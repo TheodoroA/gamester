@@ -10,6 +10,7 @@ export async function catalogRoutes(fastify: FastifyInstance): Promise<void> {
 
   fastify.get('/api/catalog/songs', controller.listSongs.bind(controller));
   fastify.post('/api/catalog/songs', controller.createSong.bind(controller));
+  fastify.put('/api/catalog/songs/:id', controller.updateSong.bind(controller));
   fastify.post('/api/catalog/import', controller.importBatch.bind(controller));
   fastify.post('/api/catalog/verify', controller.verifyAdmin.bind(controller));
 }

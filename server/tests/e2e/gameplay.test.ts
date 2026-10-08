@@ -196,4 +196,90 @@ describe('E2E-01: Simulação Completa de Partida até a Vitória (CA-08)', () =
     wsAlice.close();
     wsBob.close();
   });
+
+  it('E2E-03: Roubo de música (STEAL) não queima o turno do jogador roubado, retornando a vez para ele na rodada seguinte', async () => {
+    // 1. Host cria sala
+    const res = await serverInstance.fastify.inject({
+      method: 'POST',
+      url: '/api/rooms',
+      payload: {
+        nickname: 'Alice',
+        settings: { mode: 'TIMELINE', maxCardsToWin: 10 }
+      }
+    });
+
+    const { roomId, playerId: hostId } = JSON.parse(res.body);
+
+    const wsAlice = await connectClient();
+    const wsBob = await connectClient();
+
+    const aliceJoinedPromise = waitForMessageType(wsAlice, 'room:joined');
+    wsAlice.send(JSON.stringify({
+      type: 'room:join',
+      payload: { roomId, nickname: 'Alice', sessionToken: hostId }
+    }));
+    await aliceJoinedPromise;
+
+    const bobJoinedPromise = waitForMessageType(wsBob, 'room:joined');
+    wsBob.send(JSON.stringify({
+      type: 'room:join',
+      payload: { roomId, nickname: 'Bob' }
+    }));
+    const bobJoined = await bobJoinedPromise;
+    const bobId = bobJoined.payload.player.id;
+
+    // 2. Inicia o jogo -> Round 1: Vez da Alice
+    const round1Promise = waitForMessageType(wsAlice, 'round:start');
+    wsAlice.send(JSON.stringify({ type: 'game:start' }));
+    const round1 = await round1Promise;
+
+    assert.equal(round1.payload.activePlayerId, hostId);
+    assert.equal(round1.payload.roundNumber, 1);
+
+    const room = serverInstance.roomManager.getRoom(roomId)!;
+    const bobPlayer = room.players.get(bobId)!;
+    bobPlayer.tokens = 2; // Fornece 2 tokens para Bob poder roubar
+
+    // 3. Bob rouba a rodada da Alice
+    const powerAppliedPromise = waitForMessageType(wsBob, 'power:applied');
+    wsBob.send(JSON.stringify({
+      type: 'power:use',
+      payload: { power: 'STEAL' }
+    }));
+    const powerMsg = await powerAppliedPromise;
+    assert.equal(powerMsg.payload.power, 'STEAL');
+    assert.equal(room.currentRound?.activePlayerId, bobId);
+    assert.equal(room.currentRound?.originalPlayerId, hostId);
+    assert.equal(room.currentRound?.isStolen, true);
+
+    // 4. Resolve o turno roubado de Bob
+    const roundEndPromise = waitForMessageType(wsAlice, 'round:end');
+    wsAlice.send(JSON.stringify({ type: 'round:resolve' }));
+    await roundEndPromise;
+
+    // 5. Avança para a próxima rodada
+    const round2Promise = waitForMessageType(wsAlice, 'round:start');
+    wsAlice.send(JSON.stringify({ type: 'round:next' }));
+    const round2 = await round2Promise;
+
+    // O turno deve voltar para Alice (a vítima do roubo), que agora tem sua rodada normal!
+    assert.equal(round2.payload.activePlayerId, hostId, 'A vez deveria retornar para Alice (vítima do roubo)');
+    assert.equal(round2.payload.roundNumber, 2);
+
+    // 6. Resolve a rodada de Alice
+    const round2EndPromise = waitForMessageType(wsAlice, 'round:end');
+    wsAlice.send(JSON.stringify({ type: 'round:resolve' }));
+    await round2EndPromise;
+
+    // 7. Avança para a terceira rodada -> deve ser a vez de Bob na rotação natural
+    const round3Promise = waitForMessageType(wsAlice, 'round:start');
+    wsAlice.send(JSON.stringify({ type: 'round:next' }));
+    const round3 = await round3Promise;
+
+    assert.equal(round3.payload.activePlayerId, bobId, 'A vez deveria avançar naturalmente para Bob');
+    assert.equal(round3.payload.roundNumber, 3);
+
+    wsAlice.close();
+    wsBob.close();
+  });
 });

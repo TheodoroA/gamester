@@ -288,6 +288,89 @@ export class CatalogRepository {
     return { songs, total };
   }
 
+  public getSongById(id: string): SongEntity | null {
+    const row = this.db.prepare(`SELECT * FROM songs WHERE id = ?`).get(id) as any;
+    if (!row) return null;
+    return {
+      id: row.id,
+      gameTitle: row.game_title,
+      releaseYear: row.release_year,
+      songTitle: row.song_title,
+      youtubeUrl: row.youtube_url,
+      youtubeId: row.youtube_id,
+      startTime: row.start_time,
+      platform: row.platform || undefined,
+      category: row.category || undefined,
+      tags: JSON.parse(row.tags || '[]'),
+      aliases: this.getAliases(row.id),
+      createdAt: row.created_at
+    };
+  }
+
+  public updateSong(id: string, input: Partial<NewSongInput>): SongEntity | null {
+    const existing = this.getSongById(id);
+    if (!existing) return null;
+
+    const gameTitle = input.gameTitle !== undefined ? input.gameTitle : existing.gameTitle;
+    const releaseYear = input.releaseYear !== undefined ? input.releaseYear : existing.releaseYear;
+    const songTitle = input.songTitle !== undefined ? input.songTitle : existing.songTitle;
+    const youtubeUrl = input.youtubeUrl !== undefined ? input.youtubeUrl : existing.youtubeUrl;
+    const youtubeId = (input as any)?.youtubeId || (input.youtubeUrl ? extractYouTubeId(input.youtubeUrl) : existing.youtubeId) || existing.youtubeId;
+    const startTime = input.startTime !== undefined ? input.startTime : existing.startTime;
+    const platform = input.platform !== undefined ? (input.platform || null) : (existing.platform || null);
+    const category = input.category !== undefined ? (input.category || null) : (existing.category || null);
+    const tags = input.tags !== undefined ? input.tags : existing.tags;
+    const aliases = input.aliases !== undefined ? input.aliases : existing.aliases;
+
+    const tagsJson = JSON.stringify(tags);
+
+    const updateStmt = this.db.prepare(`
+      UPDATE songs SET
+        game_title = ?,
+        release_year = ?,
+        song_title = ?,
+        youtube_url = ?,
+        youtube_id = ?,
+        start_time = ?,
+        platform = ?,
+        category = ?,
+        tags = ?
+      WHERE id = ?
+    `);
+
+    const deleteAliases = this.db.prepare(`DELETE FROM song_aliases WHERE song_id = ?`);
+    const insertAlias = this.db.prepare(`INSERT INTO song_aliases (song_id, alias) VALUES (?, ?)`);
+
+    const transaction = this.db.transaction(() => {
+      updateStmt.run(
+        gameTitle,
+        releaseYear,
+        songTitle,
+        youtubeUrl,
+        youtubeId,
+        startTime,
+        platform,
+        category,
+        tagsJson,
+        id
+      );
+
+      if (input.aliases !== undefined) {
+        deleteAliases.run(id);
+        for (const alias of aliases) {
+          const cleanAlias = alias.trim();
+          if (cleanAlias) {
+            insertAlias.run(id, cleanAlias);
+          }
+        }
+      }
+    });
+
+    transaction();
+
+    return this.getSongById(id);
+  }
+
   public count(): number {
     const row = this.db.prepare(`SELECT COUNT(*) as count FROM songs`).get() as { count: number };
     return row.count;

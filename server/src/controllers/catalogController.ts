@@ -95,4 +95,24 @@ export class CatalogController {
       errors: []
     });
   }
+
+  public async updateSong(request: FastifyRequest, reply: FastifyReply): Promise<void> {
+    if (!this.checkAdmin(request, reply)) return;
+
+    const { id } = request.params as { id: string };
+    const body = request.body as Partial<NewSongInput>;
+
+    const updated = this.repo.updateSong(id, body);
+    if (!updated) {
+      reply.status(404).send({
+        error: {
+          code: 'NOT_FOUND',
+          message: 'Música não encontrada.'
+        }
+      });
+      return;
+    }
+
+    reply.send(updated);
+  }
 }

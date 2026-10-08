@@ -94,19 +94,44 @@ export function setupWebSocketServer(
     const playerIds = Array.from(room.players.keys());
     if (playerIds.length === 0) return;
 
-    const currentIdx = room.currentRound ? playerIds.indexOf(room.currentRound.originalPlayerId || room.currentRound.activePlayerId) : -1;
-    
-    // Prioriza o próximo jogador que esteja ativamente conectado
-    let nextIdx = (currentIdx + 1) % playerIds.length;
-    for (let i = 0; i < playerIds.length; i++) {
-      const candidateIdx = (currentIdx + 1 + i) % playerIds.length;
-      const candidatePlayer = room.players.get(playerIds[candidateIdx]);
-      if (candidatePlayer && candidatePlayer.isConnected) {
-        nextIdx = candidateIdx;
-        break;
+    let nextPlayerId: string;
+
+    // Se a rodada anterior foi roubada (STEAL), não pulamos a vez da pessoa roubada:
+    // O roubo serviu como rodada extra para quem roubou. A próxima rodada deve retornar
+    // para a pessoa original (originalPlayerId), desde que ela ainda esteja conectada!
+    if (room.currentRound?.isStolen && room.currentRound.originalPlayerId) {
+      const originalPlayer = room.players.get(room.currentRound.originalPlayerId);
+      if (originalPlayer && originalPlayer.isConnected) {
+        nextPlayerId = room.currentRound.originalPlayerId;
+      } else {
+        // Se ela se desconectou, segue a rotação normal a partir do originalPlayerId
+        const currentIdx = playerIds.indexOf(room.currentRound.originalPlayerId);
+        let nextIdx = (currentIdx + 1) % playerIds.length;
+        for (let i = 0; i < playerIds.length; i++) {
+          const candidateIdx = (currentIdx + 1 + i) % playerIds.length;
+          const candidatePlayer = room.players.get(playerIds[candidateIdx]);
+          if (candidatePlayer && candidatePlayer.isConnected) {
+            nextIdx = candidateIdx;
+            break;
+          }
+        }
+        nextPlayerId = playerIds[nextIdx];
       }
+    } else {
+      const currentIdx = room.currentRound ? playerIds.indexOf(room.currentRound.originalPlayerId || room.currentRound.activePlayerId) : -1;
+      
+      // Prioriza o próximo jogador que esteja ativamente conectado
+      let nextIdx = (currentIdx + 1) % playerIds.length;
+      for (let i = 0; i < playerIds.length; i++) {
+        const candidateIdx = (currentIdx + 1 + i) % playerIds.length;
+        const candidatePlayer = room.players.get(playerIds[candidateIdx]);
+        if (candidatePlayer && candidatePlayer.isConnected) {
+          nextIdx = candidateIdx;
+          break;
+        }
+      }
+      nextPlayerId = playerIds[nextIdx];
     }
-    const nextPlayerId = playerIds[nextIdx];
 
     const song = catalogRepo?.getRandomSong(room.playedSongIds, room.settings.category, room.settings.tag) || {
       id: 'fallback-' + (room.currentRound ? room.currentRound.roundNumber + 1 : 1),

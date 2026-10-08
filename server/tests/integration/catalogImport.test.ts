@@ -159,4 +159,57 @@ describe('Catálogo e Importação em Lote (TI-04)', () => {
     assert.equal(statusCode, 200);
     assert.equal(payload?.success, true);
   });
+
+  it('Deve atualizar os dados de uma música existente (updateSong) com proteção de admin', async () => {
+    const song = repo.getRandomSong()!;
+    assert.ok(song);
+
+    // 1. Atualiza no repositório diretamente
+    const updatedRepo = repo.updateSong(song.id, {
+      songTitle: 'Title Edited',
+      releaseYear: 1999,
+      tags: ['edited-tag'],
+      aliases: ['NewAlias']
+    });
+
+    assert.ok(updatedRepo);
+    assert.equal(updatedRepo.songTitle, 'Title Edited');
+    assert.equal(updatedRepo.releaseYear, 1999);
+    assert.deepEqual(updatedRepo.tags, ['edited-tag']);
+    assert.deepEqual(updatedRepo.aliases, ['NewAlias']);
+
+    // 2. Testa controller sem admin key -> 401
+    const controller = new CatalogController(repo, 'chave-secreta-teste');
+    let statusCode = 200;
+    let payload: any = null;
+    const mockReply: any = {
+      status(code: number) {
+        statusCode = code;
+        return this;
+      },
+      send(data: any) {
+        payload = data;
+        return this;
+      }
+    };
+
+    await controller.updateSong(
+      { headers: {}, params: { id: song.id }, body: { gameTitle: 'Novo Jogo' } } as any,
+      mockReply
+    );
+    assert.equal(statusCode, 401);
+
+    // 3. Testa controller com chave correta -> 200
+    statusCode = 200;
+    await controller.updateSong(
+      { headers: { 'x-admin-key': 'chave-secreta-teste' }, params: { id: song.id }, body: { gameTitle: 'Chrono Trigger Remaster' } } as any,
+      mockReply
+    );
+    assert.equal(statusCode, 200);
+    assert.equal(payload.gameTitle, 'Chrono Trigger Remaster');
+
+    // Confirma persistência
+    const fetched = repo.getSongById(song.id);
+    assert.equal(fetched?.gameTitle, 'Chrono Trigger Remaster');
+  });
 });
