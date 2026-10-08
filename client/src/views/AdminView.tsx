@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowLeft, Plus, Upload, Play, Pause, Check, AlertCircle } from 'lucide-react';
+import { ArrowLeft, Plus, Upload, Play, Pause, Check, AlertCircle, Lock, LogOut } from 'lucide-react';
 import { YouTubeHeadlessPlayer } from '../components/YouTubeHeadlessPlayer.js';
 
 interface AdminViewProps {
@@ -22,6 +22,8 @@ interface SongItem {
 export const AdminView: React.FC<AdminViewProps> = ({ onBack }) => {
   const [adminKey, setAdminKey] = useState(localStorage.getItem('gamester_admin_key') || '');
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [authError, setAuthError] = useState<string | null>(null);
+  const [isVerifying, setIsVerifying] = useState(false);
   const [songs, setSongs] = useState<SongItem[]>([]);
   const [activeTab, setActiveTab] = useState<'LIST' | 'CREATE' | 'IMPORT'>('LIST');
 
@@ -46,20 +48,42 @@ export const AdminView: React.FC<AdminViewProps> = ({ onBack }) => {
   const [importMsg, setImportMsg] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
 
   const fetchSongs = async (key = adminKey) => {
+    const trimmed = key.trim();
+    if (!trimmed) {
+      setIsAuthenticated(false);
+      return false;
+    }
+
+    setIsVerifying(true);
+    setAuthError(null);
+
     try {
-      const res = await fetch('/api/catalog/songs?limit=50', {
-        headers: { 'x-admin-key': key }
+      const res = await fetch('/api/catalog/songs?limit=100', {
+        headers: { 'x-admin-key': trimmed }
       });
+
       if (res.ok) {
         const data = await res.json();
         setSongs(data.songs || []);
         setIsAuthenticated(true);
-        localStorage.setItem('gamester_admin_key', key);
+        setAuthError(null);
+        localStorage.setItem('gamester_admin_key', trimmed);
+        return true;
       } else {
+        const data = await res.json().catch(() => ({}));
         setIsAuthenticated(false);
+        setSongs([]);
+        setAuthError(data.error?.message || 'Chave de administração incorreta.');
+        localStorage.removeItem('gamester_admin_key');
+        return false;
       }
     } catch (e) {
       console.error(e);
+      setIsAuthenticated(false);
+      setAuthError('Erro ao conectar ao servidor para validar a chave.');
+      return false;
+    } finally {
+      setIsVerifying(false);
     }
   };
 
@@ -71,7 +95,21 @@ export const AdminView: React.FC<AdminViewProps> = ({ onBack }) => {
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    fetchSongs();
+    if (!adminKey.trim()) {
+      setAuthError('Digite a chave secreta de administração.');
+      return;
+    }
+    fetchSongs(adminKey.trim());
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem('gamester_admin_key');
+    setAdminKey('');
+    setIsAuthenticated(false);
+    setSongs([]);
+    setPreviewing(false);
+    setPreviewId('');
+    setAuthError(null);
   };
 
   const handleTestPreview = () => {
@@ -179,6 +217,14 @@ export const AdminView: React.FC<AdminViewProps> = ({ onBack }) => {
         </button>
 
         <h2 className="text-xl font-black text-white mb-4">Acesso Administrativo</h2>
+
+        {authError && (
+          <div className="mb-4 p-3 bg-rose-500/15 border border-rose-500/30 rounded-xl flex items-center gap-2.5 text-rose-300 text-xs font-bold">
+            <AlertCircle className="w-4 h-4 flex-shrink-0 text-rose-400" />
+            <span>{authError}</span>
+          </div>
+        )}
+
         <form onSubmit={handleLogin} className="space-y-4">
           <div>
             <label className="block text-xs font-bold text-slate-400 mb-1">Chave Secreta (ADMIN_KEY)</label>
@@ -187,14 +233,22 @@ export const AdminView: React.FC<AdminViewProps> = ({ onBack }) => {
               value={adminKey}
               onChange={(e) => setAdminKey(e.target.value)}
               placeholder="Digite a chave da VPS"
-              className="w-full px-4 py-2.5 bg-slate-950 border border-slate-700 rounded-xl text-white"
+              className="w-full px-4 py-2.5 bg-slate-950 border border-slate-700 rounded-xl text-white placeholder-slate-600 focus:outline-none focus:border-purple-500 text-sm font-mono"
             />
           </div>
           <button
             type="submit"
-            className="w-full py-2.5 bg-purple-600 hover:bg-purple-500 font-bold rounded-xl text-white text-sm"
+            disabled={isVerifying}
+            className="w-full py-2.5 bg-purple-600 hover:bg-purple-500 disabled:opacity-50 font-bold rounded-xl text-white text-sm transition-all flex items-center justify-center gap-2"
           >
-            Acessar Catálogo
+            {isVerifying ? (
+              <span>Verificando chave...</span>
+            ) : (
+              <>
+                <Lock className="w-4 h-4" />
+                <span>Acessar Catálogo</span>
+              </>
+            )}
           </button>
         </form>
       </div>
@@ -223,8 +277,8 @@ export const AdminView: React.FC<AdminViewProps> = ({ onBack }) => {
           </div>
         </div>
 
-        {/* Abas */}
-        <div className="flex gap-2">
+        {/* Abas e Logout */}
+        <div className="flex items-center gap-2">
           <button
             onClick={() => setActiveTab('LIST')}
             className={`px-3 py-1.5 text-xs font-bold rounded-lg ${
@@ -248,6 +302,13 @@ export const AdminView: React.FC<AdminViewProps> = ({ onBack }) => {
             }`}
           >
             <Upload className="w-3.5 h-3.5" /> Importar IA
+          </button>
+          <button
+            onClick={handleLogout}
+            className="px-3 py-1.5 text-xs font-bold rounded-lg bg-slate-800 hover:bg-rose-950/60 hover:text-rose-300 text-slate-400 flex items-center gap-1 transition-colors border border-slate-700/50"
+            title="Encerrar sessão de administrador"
+          >
+            <LogOut className="w-3.5 h-3.5" /> Sair
           </button>
         </div>
       </div>

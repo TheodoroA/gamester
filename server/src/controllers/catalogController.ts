@@ -5,7 +5,7 @@ export class CatalogController {
   private repo: CatalogRepository;
   private adminKey: string;
 
-  constructor(repo: CatalogRepository, adminKey = process.env.ADMIN_KEY || 'segredo-vps-gamester') {
+  constructor(repo: CatalogRepository, adminKey = process.env.ADMIN_KEY || 'gamester-vps-secret') {
     this.repo = repo;
     this.adminKey = adminKey;
   }
@@ -24,7 +24,14 @@ export class CatalogController {
     return true;
   }
 
+  public async verifyAdmin(request: FastifyRequest, reply: FastifyReply): Promise<void> {
+    if (!this.checkAdmin(request, reply)) return;
+    reply.send({ success: true, message: 'Autenticado com sucesso.' });
+  }
+
   public async listSongs(request: FastifyRequest, reply: FastifyReply): Promise<void> {
+    if (!this.checkAdmin(request, reply)) return;
+
     const query = request.query as any;
     const filter = {
       page: query.page ? Number(query.page) : 1,

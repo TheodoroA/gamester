@@ -2,6 +2,7 @@ import { describe, it, before, after } from 'node:test';
 import assert from 'node:assert/strict';
 import Database from 'better-sqlite3';
 import { CatalogRepository, NewSongInput } from '../../src/db/repositories/catalogRepository.js';
+import { CatalogController } from '../../src/controllers/catalogController.js';
 import { initSchema } from '../../src/db/sqlite.js';
 
 describe('Catálogo e Importação em Lote (TI-04)', () => {
@@ -96,5 +97,66 @@ describe('Catálogo e Importação em Lote (TI-04)', () => {
     const song2 = repo.getRandomSong([song1.id]);
     assert.ok(song2);
     assert.notEqual(song1.id, song2.id);
+  });
+
+  it('Deve barrar requisições em listSongs sem chave de administração válida (401)', async () => {
+    const controller = new CatalogController(repo, 'chave-secreta-teste');
+    let statusCode = 200;
+    let payload: any = null;
+
+    const mockReply: any = {
+      status(code: number) {
+        statusCode = code;
+        return this;
+      },
+      send(data: any) {
+        payload = data;
+        return this;
+      }
+    };
+
+    // Sem chave
+    await controller.listSongs({ headers: {}, query: {} } as any, mockReply);
+    assert.equal(statusCode, 401);
+    assert.equal(payload?.error?.code, 'UNAUTHORIZED');
+
+    // Com chave incorreta
+    statusCode = 200;
+    await controller.listSongs({ headers: { 'x-admin-key': 'chave-errada' }, query: {} } as any, mockReply);
+    assert.equal(statusCode, 401);
+    assert.equal(payload?.error?.code, 'UNAUTHORIZED');
+
+    // Com chave correta
+    statusCode = 200;
+    await controller.listSongs({ headers: { 'x-admin-key': 'chave-secreta-teste' }, query: {} } as any, mockReply);
+    assert.equal(statusCode, 200);
+    assert.ok(Array.isArray(payload.songs));
+  });
+
+  it('Deve verificar chave de administração via verifyAdmin com sucesso ou rejeição', async () => {
+    const controller = new CatalogController(repo, 'chave-secreta-teste');
+    let statusCode = 200;
+    let payload: any = null;
+
+    const mockReply: any = {
+      status(code: number) {
+        statusCode = code;
+        return this;
+      },
+      send(data: any) {
+        payload = data;
+        return this;
+      }
+    };
+
+    // Chave incorreta
+    await controller.verifyAdmin({ headers: { 'x-admin-key': 'errada' } } as any, mockReply);
+    assert.equal(statusCode, 401);
+
+    // Chave correta
+    statusCode = 200;
+    await controller.verifyAdmin({ headers: { 'x-admin-key': 'chave-secreta-teste' } } as any, mockReply);
+    assert.equal(statusCode, 200);
+    assert.equal(payload?.success, true);
   });
 });
