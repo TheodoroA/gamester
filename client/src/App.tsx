@@ -19,7 +19,13 @@ export const App: React.FC = () => {
   const [view, setView] = useState<'APP' | 'ADMIN'>('APP');
 
   // Slot selection for Timeline mode
-  const [selectedSlot, setSelectedSlot] = useState<number | null>(null);
+  const [selectedSlot, setSelectedSlot] = useState<number | null>(0);
+
+  useEffect(() => {
+    if (player && player.timeline.length === 0) {
+      setSelectedSlot(0);
+    }
+  }, [player?.timeline?.length, room?.currentRound?.roundNumber]);
 
   useEffect(() => {
     const unsubscribe = roomStore.subscribe(() => {
@@ -67,7 +73,8 @@ export const App: React.FC = () => {
   };
 
   const handleGuessSubmit = (gameGuess: string, songGuess?: string) => {
-    roomStore.submitGuess(gameGuess, songGuess, selectedSlot ?? undefined);
+    const slot = (player?.timeline.length === 0) ? 0 : (selectedSlot ?? 0);
+    roomStore.submitGuess(gameGuess, songGuess, slot);
   };
 
   if (view === 'ADMIN') {

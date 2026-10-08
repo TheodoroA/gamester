@@ -12,6 +12,8 @@ interface YouTubeHeadlessPlayerProps {
   startTime?: number;
   duration?: number;
   isPlaying?: boolean;
+  volume?: number;
+  isMuted?: boolean;
   onError?: (errCode: number) => void;
 }
 
@@ -20,6 +22,8 @@ export const YouTubeHeadlessPlayer: React.FC<YouTubeHeadlessPlayerProps> = ({
   startTime = 0,
   duration = 30,
   isPlaying = true,
+  volume = 70,
+  isMuted = false,
   onError
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -104,8 +108,12 @@ export const YouTubeHeadlessPlayer: React.FC<YouTubeHeadlessPlayerProps> = ({
           onReady: (event: any) => {
             playerRef.current = event.target;
             try {
-              event.target.unMute();
-              event.target.setVolume(100);
+              if (isMuted) {
+                event.target.mute();
+              } else {
+                event.target.unMute();
+                event.target.setVolume(volume);
+              }
               if (youtubeId && isPlaying) {
                 event.target.playVideo();
               }
@@ -144,14 +152,33 @@ export const YouTubeHeadlessPlayer: React.FC<YouTubeHeadlessPlayerProps> = ({
           startSeconds: start,
           endSeconds: start + duration
         });
-        playerRef.current.unMute();
-        playerRef.current.setVolume(100);
+        if (isMuted) {
+          playerRef.current.mute();
+        } else {
+          playerRef.current.unMute();
+          playerRef.current.setVolume(volume);
+        }
         playerRef.current.playVideo();
       }
     } catch (err) {
       console.warn('Erro ao chamar loadVideoById:', err);
     }
   };
+
+  // Reage a alterações dinâmicas de volume e mudo
+  useEffect(() => {
+    if (!playerRef.current) return;
+    try {
+      if (isMuted) {
+        playerRef.current.mute?.();
+      } else {
+        playerRef.current.unMute?.();
+        playerRef.current.setVolume?.(volume);
+      }
+    } catch {
+      // ignore
+    }
+  }, [volume, isMuted]);
 
   // Atualiza reprodução quando o youtubeId ou startTime mudar
   useEffect(() => {

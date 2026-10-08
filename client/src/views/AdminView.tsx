@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowLeft, Plus, Upload, Play, Check, AlertCircle } from 'lucide-react';
+import { ArrowLeft, Plus, Upload, Play, Pause, Check, AlertCircle } from 'lucide-react';
 import { YouTubeHeadlessPlayer } from '../components/YouTubeHeadlessPlayer.js';
 
 interface AdminViewProps {
@@ -84,6 +84,16 @@ export const AdminView: React.FC<AdminViewProps> = ({ onBack }) => {
     setPreviewId(id);
     setPreviewStart(startTime);
     setPreviewing(true);
+  };
+
+  const toggleSongPreview = (song: SongItem) => {
+    if (previewing && previewId === song.youtubeId) {
+      setPreviewing(false);
+    } else {
+      setPreviewId(song.youtubeId);
+      setPreviewStart(song.startTime || 0);
+      setPreviewing(true);
+    }
   };
 
   const handleCreateSong = async (e: React.FormEvent) => {
@@ -194,7 +204,7 @@ export const AdminView: React.FC<AdminViewProps> = ({ onBack }) => {
   return (
     <div className="max-w-4xl w-full mx-auto p-6 bg-slate-900 border border-slate-800 rounded-2xl shadow-2xl">
       {/* Player oculto para pré-escuta de 30s */}
-      {previewing && previewId && (
+      {previewId && (
         <YouTubeHeadlessPlayer
           youtubeId={previewId}
           startTime={previewStart}
@@ -248,6 +258,7 @@ export const AdminView: React.FC<AdminViewProps> = ({ onBack }) => {
           <table className="w-full text-left text-xs text-slate-300">
             <thead className="bg-slate-950 text-slate-400 uppercase tracking-wider text-[10px]">
               <tr>
+                <th className="p-3 text-center w-12">Prévia</th>
                 <th className="p-3">Jogo</th>
                 <th className="p-3">Ano</th>
                 <th className="p-3">Faixa</th>
@@ -256,23 +267,53 @@ export const AdminView: React.FC<AdminViewProps> = ({ onBack }) => {
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-800">
-              {songs.map((s) => (
-                <tr key={s.id} className="hover:bg-slate-800/40">
-                  <td className="p-3 font-bold text-white">{s.gameTitle}</td>
-                  <td className="p-3 font-mono text-purple-400">{s.releaseYear}</td>
-                  <td className="p-3">{s.songTitle}</td>
-                  <td className="p-3">
-                    <div className="flex flex-wrap gap-1">
-                      {s.tags.map((t, idx) => (
-                        <span key={idx} className="px-1.5 py-0.5 rounded bg-slate-800 text-slate-400 text-[10px]">
-                          {t}
-                        </span>
-                      ))}
-                    </div>
-                  </td>
-                  <td className="p-3 text-right font-mono text-slate-400">{s.startTime}s</td>
-                </tr>
-              ))}
+              {songs.map((s) => {
+                const isPlaying = previewing && previewId === s.youtubeId;
+                return (
+                  <tr key={s.id} className={`hover:bg-slate-800/40 transition-colors ${isPlaying ? 'bg-purple-950/30' : ''}`}>
+                    <td className="p-3 text-center">
+                      <button
+                        type="button"
+                        onClick={() => toggleSongPreview(s)}
+                        className={`p-2 rounded-lg transition-all ${
+                          isPlaying
+                            ? 'bg-amber-500 hover:bg-amber-400 text-slate-950 shadow-md shadow-amber-500/20 scale-105'
+                            : 'bg-slate-800 hover:bg-purple-600 text-slate-300 hover:text-white'
+                        }`}
+                        title={isPlaying ? 'Pausar áudio' : 'Ouvir trecho de 30s'}
+                      >
+                        {isPlaying ? (
+                          <Pause className="w-3.5 h-3.5 fill-current" />
+                        ) : (
+                          <Play className="w-3.5 h-3.5 fill-current" />
+                        )}
+                      </button>
+                    </td>
+                    <td className="p-3 font-bold text-white">
+                      <div className="flex items-center gap-2">
+                        <span>{s.gameTitle}</span>
+                        {isPlaying && (
+                          <span className="text-[10px] text-amber-400 font-semibold animate-pulse">
+                            ▶ Tocando
+                          </span>
+                        )}
+                      </div>
+                    </td>
+                    <td className="p-3 font-mono text-purple-400">{s.releaseYear}</td>
+                    <td className="p-3">{s.songTitle}</td>
+                    <td className="p-3">
+                      <div className="flex flex-wrap gap-1">
+                        {s.tags.map((t, idx) => (
+                          <span key={idx} className="px-1.5 py-0.5 rounded bg-slate-800 text-slate-400 text-[10px]">
+                            {t}
+                          </span>
+                        ))}
+                      </div>
+                    </td>
+                    <td className="p-3 text-right font-mono text-slate-400">{s.startTime}s</td>
+                  </tr>
+                );
+              })}
             </tbody>
           </table>
         </div>

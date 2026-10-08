@@ -40,9 +40,29 @@ export const TimelineBoard: React.FC<TimelineBoardProps> = ({
         {/* Linha horizontal rolável */}
         <div className="flex items-center gap-2 overflow-x-auto pb-2 pt-1 px-1 scroll-smooth">
           {sorted.length === 0 ? (
-            <div className="py-6 px-4 text-center text-xs text-slate-500 italic w-full border border-dashed border-slate-800 rounded-xl">
-              Nenhuma carta conquistada ainda. Acerte o jogo e o período para começar sua linha do tempo!
-            </div>
+            isSelectingSlot ? (
+              <button
+                type="button"
+                onClick={() => onSelectSlot?.(0)}
+                className={`w-full py-5 px-4 rounded-xl border border-dashed flex flex-col items-center justify-center gap-1.5 transition-all ${
+                  selectedSlot === 0 || selectedSlot === null
+                    ? 'bg-purple-600/25 border-purple-500 text-purple-200 shadow-lg shadow-purple-600/10'
+                    : 'border-slate-700 hover:border-slate-500 text-slate-400'
+                }`}
+              >
+                <div className="flex items-center gap-2 font-bold text-xs text-purple-300">
+                  <PlusCircle className="w-4 h-4 text-purple-400" />
+                  <span>⭐ Slot Inicial: 1ª Carta da Linha do Tempo (Selecionado)</span>
+                </div>
+                <span className="text-[11px] text-slate-400">
+                  Qualquer ano de lançamento iniciará sua linha do tempo após acertar o jogo.
+                </span>
+              </button>
+            ) : (
+              <div className="py-6 px-4 text-center text-xs text-slate-500 italic w-full border border-dashed border-slate-800 rounded-xl">
+                Nenhuma carta conquistada ainda. Acerte o jogo para começar sua linha do tempo!
+              </div>
+            )
           ) : (
             <>
               {/* Slot inicial (antes do primeiro jogo) */}

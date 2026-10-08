@@ -51,7 +51,20 @@ export class Room {
   public players = new Map<string, PlayerSession>();
   public currentRound?: any;
   public playedSongIds: string[] = [];
+  public roundTimer?: NodeJS.Timeout;
+  public revealTimer?: NodeJS.Timeout;
   public lastActivity = Date.now();
+
+  public clearTimers(): void {
+    if (this.roundTimer) {
+      clearTimeout(this.roundTimer);
+      this.roundTimer = undefined;
+    }
+    if (this.revealTimer) {
+      clearTimeout(this.revealTimer);
+      this.revealTimer = undefined;
+    }
+  }
 
   constructor(id: string, hostId: string, settings?: Partial<RoomSettings>) {
     this.id = id;
@@ -262,6 +275,7 @@ export class RoomManager {
 
         // Se a sala ficou vazia, remove
         if (room.players.size === 0) {
+          room.clearTimers();
           this.rooms.delete(roomId);
         } else {
           room.broadcast({
@@ -274,7 +288,11 @@ export class RoomManager {
   }
 
   public removeRoom(roomId: string): void {
-    this.rooms.delete(roomId.toUpperCase());
+    const room = this.getRoom(roomId);
+    if (room) {
+      room.clearTimers();
+      this.rooms.delete(room.id);
+    }
   }
 
   public countActiveRooms(): number {

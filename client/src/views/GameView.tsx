@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Send, Music, HelpCircle, AlertCircle, Coins } from 'lucide-react';
-import { RoomState, Player } from '../stores/roomStore.js';
+import { Send, Music, HelpCircle, AlertCircle, Coins, Volume2, VolumeX } from 'lucide-react';
+import { RoomState, Player, roomStore } from '../stores/roomStore.js';
 import { RoundTimer } from '../components/RoundTimer.js';
 import { PowerButtons } from '../components/PowerButtons.js';
 import { YouTubeHeadlessPlayer } from '../components/YouTubeHeadlessPlayer.js';
@@ -23,6 +23,8 @@ export const GameView: React.FC<GameViewProps> = ({
   const [gameGuess, setGameGuess] = useState('');
   const [songGuess, setSongGuess] = useState('');
   const [submitted, setSubmitted] = useState(false);
+  const [volume, setVolume] = useState(roomStore.volume);
+  const [isMuted, setIsMuted] = useState(roomStore.isMuted);
 
   const round = room.currentRound;
   if (!round) {
@@ -32,6 +34,18 @@ export const GameView: React.FC<GameViewProps> = ({
   const activePlayer = room.players.find(p => p.id === round.activePlayerId);
   const isActive = currentPlayer.id === round.activePlayerId;
   const isInterventionPhase = Date.now() <= (round.interventionEndsAt || 0);
+
+  const handleVolumeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const val = Number(e.target.value);
+    roomStore.setVolume(val);
+    setVolume(val);
+    setIsMuted(roomStore.isMuted);
+  };
+
+  const handleToggleMute = () => {
+    roomStore.toggleMute();
+    setIsMuted(roomStore.isMuted);
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -47,10 +61,12 @@ export const GameView: React.FC<GameViewProps> = ({
         youtubeId={round.youtubeId}
         startTime={round.startTime}
         isPlaying={true}
+        volume={volume}
+        isMuted={isMuted}
       />
 
       {/* Barra de Status Superior */}
-      <div className="w-full flex justify-between items-center mb-4 px-2">
+      <div className="w-full flex flex-wrap justify-between items-center gap-3 mb-4 px-2">
         <div className="flex items-center gap-2">
           <span className="text-xs uppercase font-bold text-slate-400">Rodada #{round.roundNumber || 1}</span>
           {round.isStolen && (
@@ -60,10 +76,41 @@ export const GameView: React.FC<GameViewProps> = ({
           )}
         </div>
 
-        <div className="flex items-center gap-2 bg-slate-900 px-3 py-1.5 rounded-xl border border-slate-800">
-          <Coins className="w-4 h-4 text-amber-400" />
-          <span className="text-xs font-bold text-slate-300">Seus Recursos:</span>
-          <span className="text-sm font-black text-amber-400">{currentPlayer.tokens} / 5</span>
+        <div className="flex items-center gap-3">
+          {/* Controle de Volume */}
+          <div className="flex items-center gap-2 bg-slate-900/90 px-3 py-1.5 rounded-xl border border-slate-800">
+            <button
+              type="button"
+              onClick={handleToggleMute}
+              className="text-slate-400 hover:text-purple-400 transition-colors"
+              title={isMuted ? "Desmutar" : "Mutar"}
+            >
+              {isMuted || volume === 0 ? (
+                <VolumeX className="w-4 h-4 text-rose-400" />
+              ) : (
+                <Volume2 className="w-4 h-4 text-purple-400" />
+              )}
+            </button>
+            <input
+              type="range"
+              min="0"
+              max="100"
+              value={isMuted ? 0 : volume}
+              onChange={handleVolumeChange}
+              className="w-16 sm:w-24 accent-purple-500 cursor-pointer h-1.5 bg-slate-700 rounded-lg"
+              title={`Volume: ${isMuted ? 0 : volume}%`}
+            />
+            <span className="text-[10px] font-bold text-slate-400 w-6 text-right">
+              {isMuted ? '0%' : `${volume}%`}
+            </span>
+          </div>
+
+          {/* Seus Recursos */}
+          <div className="flex items-center gap-2 bg-slate-900 px-3 py-1.5 rounded-xl border border-slate-800">
+            <Coins className="w-4 h-4 text-amber-400" />
+            <span className="text-xs font-bold text-slate-300">Recursos:</span>
+            <span className="text-sm font-black text-amber-400">{currentPlayer.tokens} / 5</span>
+          </div>
         </div>
       </div>
 

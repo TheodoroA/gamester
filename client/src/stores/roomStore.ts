@@ -46,6 +46,11 @@ class RoomStore {
   public hasAudioUnlocked = false;
   public resolution: any | null = null;
   public gameOver: any | null = null;
+  public volume: number = (() => {
+    const saved = localStorage.getItem('gamester_volume');
+    return saved !== null ? Math.max(0, Math.min(100, Number(saved))) : 70;
+  })();
+  public isMuted: boolean = localStorage.getItem('gamester_muted') === 'true';
 
   private listeners = new Set<Listener>();
 
@@ -62,6 +67,22 @@ class RoomStore {
 
   public initAudioContext(): void {
     this.hasAudioUnlocked = true;
+    this.notify();
+  }
+
+  public setVolume(vol: number): void {
+    this.volume = Math.max(0, Math.min(100, vol));
+    localStorage.setItem('gamester_volume', String(this.volume));
+    if (this.volume > 0 && this.isMuted) {
+      this.isMuted = false;
+      localStorage.setItem('gamester_muted', 'false');
+    }
+    this.notify();
+  }
+
+  public toggleMute(): void {
+    this.isMuted = !this.isMuted;
+    localStorage.setItem('gamester_muted', String(this.isMuted));
     this.notify();
   }
 
