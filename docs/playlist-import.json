@@ -1,0 +1,4413 @@
+[
+  {
+    "gameTitle": "Metaphor: ReFantazio",
+    "releaseYear": 2024,
+    "songTitle": "Hero's Awakening",
+    "platform": "Multi",
+    "category": "RPG",
+    "startTime": 10,
+    "tags": [
+      "rpg",
+      "atlus",
+      "epic",
+      "battle",
+      "choral"
+    ],
+    "aliases": [
+      "Metaphor",
+      "Metaphor ReFantazio"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=sJGDdLDn7as"
+  },
+  {
+    "gameTitle": "Final Fantasy XVI",
+    "releaseYear": 2023,
+    "songTitle": "No Risk, No Reward",
+    "youtubeUrl": "https://www.youtube.com/watch?v=ri_iUO8MJMI",
+    "startTime": 15,
+    "platform": "PS5 / PC",
+    "category": "RPG",
+    "tags": [
+      "rpg",
+      "square-enix",
+      "soken",
+      "epic",
+      "valisthea"
+    ],
+    "aliases": [
+      "FFXVI",
+      "FF16",
+      "Final Fantasy 16"
+    ]
+  },
+  {
+    "gameTitle": "Super Smash Bros. Brawl",
+    "releaseYear": 2008,
+    "songTitle": "Main Theme",
+    "platform": "Wii",
+    "category": "Luta",
+    "startTime": 10,
+    "tags": [
+      "nintendo",
+      "smash",
+      "latin",
+      "choral",
+      "wii"
+    ],
+    "aliases": [
+      "Smash Brawl",
+      "SSBB",
+      "Super Smash Bros"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=zeKE0NHUtUw"
+  },
+  {
+    "gameTitle": "The Great Ace Attorney: Adventures",
+    "releaseYear": 2015,
+    "songTitle": "Ryunosuke Naruhodo ~ Objection!",
+    "platform": "3DS / Multi",
+    "category": "Aventura",
+    "startTime": 5,
+    "tags": [
+      "capcom",
+      "ace attorney",
+      "objection",
+      "courtroom"
+    ],
+    "aliases": [
+      "The Great Ace Attorney",
+      "Dai Gyakuten Saiban",
+      "TGAA"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=J73Rh0R9gFA"
+  },
+  {
+    "gameTitle": "Final Fantasy XVI",
+    "releaseYear": 2023,
+    "songTitle": "Away",
+    "youtubeUrl": "https://www.youtube.com/watch?v=Yf3wH29UYi8",
+    "startTime": 15,
+    "platform": "PS5 / PC",
+    "category": "RPG",
+    "tags": [
+      "rpg",
+      "square-enix",
+      "soken",
+      "epic",
+      "valisthea"
+    ],
+    "aliases": [
+      "FFXVI",
+      "FF16",
+      "Final Fantasy 16"
+    ]
+  },
+  {
+    "gameTitle": "The Witcher 3: Wild Hunt",
+    "releaseYear": 2015,
+    "songTitle": "Silver For Monsters...",
+    "platform": "Multi",
+    "category": "RPG",
+    "startTime": 10,
+    "tags": [
+      "rpg",
+      "slavic",
+      "folk",
+      "combat",
+      "cdpr"
+    ],
+    "aliases": [
+      "Witcher 3",
+      "TW3",
+      "The Witcher"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=jRG0gyVFP60"
+  },
+  {
+    "gameTitle": "Assassin's Creed II",
+    "releaseYear": 2009,
+    "songTitle": "Ezio's Family",
+    "platform": "Multi",
+    "category": "Ação",
+    "startTime": 5,
+    "tags": [
+      "action",
+      "stealth",
+      "acoustic",
+      "vocal",
+      "jesper-kyd"
+    ],
+    "aliases": [
+      "AC2",
+      "Assassins Creed 2",
+      "Assassins Creed"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=K892qn3U524"
+  },
+  {
+    "gameTitle": "Kingdom Hearts II",
+    "releaseYear": 2005,
+    "songTitle": "Dearly Beloved",
+    "platform": "PS2",
+    "category": "RPG",
+    "startTime": 10,
+    "tags": [
+      "rpg",
+      "disney",
+      "square",
+      "piano",
+      "nostalgia"
+    ],
+    "aliases": [
+      "KH2",
+      "Kingdom Hearts 2"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=sihC5l_gIak"
+  },
+  {
+    "gameTitle": "Helldivers 2",
+    "releaseYear": 2024,
+    "songTitle": "No Diver Left Behind",
+    "platform": "PC / PS5",
+    "category": "FPS",
+    "startTime": 15,
+    "tags": [
+      "shooter",
+      "coop",
+      "epic",
+      "brass",
+      "liberty"
+    ],
+    "aliases": [
+      "HD2",
+      "Helldivers"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=JuUNX1bNOxI"
+  },
+  {
+    "gameTitle": "The Witcher 3: Wild Hunt",
+    "releaseYear": 2015,
+    "songTitle": "Steel For Humans",
+    "platform": "Multi",
+    "category": "RPG",
+    "startTime": 10,
+    "tags": [
+      "rpg",
+      "slavic",
+      "folk",
+      "combat",
+      "cdpr"
+    ],
+    "aliases": [
+      "Witcher 3",
+      "TW3",
+      "The Witcher"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=uqp4Jc-XkCw"
+  },
+  {
+    "gameTitle": "League of Legends",
+    "releaseYear": 2009,
+    "songTitle": "Pantheon, the Unbreakable Spear",
+    "platform": "PC",
+    "category": "MOBA",
+    "startTime": 15,
+    "tags": [
+      "moba",
+      "riot",
+      "choral",
+      "warrior",
+      "epic"
+    ],
+    "aliases": [
+      "LoL",
+      "League"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=diVQnGqjYLQ"
+  },
+  {
+    "gameTitle": "GRIS",
+    "releaseYear": 2018,
+    "songTitle": "Where Courage Abides",
+    "platform": "Multi",
+    "category": "Indie",
+    "startTime": 10,
+    "tags": [
+      "indie",
+      "ambient",
+      "emotional",
+      "art",
+      "piano"
+    ],
+    "aliases": [
+      "Gris"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=X3wwj8w-m70"
+  },
+  {
+    "gameTitle": "NieR: Automata",
+    "releaseYear": 2017,
+    "songTitle": "Song of the Ancients - Atonement",
+    "platform": "Multi",
+    "category": "RPG",
+    "startTime": 10,
+    "tags": [
+      "rpg",
+      "square-enix",
+      "vocal",
+      "keiichi-okabe",
+      "action"
+    ],
+    "aliases": [
+      "Nier Automata",
+      "Automata",
+      "NieR"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=QNmui0Prrls"
+  },
+  {
+    "gameTitle": "Final Fantasy XVI",
+    "releaseYear": 2023,
+    "songTitle": "All as One",
+    "youtubeUrl": "https://www.youtube.com/watch?v=IBMUZR14TZc",
+    "startTime": 15,
+    "platform": "PS5 / PC",
+    "category": "RPG",
+    "tags": [
+      "rpg",
+      "square-enix",
+      "soken",
+      "epic",
+      "valisthea"
+    ],
+    "aliases": [
+      "FFXVI",
+      "FF16",
+      "Final Fantasy 16"
+    ]
+  },
+  {
+    "gameTitle": "Metaphor: ReFantazio",
+    "releaseYear": 2024,
+    "songTitle": "King's Verdict",
+    "platform": "Multi",
+    "category": "RPG",
+    "startTime": 10,
+    "tags": [
+      "rpg",
+      "atlus",
+      "orchestral",
+      "boss"
+    ],
+    "aliases": [
+      "Metaphor",
+      "Metaphor ReFantazio"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=2IzJIw2gB4o"
+  },
+  {
+    "gameTitle": "Final Fantasy XVI",
+    "releaseYear": 2023,
+    "songTitle": "Find the Flame",
+    "youtubeUrl": "https://www.youtube.com/watch?v=CeqyEzK87z4",
+    "startTime": 15,
+    "platform": "PS5 / PC",
+    "category": "RPG",
+    "tags": [
+      "rpg",
+      "square-enix",
+      "soken",
+      "epic",
+      "valisthea"
+    ],
+    "aliases": [
+      "FFXVI",
+      "FF16",
+      "Final Fantasy 16"
+    ]
+  },
+  {
+    "gameTitle": "Phoenix Wright: Ace Attorney",
+    "releaseYear": 2001,
+    "songTitle": "Objection! 2001 (Orchestra)",
+    "platform": "GBA / DS",
+    "category": "Aventura",
+    "startTime": 5,
+    "tags": [
+      "capcom",
+      "ace attorney",
+      "phoenix wright",
+      "courtroom"
+    ],
+    "aliases": [
+      "Phoenix Wright",
+      "Ace Attorney",
+      "Gyakuten Saiban"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=hrVW7NWP_D0"
+  },
+  {
+    "gameTitle": "Clair Obscur: Expedition 33",
+    "releaseYear": 2025,
+    "songTitle": "Lumière",
+    "youtubeUrl": "https://www.youtube.com/watch?v=iqizXvvWnmM",
+    "startTime": 10,
+    "platform": "PC / PS5 / Xbox",
+    "category": "RPG",
+    "tags": [
+      "rpg",
+      "french",
+      "turn-based",
+      "orchestral",
+      "sandfall"
+    ],
+    "aliases": [
+      "Expedition 33",
+      "Clair Obscur"
+    ]
+  },
+  {
+    "gameTitle": "Hades II",
+    "releaseYear": 2024,
+    "songTitle": "Moonlight Guide Us",
+    "platform": "PC",
+    "category": "Indie",
+    "startTime": 15,
+    "tags": [
+      "roguelite",
+      "supergiant",
+      "mythology",
+      "vocal"
+    ],
+    "aliases": [
+      "Hades 2"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=QrCfUga8AbE"
+  },
+  {
+    "gameTitle": "Clair Obscur: Expedition 33",
+    "releaseYear": 2025,
+    "songTitle": "Alicia",
+    "youtubeUrl": "https://www.youtube.com/watch?v=yakOBIoyoik",
+    "startTime": 10,
+    "platform": "PC / PS5 / Xbox",
+    "category": "RPG",
+    "tags": [
+      "rpg",
+      "french",
+      "turn-based",
+      "orchestral",
+      "sandfall"
+    ],
+    "aliases": [
+      "Expedition 33",
+      "Clair Obscur"
+    ]
+  },
+  {
+    "gameTitle": "NieR Replicant",
+    "releaseYear": 2010,
+    "songTitle": "Song of the Ancients / Popola",
+    "platform": "PS3 / Multi",
+    "category": "RPG",
+    "startTime": 5,
+    "tags": [
+      "rpg",
+      "vocal",
+      "acoustic",
+      "twins"
+    ],
+    "aliases": [
+      "NieR",
+      "Nier Replicant",
+      "Nier Gestalt"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=UZBELmCNXUw"
+  },
+  {
+    "gameTitle": "Clair Obscur: Expedition 33",
+    "releaseYear": 2025,
+    "songTitle": "Gustave",
+    "youtubeUrl": "https://www.youtube.com/watch?v=Rof660OEA3E",
+    "startTime": 10,
+    "platform": "PC / PS5 / Xbox",
+    "category": "RPG",
+    "tags": [
+      "rpg",
+      "french",
+      "turn-based",
+      "orchestral",
+      "sandfall"
+    ],
+    "aliases": [
+      "Expedition 33",
+      "Clair Obscur"
+    ]
+  },
+  {
+    "gameTitle": "NieR Replicant",
+    "releaseYear": 2010,
+    "songTitle": "Kaine / Salvation",
+    "platform": "PS3 / Multi",
+    "category": "RPG",
+    "startTime": 5,
+    "tags": [
+      "rpg",
+      "vocal",
+      "emotional",
+      "acoustic"
+    ],
+    "aliases": [
+      "NieR",
+      "Nier Replicant",
+      "Nier Gestalt"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=FP4duz43t_A"
+  },
+  {
+    "gameTitle": "Clair Obscur: Expedition 33",
+    "releaseYear": 2025,
+    "songTitle": "Renoir",
+    "youtubeUrl": "https://www.youtube.com/watch?v=nBHv7wYOi3I",
+    "startTime": 10,
+    "platform": "PC / PS5 / Xbox",
+    "category": "RPG",
+    "tags": [
+      "rpg",
+      "french",
+      "turn-based",
+      "orchestral",
+      "sandfall"
+    ],
+    "aliases": [
+      "Expedition 33",
+      "Clair Obscur"
+    ]
+  },
+  {
+    "gameTitle": "Clair Obscur: Expedition 33",
+    "releaseYear": 2025,
+    "songTitle": "Un 33 Décembre à Paris",
+    "youtubeUrl": "https://www.youtube.com/watch?v=P4UWJZFyp7w",
+    "startTime": 10,
+    "platform": "PC / PS5 / Xbox",
+    "category": "RPG",
+    "tags": [
+      "rpg",
+      "french",
+      "turn-based",
+      "orchestral",
+      "sandfall"
+    ],
+    "aliases": [
+      "Expedition 33",
+      "Clair Obscur"
+    ]
+  },
+  {
+    "gameTitle": "Child of Light",
+    "releaseYear": 2014,
+    "songTitle": "Aurora's Theme",
+    "platform": "Multi",
+    "category": "Indie",
+    "startTime": 5,
+    "tags": [
+      "rpg",
+      "fairy-tale",
+      "piano",
+      "ubisoft"
+    ],
+    "aliases": [
+      "Child of Light"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=rw0y6azTPLw"
+  },
+  {
+    "gameTitle": "NieR: Automata",
+    "releaseYear": 2017,
+    "songTitle": "Amusement Park",
+    "platform": "Multi",
+    "category": "RPG",
+    "startTime": 15,
+    "tags": [
+      "rpg",
+      "choral",
+      "carnival",
+      "atmospheric"
+    ],
+    "aliases": [
+      "Nier Automata",
+      "Automata"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=8jpJM6nc6fE"
+  },
+  {
+    "gameTitle": "Baldur's Gate 3",
+    "releaseYear": 2023,
+    "songTitle": "Down by the River",
+    "platform": "PC / PS5 / Xbox",
+    "category": "RPG",
+    "startTime": 10,
+    "tags": [
+      "rpg",
+      "larian",
+      "vocal",
+      "fantasy",
+      "goty"
+    ],
+    "aliases": [
+      "BG3",
+      "Baldurs Gate 3",
+      "Baldurs Gate"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=0EwhdbYnHbg"
+  },
+  {
+    "gameTitle": "Ender Lilies: Quietus of the Knights",
+    "releaseYear": 2021,
+    "songTitle": "ENDER LILIES",
+    "platform": "Multi",
+    "category": "Indie",
+    "startTime": 5,
+    "tags": [
+      "metroidvania",
+      "indie",
+      "mili",
+      "piano"
+    ],
+    "aliases": [
+      "Ender Lilies"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=aRmCZSaqkYQ"
+  },
+  {
+    "gameTitle": "Final Fantasy XV",
+    "releaseYear": 2016,
+    "songTitle": "Valse di Fantastica",
+    "platform": "Multi",
+    "category": "RPG",
+    "startTime": 10,
+    "tags": [
+      "rpg",
+      "waltz",
+      "yoko-shimomura",
+      "square-enix"
+    ],
+    "aliases": [
+      "FFXV",
+      "FF15",
+      "Final Fantasy 15"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=FkKVUswNxX8"
+  },
+  {
+    "gameTitle": "Outer Wilds",
+    "releaseYear": 2019,
+    "songTitle": "Main Theme",
+    "platform": "Multi",
+    "category": "Indie",
+    "startTime": 10,
+    "tags": [
+      "indie",
+      "banjo",
+      "campfire",
+      "space",
+      "exploration"
+    ],
+    "aliases": [
+      "Outer Wilds"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=Xpkc-NU1KA0"
+  },
+  {
+    "gameTitle": "Clair Obscur: Expedition 33",
+    "releaseYear": 2025,
+    "songTitle": "Lune",
+    "youtubeUrl": "https://www.youtube.com/watch?v=mIlWv6sPIqY",
+    "startTime": 10,
+    "platform": "PC / PS5 / Xbox",
+    "category": "RPG",
+    "tags": [
+      "rpg",
+      "french",
+      "turn-based",
+      "orchestral",
+      "sandfall"
+    ],
+    "aliases": [
+      "Expedition 33",
+      "Clair Obscur"
+    ]
+  },
+  {
+    "gameTitle": "Final Fantasy VII Remake",
+    "releaseYear": 2020,
+    "songTitle": "Hollow",
+    "platform": "PS4 / Multi",
+    "category": "RPG",
+    "startTime": 15,
+    "tags": [
+      "rpg",
+      "vocal",
+      "nobuo-uematsu",
+      "square-enix"
+    ],
+    "aliases": [
+      "FF7 Remake",
+      "FFVII Remake",
+      "FF7R"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=h0AcvqihLgM"
+  },
+  {
+    "gameTitle": "Lies of P",
+    "releaseYear": 2023,
+    "songTitle": "Quixotic",
+    "platform": "Multi",
+    "category": "Ação",
+    "startTime": 10,
+    "tags": [
+      "soulslike",
+      "gramophone",
+      "acoustic",
+      "vocal"
+    ],
+    "aliases": [
+      "Lies of P"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=n1VsHarZwm4"
+  },
+  {
+    "gameTitle": "Final Fantasy XVI",
+    "releaseYear": 2023,
+    "songTitle": "My Star",
+    "youtubeUrl": "https://www.youtube.com/watch?v=gQhi0tw1SO8",
+    "startTime": 15,
+    "platform": "PS5 / PC",
+    "category": "RPG",
+    "tags": [
+      "rpg",
+      "square-enix",
+      "soken",
+      "epic",
+      "valisthea"
+    ],
+    "aliases": [
+      "FFXVI",
+      "FF16",
+      "Final Fantasy 16"
+    ]
+  },
+  {
+    "gameTitle": "Lies of P",
+    "releaseYear": 2023,
+    "songTitle": "Feel",
+    "platform": "Multi",
+    "category": "Ação",
+    "startTime": 10,
+    "tags": [
+      "soulslike",
+      "gramophone",
+      "vocal",
+      "ballad"
+    ],
+    "aliases": [
+      "Lies of P"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=OCwb7LaEHzw"
+  },
+  {
+    "gameTitle": "Like a Dragon: Infinite Wealth",
+    "releaseYear": 2024,
+    "songTitle": "Yume Mita Sugata E",
+    "platform": "Multi",
+    "category": "RPG",
+    "startTime": 10,
+    "tags": [
+      "sega",
+      "karaoke",
+      "yakuza",
+      "ichiban"
+    ],
+    "aliases": [
+      "Yakuza 8",
+      "Infinite Wealth",
+      "Like a Dragon"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=8QANpZbvsEo"
+  },
+  {
+    "gameTitle": "Metal Gear Solid 3: Snake Eater",
+    "releaseYear": 2004,
+    "songTitle": "Snake Eater",
+    "platform": "PS2 / Multi",
+    "category": "Ação",
+    "startTime": 10,
+    "tags": [
+      "stealth",
+      "james-bond",
+      "vocal",
+      "konami",
+      "kojima"
+    ],
+    "aliases": [
+      "MGS3",
+      "Metal Gear Solid 3",
+      "Snake Eater"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=m2OR_JaXDaM"
+  },
+  {
+    "gameTitle": "Hades",
+    "releaseYear": 2020,
+    "songTitle": "In the Blood",
+    "platform": "Multi",
+    "category": "Indie",
+    "startTime": 15,
+    "tags": [
+      "roguelite",
+      "vocal",
+      "supergiant",
+      "darren-korb"
+    ],
+    "aliases": [
+      "Hades"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=ojx8dyes__8"
+  },
+  {
+    "gameTitle": "Honkai: Star Rail",
+    "releaseYear": 2023,
+    "songTitle": "Wildfire",
+    "platform": "Multi",
+    "category": "RPG",
+    "startTime": 15,
+    "tags": [
+      "rpg",
+      "cocolia",
+      "rock",
+      "vocal",
+      "hoyoverse"
+    ],
+    "aliases": [
+      "HSR",
+      "Star Rail",
+      "Honkai"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=SxlW79tDhCA"
+  },
+  {
+    "gameTitle": "Yakuza: Like a Dragon",
+    "releaseYear": 2020,
+    "songTitle": "AWAKE",
+    "platform": "Multi",
+    "category": "RPG",
+    "startTime": 10,
+    "tags": [
+      "sega",
+      "karaoke",
+      "yakuza",
+      "saeko"
+    ],
+    "aliases": [
+      "Yakuza 7",
+      "Like a Dragon"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=vK38U2l8MbU"
+  },
+  {
+    "gameTitle": "Dragon Ball Z: Budokai",
+    "releaseYear": 2002,
+    "songTitle": "Namek Theme",
+    "platform": "PS2 / GameCube",
+    "category": "Luta",
+    "startTime": 5,
+    "tags": [
+      "anime",
+      "fighting",
+      "rock",
+      "dbz",
+      "bandai"
+    ],
+    "aliases": [
+      "DBZ Budokai",
+      "Dragon Ball Z Budokai",
+      "Budokai 1"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=QiE6ssOyQPg"
+  },
+  {
+    "gameTitle": "Clair Obscur: Expedition 33",
+    "releaseYear": 2025,
+    "songTitle": "Une vie à t'aimer",
+    "youtubeUrl": "https://www.youtube.com/watch?v=3kMbTzomh94",
+    "startTime": 10,
+    "platform": "PC / PS5 / Xbox",
+    "category": "RPG",
+    "tags": [
+      "rpg",
+      "french",
+      "turn-based",
+      "orchestral",
+      "sandfall"
+    ],
+    "aliases": [
+      "Expedition 33",
+      "Clair Obscur"
+    ]
+  },
+  {
+    "gameTitle": "Like a Dragon: Gaiden",
+    "releaseYear": 2023,
+    "songTitle": "Like A Butterfly",
+    "platform": "Multi",
+    "category": "Ação",
+    "startTime": 10,
+    "tags": [
+      "sega",
+      "karaoke",
+      "yakuza",
+      "kiryu"
+    ],
+    "aliases": [
+      "Yakuza Gaiden",
+      "The Man Who Erased His Name"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=L_e3BXh7-nk"
+  },
+  {
+    "gameTitle": "Hades II",
+    "releaseYear": 2024,
+    "songTitle": "Coral Crown",
+    "platform": "PC",
+    "category": "Indie",
+    "startTime": 10,
+    "tags": [
+      "roguelite",
+      "sirens",
+      "vocal",
+      "supergiant"
+    ],
+    "aliases": [
+      "Hades 2"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=N7QSavYWEE0"
+  },
+  {
+    "gameTitle": "Cyberpunk 2077",
+    "releaseYear": 2020,
+    "songTitle": "Never Fade Away (SAMURAI Cover)",
+    "platform": "Multi",
+    "category": "RPG",
+    "startTime": 15,
+    "tags": [
+      "cyberpunk",
+      "cdpr",
+      "rock",
+      "night-city",
+      "johnny-silverhand"
+    ],
+    "aliases": [
+      "Cyberpunk",
+      "CP2077",
+      "CP77"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=IDG_NYJqn74"
+  },
+  {
+    "gameTitle": "Persona 5",
+    "releaseYear": 2016,
+    "songTitle": "Life Will Change",
+    "platform": "PS3 / PS4 / Multi",
+    "category": "RPG",
+    "startTime": 10,
+    "tags": [
+      "rpg",
+      "atlus",
+      "jazz",
+      "funk",
+      "heist",
+      "phantom-thieves"
+    ],
+    "aliases": [
+      "P5",
+      "Persona 5 Royal",
+      "P5R"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=dsuJZx24V_A"
+  },
+  {
+    "gameTitle": "Like a Dragon: Infinite Wealth",
+    "releaseYear": 2024,
+    "songTitle": "Honolulu City Lights",
+    "platform": "Multi",
+    "category": "RPG",
+    "startTime": 10,
+    "tags": [
+      "sega",
+      "karaoke",
+      "yakuza",
+      "hawaii"
+    ],
+    "aliases": [
+      "Yakuza 8",
+      "Infinite Wealth"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=3oIwDvi_LP8"
+  },
+  {
+    "gameTitle": "Persona 3 Reload",
+    "releaseYear": 2024,
+    "songTitle": "It's Going Down Now",
+    "platform": "Multi",
+    "category": "RPG",
+    "startTime": 10,
+    "tags": [
+      "rpg",
+      "atlus",
+      "hip-hop",
+      "battle",
+      "lotus-juice"
+    ],
+    "aliases": [
+      "P3R",
+      "Persona 3",
+      "P3 Reload"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=2KuWjZD6PBA"
+  },
+  {
+    "gameTitle": "Guilty Gear Xrd",
+    "releaseYear": 2014,
+    "songTitle": "Big Blast Sonic",
+    "youtubeUrl": "https://www.youtube.com/watch?v=J-C-9j-1HbY",
+    "startTime": 15,
+    "platform": "Multi",
+    "category": "Luta",
+    "tags": [
+      "fighting",
+      "heavy-metal",
+      "arc-system-works"
+    ],
+    "aliases": [
+      "GGXrd",
+      "Guilty Gear Xrd"
+    ]
+  },
+  {
+    "gameTitle": "Call of Duty: Black Ops",
+    "releaseYear": 2010,
+    "songTitle": "115 (Kino Der Toten)",
+    "platform": "Multi",
+    "category": "FPS",
+    "startTime": 15,
+    "tags": [
+      "fps",
+      "zombies",
+      "metal",
+      "elena-siegman",
+      "treyarch"
+    ],
+    "aliases": [
+      "COD BO",
+      "Black Ops",
+      "Black Ops 1",
+      "BO1"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=5fmXjVuyVKo"
+  },
+  {
+    "gameTitle": "Devil May Cry 5",
+    "releaseYear": 2019,
+    "songTitle": "Devil Trigger (Nero's Theme)",
+    "platform": "Multi",
+    "category": "Ação",
+    "startTime": 20,
+    "tags": [
+      "hack-and-slash",
+      "capcom",
+      "electronic",
+      "rock",
+      "nero"
+    ],
+    "aliases": [
+      "DMC5",
+      "Devil May Cry 5",
+      "DMC 5"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=eICijnr1k_I"
+  },
+  {
+    "gameTitle": "Alan Wake 2",
+    "releaseYear": 2023,
+    "songTitle": "Herald of Darkness",
+    "platform": "Multi",
+    "category": "Ação",
+    "startTime": 15,
+    "tags": [
+      "survival-horror",
+      "remedy",
+      "musical",
+      "rock",
+      "poets-of-the-fall"
+    ],
+    "aliases": [
+      "Alan Wake 2",
+      "AW2"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=Df3Z-kSb2G8"
+  },
+  {
+    "gameTitle": "Guilty Gear: Strive",
+    "releaseYear": 2021,
+    "songTitle": "CARPE DIEM",
+    "youtubeUrl": "https://www.youtube.com/watch?v=215T8NF93kw",
+    "startTime": 15,
+    "platform": "Multi",
+    "category": "Luta",
+    "tags": [
+      "fighting",
+      "rock",
+      "metal",
+      "arc-system-works",
+      "daisuke-ishiwatari"
+    ],
+    "aliases": [
+      "GGST",
+      "Guilty Gear Strive",
+      "Guilty Gear"
+    ]
+  },
+  {
+    "gameTitle": "Absolum",
+    "releaseYear": 2025,
+    "songTitle": "The Underking",
+    "platform": "Multi",
+    "category": "Ação",
+    "startTime": 15,
+    "tags": [
+      "metal",
+      "mick-gordon",
+      "boss",
+      "heavy"
+    ],
+    "aliases": [
+      "Absolum"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=yShiPI-gPeA"
+  },
+  {
+    "gameTitle": "Devil May Cry 5",
+    "releaseYear": 2019,
+    "songTitle": "Subhuman (Dante's Theme)",
+    "platform": "Multi",
+    "category": "Ação",
+    "startTime": 15,
+    "tags": [
+      "hack-and-slash",
+      "capcom",
+      "metal",
+      "dante"
+    ],
+    "aliases": [
+      "DMC5",
+      "Devil May Cry 5",
+      "DMC 5"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=jozqnG_32i0"
+  },
+  {
+    "gameTitle": "Doom",
+    "releaseYear": 2016,
+    "songTitle": "BFG Division",
+    "platform": "Multi",
+    "category": "FPS",
+    "startTime": 65,
+    "tags": [
+      "fps",
+      "metal",
+      "djent",
+      "mick-gordon",
+      "id-software"
+    ],
+    "aliases": [
+      "Doom 2016",
+      "Doom 4",
+      "DOOM"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=YVDwo4DladY"
+  },
+  {
+    "gameTitle": "Warhammer 40,000: Space Marine 2",
+    "releaseYear": 2024,
+    "songTitle": "Scions of Lorgar",
+    "youtubeUrl": "https://www.youtube.com/watch?v=zyUFl131aPo",
+    "startTime": 15,
+    "platform": "Multi",
+    "category": "Ação",
+    "tags": [
+      "warhammer",
+      "40k",
+      "choral",
+      "chaos"
+    ],
+    "aliases": [
+      "Space Marine 2",
+      "Warhammer 40k",
+      "SM2"
+    ]
+  },
+  {
+    "gameTitle": "Devil May Cry 5",
+    "releaseYear": 2019,
+    "songTitle": "Bury the Light (Vergil's Theme)",
+    "platform": "Multi",
+    "category": "Ação",
+    "startTime": 20,
+    "tags": [
+      "hack-and-slash",
+      "capcom",
+      "metal",
+      "vergil",
+      "motivation"
+    ],
+    "aliases": [
+      "DMC5",
+      "Devil May Cry 5",
+      "DMC 5",
+      "Bury The Light"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=pvy9km7g6fw"
+  },
+  {
+    "gameTitle": "Guilty Gear: Strive",
+    "releaseYear": 2021,
+    "songTitle": "Extras",
+    "youtubeUrl": "https://www.youtube.com/watch?v=IM6eBN7LkLU",
+    "startTime": 15,
+    "platform": "Multi",
+    "category": "Luta",
+    "tags": [
+      "fighting",
+      "rock",
+      "metal",
+      "arc-system-works",
+      "daisuke-ishiwatari"
+    ],
+    "aliases": [
+      "GGST",
+      "Guilty Gear Strive",
+      "Guilty Gear"
+    ]
+  },
+  {
+    "gameTitle": "Guilty Gear: Strive",
+    "releaseYear": 2021,
+    "songTitle": "Find Your One Way",
+    "youtubeUrl": "https://www.youtube.com/watch?v=KHiWsEckmEw",
+    "startTime": 15,
+    "platform": "Multi",
+    "category": "Luta",
+    "tags": [
+      "fighting",
+      "rock",
+      "metal",
+      "arc-system-works",
+      "daisuke-ishiwatari"
+    ],
+    "aliases": [
+      "GGST",
+      "Guilty Gear Strive",
+      "Guilty Gear"
+    ]
+  },
+  {
+    "gameTitle": "Guilty Gear Xrd",
+    "releaseYear": 2014,
+    "songTitle": "HEAVY DAY",
+    "youtubeUrl": "https://www.youtube.com/watch?v=aPE5UUCPHyY",
+    "startTime": 15,
+    "platform": "Multi",
+    "category": "Luta",
+    "tags": [
+      "fighting",
+      "heavy-metal",
+      "arc-system-works"
+    ],
+    "aliases": [
+      "GGXrd",
+      "Guilty Gear Xrd"
+    ]
+  },
+  {
+    "gameTitle": "Doom Eternal",
+    "releaseYear": 2020,
+    "songTitle": "The Only Thing They Fear Is You",
+    "platform": "Multi",
+    "category": "FPS",
+    "startTime": 15,
+    "tags": [
+      "fps",
+      "metal",
+      "djent",
+      "mick-gordon",
+      "slayer"
+    ],
+    "aliases": [
+      "Doom Eternal",
+      "DOOM"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=kpnW68Q8ltc"
+  },
+  {
+    "gameTitle": "Guilty Gear Xrd",
+    "releaseYear": 2014,
+    "songTitle": "Six Black Heavens Guns",
+    "youtubeUrl": "https://www.youtube.com/watch?v=qZjmSZlmRF0",
+    "startTime": 15,
+    "platform": "Multi",
+    "category": "Luta",
+    "tags": [
+      "fighting",
+      "heavy-metal",
+      "arc-system-works"
+    ],
+    "aliases": [
+      "GGXrd",
+      "Guilty Gear Xrd"
+    ]
+  },
+  {
+    "gameTitle": "Hades II",
+    "releaseYear": 2024,
+    "songTitle": "Rock and a Hard Place",
+    "platform": "PC",
+    "category": "Indie",
+    "startTime": 10,
+    "tags": [
+      "roguelite",
+      "rock",
+      "scylla",
+      "supergiant"
+    ],
+    "aliases": [
+      "Hades 2"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=dmYLiPtfPfk"
+  },
+  {
+    "gameTitle": "Mega Man X5",
+    "releaseYear": 2000,
+    "songTitle": "X vs Zero",
+    "platform": "PS1 / PC",
+    "category": "Ação",
+    "startTime": 10,
+    "tags": [
+      "platformer",
+      "capcom",
+      "rock",
+      "rival",
+      "retro"
+    ],
+    "aliases": [
+      "MMX5",
+      "Mega Man X5",
+      "Rockman X5"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=C3qYAvmiKRs"
+  },
+  {
+    "gameTitle": "Ace Combat 7: Skies Unknown",
+    "releaseYear": 2019,
+    "songTitle": "Daredevil",
+    "platform": "Multi",
+    "category": "Ação",
+    "startTime": 20,
+    "tags": [
+      "flight-sim",
+      "namco",
+      "choral",
+      "epic",
+      "dogfight"
+    ],
+    "aliases": [
+      "AC7",
+      "Ace Combat 7"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=_h6QFqGla7E"
+  },
+  {
+    "gameTitle": "God of War III",
+    "releaseYear": 2010,
+    "songTitle": "Rage of Sparta",
+    "platform": "PS3 / PS4",
+    "category": "Ação",
+    "startTime": 10,
+    "tags": [
+      "hack-and-slash",
+      "kratos",
+      "orchestral",
+      "sony",
+      "sparta"
+    ],
+    "aliases": [
+      "GOW3",
+      "God of War 3",
+      "GOW 3"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=9a4Rx7T_lwc"
+  },
+  {
+    "gameTitle": "Castle Crashers",
+    "releaseYear": 2008,
+    "songTitle": "Rage of the Champions",
+    "platform": "Multi",
+    "category": "Indie",
+    "startTime": 5,
+    "tags": [
+      "beat-em-up",
+      "indie",
+      "behemoth",
+      "arena"
+    ],
+    "aliases": [
+      "Castle Crashers"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=9wMjq58Fjvo"
+  },
+  {
+    "gameTitle": "Final Fantasy XVI",
+    "releaseYear": 2023,
+    "songTitle": "On the Shoulders of Giants",
+    "youtubeUrl": "https://www.youtube.com/watch?v=hyboOI1Ok0Q",
+    "startTime": 15,
+    "platform": "PS5 / PC",
+    "category": "RPG",
+    "tags": [
+      "rpg",
+      "square-enix",
+      "soken",
+      "epic",
+      "valisthea"
+    ],
+    "aliases": [
+      "FFXVI",
+      "FF16",
+      "Final Fantasy 16"
+    ]
+  },
+  {
+    "gameTitle": "God of War III",
+    "releaseYear": 2010,
+    "songTitle": "The End Begins",
+    "platform": "PS3 / PS4",
+    "category": "Ação",
+    "startTime": 10,
+    "tags": [
+      "hack-and-slash",
+      "kratos",
+      "choral",
+      "boss"
+    ],
+    "aliases": [
+      "GOW3",
+      "God of War 3",
+      "GOW 3"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=3AGB0IrFGxc"
+  },
+  {
+    "gameTitle": "God of War III",
+    "releaseYear": 2010,
+    "songTitle": "Poseidon's Wrath",
+    "platform": "PS3 / PS4",
+    "category": "Ação",
+    "startTime": 10,
+    "tags": [
+      "hack-and-slash",
+      "boss",
+      "epic",
+      "olympus"
+    ],
+    "aliases": [
+      "GOW3",
+      "God of War 3",
+      "GOW 3"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=JvshC4R0xQI"
+  },
+  {
+    "gameTitle": "Pokémon Red and Blue",
+    "releaseYear": 1996,
+    "songTitle": "Final Battle! VS Champion Rival",
+    "platform": "Game Boy",
+    "category": "RPG",
+    "startTime": 5,
+    "tags": [
+      "rpg",
+      "nintendo",
+      "pokemon",
+      "champion",
+      "blue"
+    ],
+    "aliases": [
+      "Pokemon Red",
+      "Pokemon Blue",
+      "Pokemon Red and Blue",
+      "Pokemon"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=e8n9YBLu_Lk"
+  },
+  {
+    "gameTitle": "Final Fantasy XVI",
+    "releaseYear": 2023,
+    "songTitle": "Control",
+    "youtubeUrl": "https://www.youtube.com/watch?v=Av7N8MmSMAw",
+    "startTime": 15,
+    "platform": "PS5 / PC",
+    "category": "RPG",
+    "tags": [
+      "rpg",
+      "square-enix",
+      "soken",
+      "epic",
+      "valisthea"
+    ],
+    "aliases": [
+      "FFXVI",
+      "FF16",
+      "Final Fantasy 16"
+    ]
+  },
+  {
+    "gameTitle": "Shadow of the Colossus",
+    "releaseYear": 2005,
+    "songTitle": "Revived Power ~ Battle with the Colossus",
+    "platform": "PS2 / PS4",
+    "category": "Ação",
+    "startTime": 10,
+    "tags": [
+      "adventure",
+      "colossus",
+      "epic",
+      "sony",
+      "kow-otani"
+    ],
+    "aliases": [
+      "SOTC",
+      "Shadow of the Colossus"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=JV4rxoPdvnY"
+  },
+  {
+    "gameTitle": "Final Fantasy VII Remake",
+    "releaseYear": 2020,
+    "songTitle": "One-Winged Angel - Rebirth",
+    "platform": "PS4 / Multi",
+    "category": "RPG",
+    "startTime": 20,
+    "tags": [
+      "rpg",
+      "sephiroth",
+      "choral",
+      "boss",
+      "square-enix"
+    ],
+    "aliases": [
+      "FF7 Remake",
+      "FFVII Remake",
+      "FF7R",
+      "Final Fantasy 7"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=kR8rk3K6qzo"
+  },
+  {
+    "gameTitle": "Shadow of the Colossus",
+    "releaseYear": 2005,
+    "songTitle": "The Opened Way ~ Battle with the Colossus",
+    "platform": "PS2 / PS4",
+    "category": "Ação",
+    "startTime": 10,
+    "tags": [
+      "adventure",
+      "colossus",
+      "epic",
+      "kow-otani"
+    ],
+    "aliases": [
+      "SOTC",
+      "Shadow of the Colossus"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=cS1yK05dty0"
+  },
+  {
+    "gameTitle": "Castlevania: Symphony of the Night",
+    "releaseYear": 1997,
+    "songTitle": "Tower of Mist (Tower of Evil Fog)",
+    "platform": "PS1",
+    "category": "Ação",
+    "startTime": 5,
+    "tags": [
+      "metroidvania",
+      "konami",
+      "alucard",
+      "gothic",
+      "michiru-yamane"
+    ],
+    "aliases": [
+      "SOTN",
+      "Castlevania SOTN",
+      "Castlevania"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=eLnKIJaJDtM"
+  },
+  {
+    "gameTitle": "Final Fantasy XVI",
+    "releaseYear": 2023,
+    "songTitle": "Heart of Stone",
+    "youtubeUrl": "https://www.youtube.com/watch?v=xDbkkIT7Nm4",
+    "startTime": 15,
+    "platform": "PS5 / PC",
+    "category": "RPG",
+    "tags": [
+      "rpg",
+      "square-enix",
+      "soken",
+      "epic",
+      "valisthea"
+    ],
+    "aliases": [
+      "FFXVI",
+      "FF16",
+      "Final Fantasy 16"
+    ]
+  },
+  {
+    "gameTitle": "God of War III",
+    "releaseYear": 2010,
+    "songTitle": "Zeus' Wrath Divine",
+    "platform": "PS3 / PS4",
+    "category": "Ação",
+    "startTime": 10,
+    "tags": [
+      "hack-and-slash",
+      "boss",
+      "zeus"
+    ],
+    "aliases": [
+      "GOW3",
+      "God of War 3",
+      "GOW 3"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=XGRWdywFTTQ"
+  },
+  {
+    "gameTitle": "Shadow of the Colossus",
+    "releaseYear": 2005,
+    "songTitle": "Counterattack ~ Battle with the Colossus",
+    "platform": "PS2 / PS4",
+    "category": "Ação",
+    "startTime": 10,
+    "tags": [
+      "adventure",
+      "colossus",
+      "epic"
+    ],
+    "aliases": [
+      "SOTC",
+      "Shadow of the Colossus"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=vXneg0v7SkI"
+  },
+  {
+    "gameTitle": "Final Fantasy XVI",
+    "releaseYear": 2023,
+    "songTitle": "No Risk, No Reward",
+    "youtubeUrl": "https://www.youtube.com/watch?v=KBVR22fHnI0",
+    "startTime": 15,
+    "platform": "PS5 / PC",
+    "category": "RPG",
+    "tags": [
+      "rpg",
+      "square-enix",
+      "soken",
+      "epic",
+      "valisthea"
+    ],
+    "aliases": [
+      "FFXVI",
+      "FF16",
+      "Final Fantasy 16"
+    ]
+  },
+  {
+    "gameTitle": "God of War III",
+    "releaseYear": 2010,
+    "songTitle": "Call to Arms",
+    "platform": "PS3 / PS4",
+    "category": "Ação",
+    "startTime": 10,
+    "tags": [
+      "hack-and-slash",
+      "epic"
+    ],
+    "aliases": [
+      "GOW3",
+      "God of War 3"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=GScsABtFefs"
+  },
+  {
+    "gameTitle": "Final Fantasy XVI",
+    "releaseYear": 2023,
+    "songTitle": "Sixteen Bells",
+    "youtubeUrl": "https://www.youtube.com/watch?v=8pw0LCai5ec",
+    "startTime": 15,
+    "platform": "PS5 / PC",
+    "category": "RPG",
+    "tags": [
+      "rpg",
+      "square-enix",
+      "soken",
+      "epic",
+      "valisthea"
+    ],
+    "aliases": [
+      "FFXVI",
+      "FF16",
+      "Final Fantasy 16"
+    ]
+  },
+  {
+    "gameTitle": "God of War III",
+    "releaseYear": 2010,
+    "songTitle": "The Vengeful Spartan",
+    "platform": "PS3 / PS4",
+    "category": "Ação",
+    "startTime": 10,
+    "tags": [
+      "hack-and-slash",
+      "kratos"
+    ],
+    "aliases": [
+      "GOW3",
+      "God of War 3"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=LqEvah2aDus"
+  },
+  {
+    "gameTitle": "Final Fantasy XVI",
+    "releaseYear": 2023,
+    "songTitle": "Before the Storm - Caer Norvent",
+    "youtubeUrl": "https://www.youtube.com/watch?v=__3sPwUHieQ",
+    "startTime": 15,
+    "platform": "PS5 / PC",
+    "category": "RPG",
+    "tags": [
+      "rpg",
+      "square-enix",
+      "soken",
+      "epic",
+      "valisthea"
+    ],
+    "aliases": [
+      "FFXVI",
+      "FF16",
+      "Final Fantasy 16"
+    ]
+  },
+  {
+    "gameTitle": "Honkai: Star Rail",
+    "releaseYear": 2023,
+    "songTitle": "Frozen March",
+    "platform": "Multi",
+    "category": "RPG",
+    "startTime": 5,
+    "tags": [
+      "rpg",
+      "orchestral",
+      "belobog",
+      "hoyoverse"
+    ],
+    "aliases": [
+      "HSR",
+      "Star Rail",
+      "Honkai"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=wlulQqZtii0"
+  },
+  {
+    "gameTitle": "Final Fantasy XVI",
+    "releaseYear": 2023,
+    "songTitle": "Color and Crackle",
+    "youtubeUrl": "https://www.youtube.com/watch?v=M2ORGjQigJM",
+    "startTime": 15,
+    "platform": "PS5 / PC",
+    "category": "RPG",
+    "tags": [
+      "rpg",
+      "square-enix",
+      "soken",
+      "epic",
+      "valisthea"
+    ],
+    "aliases": [
+      "FFXVI",
+      "FF16",
+      "Final Fantasy 16"
+    ]
+  },
+  {
+    "gameTitle": "God of War III",
+    "releaseYear": 2010,
+    "songTitle": "Brothers of Blood",
+    "platform": "PS3 / PS4",
+    "category": "Ação",
+    "startTime": 10,
+    "tags": [
+      "hack-and-slash",
+      "boss"
+    ],
+    "aliases": [
+      "GOW3",
+      "God of War 3"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=4I2A2Jx1h-0"
+  },
+  {
+    "gameTitle": "Final Fantasy XVI",
+    "releaseYear": 2023,
+    "songTitle": "To Sail Forbidden Seas",
+    "youtubeUrl": "https://www.youtube.com/watch?v=okE5HXtHNiA",
+    "startTime": 15,
+    "platform": "PS5 / PC",
+    "category": "RPG",
+    "tags": [
+      "rpg",
+      "square-enix",
+      "soken",
+      "epic",
+      "valisthea"
+    ],
+    "aliases": [
+      "FFXVI",
+      "FF16",
+      "Final Fantasy 16"
+    ]
+  },
+  {
+    "gameTitle": "Shadow of the Colossus",
+    "releaseYear": 2005,
+    "songTitle": "A Messenger from Behind",
+    "platform": "PS2 / PS4",
+    "category": "Ação",
+    "startTime": 10,
+    "tags": [
+      "adventure",
+      "colossus"
+    ],
+    "aliases": [
+      "SOTC",
+      "Shadow of the Colossus"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=Vda51NUGY-g"
+  },
+  {
+    "gameTitle": "Shadow of the Colossus",
+    "releaseYear": 2005,
+    "songTitle": "Liberated Guardian",
+    "platform": "PS2 / PS4",
+    "category": "Ação",
+    "startTime": 10,
+    "tags": [
+      "adventure",
+      "colossus"
+    ],
+    "aliases": [
+      "SOTC",
+      "Shadow of the Colossus"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=eltSeyjXHi8"
+  },
+  {
+    "gameTitle": "Project Wingman",
+    "releaseYear": 2020,
+    "songTitle": "Descendants",
+    "platform": "PC",
+    "category": "Ação",
+    "startTime": 15,
+    "tags": [
+      "flight-sim",
+      "indie",
+      "orchestral",
+      "dogfight"
+    ],
+    "aliases": [
+      "Project Wingman"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=HWkJLp4KAhI"
+  },
+  {
+    "gameTitle": "Final Fantasy XVI",
+    "releaseYear": 2023,
+    "songTitle": "Shattered",
+    "youtubeUrl": "https://www.youtube.com/watch?v=dXCGsJxoeUE",
+    "startTime": 15,
+    "platform": "PS5 / PC",
+    "category": "RPG",
+    "tags": [
+      "rpg",
+      "square-enix",
+      "soken",
+      "epic",
+      "valisthea"
+    ],
+    "aliases": [
+      "FFXVI",
+      "FF16",
+      "Final Fantasy 16"
+    ]
+  },
+  {
+    "gameTitle": "Final Fantasy XVI",
+    "releaseYear": 2023,
+    "songTitle": "Ascension",
+    "youtubeUrl": "https://www.youtube.com/watch?v=oLm40DaQ5YE",
+    "startTime": 15,
+    "platform": "PS5 / PC",
+    "category": "RPG",
+    "tags": [
+      "rpg",
+      "square-enix",
+      "soken",
+      "epic",
+      "valisthea"
+    ],
+    "aliases": [
+      "FFXVI",
+      "FF16",
+      "Final Fantasy 16"
+    ]
+  },
+  {
+    "gameTitle": "Shadow of the Colossus",
+    "releaseYear": 2005,
+    "songTitle": "Violent Encounter",
+    "platform": "PS2 / PS4",
+    "category": "Ação",
+    "startTime": 10,
+    "tags": [
+      "adventure",
+      "colossus"
+    ],
+    "aliases": [
+      "SOTC",
+      "Shadow of the Colossus"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=5cmmuh02FdI"
+  },
+  {
+    "gameTitle": "Final Fantasy XVI",
+    "releaseYear": 2023,
+    "songTitle": "Land of Eikons",
+    "youtubeUrl": "https://www.youtube.com/watch?v=REdyY-Ue3n4",
+    "startTime": 15,
+    "platform": "PS5 / PC",
+    "category": "RPG",
+    "tags": [
+      "rpg",
+      "square-enix",
+      "soken",
+      "epic",
+      "valisthea"
+    ],
+    "aliases": [
+      "FFXVI",
+      "FF16",
+      "Final Fantasy 16"
+    ]
+  },
+  {
+    "gameTitle": "Shadow of the Colossus",
+    "releaseYear": 2005,
+    "songTitle": "A Despair-filled Farewell",
+    "platform": "PS2 / PS4",
+    "category": "Ação",
+    "startTime": 10,
+    "tags": [
+      "adventure",
+      "colossus"
+    ],
+    "aliases": [
+      "SOTC",
+      "Shadow of the Colossus"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=VRVsp-wRYms"
+  },
+  {
+    "gameTitle": "Final Fantasy XVI",
+    "releaseYear": 2023,
+    "songTitle": "Blood Beats Black - The Iron Kingdom",
+    "youtubeUrl": "https://www.youtube.com/watch?v=9HrjJpRZwP4",
+    "startTime": 15,
+    "platform": "PS5 / PC",
+    "category": "RPG",
+    "tags": [
+      "rpg",
+      "square-enix",
+      "soken",
+      "epic",
+      "valisthea"
+    ],
+    "aliases": [
+      "FFXVI",
+      "FF16",
+      "Final Fantasy 16"
+    ]
+  },
+  {
+    "gameTitle": "Kingdom Come: Deliverance",
+    "releaseYear": 2018,
+    "songTitle": "Nebakov March",
+    "platform": "Multi",
+    "category": "RPG",
+    "startTime": 10,
+    "tags": [
+      "rpg",
+      "medieval",
+      "bohemia",
+      "march"
+    ],
+    "aliases": [
+      "KCD",
+      "Kingdom Come"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=Ur-zcJDyM8E"
+  },
+  {
+    "gameTitle": "Final Fantasy XVI",
+    "releaseYear": 2023,
+    "songTitle": "Winter's Bound",
+    "youtubeUrl": "https://www.youtube.com/watch?v=UC9pQMNCBME",
+    "startTime": 15,
+    "platform": "PS5 / PC",
+    "category": "RPG",
+    "tags": [
+      "rpg",
+      "square-enix",
+      "soken",
+      "epic",
+      "valisthea"
+    ],
+    "aliases": [
+      "FFXVI",
+      "FF16",
+      "Final Fantasy 16"
+    ]
+  },
+  {
+    "gameTitle": "God of War Ragnarök",
+    "releaseYear": 2022,
+    "songTitle": "Letting Go",
+    "platform": "PS4 / PS5",
+    "category": "Ação",
+    "startTime": 15,
+    "tags": [
+      "action",
+      "norse",
+      "bear-mccreary",
+      "emotional"
+    ],
+    "aliases": [
+      "GOW Ragnarok",
+      "God of War Ragnarok"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=k7Z8V16LDv0"
+  },
+  {
+    "gameTitle": "Final Fantasy XVI",
+    "releaseYear": 2023,
+    "songTitle": "My Lady",
+    "youtubeUrl": "https://www.youtube.com/watch?v=iLubQoyBJXA",
+    "startTime": 15,
+    "platform": "PS5 / PC",
+    "category": "RPG",
+    "tags": [
+      "rpg",
+      "square-enix",
+      "soken",
+      "epic",
+      "valisthea"
+    ],
+    "aliases": [
+      "FFXVI",
+      "FF16",
+      "Final Fantasy 16"
+    ]
+  },
+  {
+    "gameTitle": "Shadow of the Colossus",
+    "releaseYear": 2005,
+    "songTitle": "Prologue ~ To the Ancient Land",
+    "platform": "PS2 / PS4",
+    "category": "Ação",
+    "startTime": 10,
+    "tags": [
+      "adventure",
+      "colossus"
+    ],
+    "aliases": [
+      "SOTC",
+      "Shadow of the Colossus"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=_B3GnbyNAC0"
+  },
+  {
+    "gameTitle": "Final Fantasy XVI",
+    "releaseYear": 2023,
+    "songTitle": "Whitewater - Kingsfall",
+    "youtubeUrl": "https://www.youtube.com/watch?v=PnglLwdpEgs",
+    "startTime": 15,
+    "platform": "PS5 / PC",
+    "category": "RPG",
+    "tags": [
+      "rpg",
+      "square-enix",
+      "soken",
+      "epic",
+      "valisthea"
+    ],
+    "aliases": [
+      "FFXVI",
+      "FF16",
+      "Final Fantasy 16"
+    ]
+  },
+  {
+    "gameTitle": "Final Fantasy XVI",
+    "releaseYear": 2023,
+    "songTitle": "Lovely, Dark, and Deep - The Greatwood",
+    "youtubeUrl": "https://www.youtube.com/watch?v=339QjVm_7bk",
+    "startTime": 15,
+    "platform": "PS5 / PC",
+    "category": "RPG",
+    "tags": [
+      "rpg",
+      "square-enix",
+      "soken",
+      "epic",
+      "valisthea"
+    ],
+    "aliases": [
+      "FFXVI",
+      "FF16",
+      "Final Fantasy 16"
+    ]
+  },
+  {
+    "gameTitle": "Clair Obscur: Expedition 33",
+    "releaseYear": 2025,
+    "songTitle": "Sciel",
+    "youtubeUrl": "https://www.youtube.com/watch?v=2tl5ekssCZg",
+    "startTime": 10,
+    "platform": "PC / PS5 / Xbox",
+    "category": "RPG",
+    "tags": [
+      "rpg",
+      "french",
+      "turn-based",
+      "orchestral",
+      "sandfall"
+    ],
+    "aliases": [
+      "Expedition 33",
+      "Clair Obscur"
+    ]
+  },
+  {
+    "gameTitle": "Final Fantasy XVI",
+    "releaseYear": 2023,
+    "songTitle": "Histoire - The Holy Empire of Sanbreque",
+    "youtubeUrl": "https://www.youtube.com/watch?v=9q2ylXt04ak",
+    "startTime": 15,
+    "platform": "PS5 / PC",
+    "category": "RPG",
+    "tags": [
+      "rpg",
+      "square-enix",
+      "soken",
+      "epic",
+      "valisthea"
+    ],
+    "aliases": [
+      "FFXVI",
+      "FF16",
+      "Final Fantasy 16"
+    ]
+  },
+  {
+    "gameTitle": "Clair Obscur: Expedition 33",
+    "releaseYear": 2025,
+    "songTitle": "L'Amour d'une Mère",
+    "youtubeUrl": "https://www.youtube.com/watch?v=0Iv03xsVm_c",
+    "startTime": 10,
+    "platform": "PC / PS5 / Xbox",
+    "category": "RPG",
+    "tags": [
+      "rpg",
+      "french",
+      "turn-based",
+      "orchestral",
+      "sandfall"
+    ],
+    "aliases": [
+      "Expedition 33",
+      "Clair Obscur"
+    ]
+  },
+  {
+    "gameTitle": "Castlevania: Symphony of the Night",
+    "releaseYear": 1997,
+    "songTitle": "Nocturne",
+    "platform": "PS1",
+    "category": "Ação",
+    "startTime": 10,
+    "tags": [
+      "metroidvania",
+      "konami",
+      "vocal",
+      "gothic"
+    ],
+    "aliases": [
+      "SOTN",
+      "Castlevania SOTN",
+      "Castlevania"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=QzJFSlHgsec"
+  },
+  {
+    "gameTitle": "Final Fantasy XVI",
+    "releaseYear": 2023,
+    "songTitle": "Idylls of the Empire",
+    "youtubeUrl": "https://www.youtube.com/watch?v=AsaV4VBcS1w",
+    "startTime": 15,
+    "platform": "PS5 / PC",
+    "category": "RPG",
+    "tags": [
+      "rpg",
+      "square-enix",
+      "soken",
+      "epic",
+      "valisthea"
+    ],
+    "aliases": [
+      "FFXVI",
+      "FF16",
+      "Final Fantasy 16"
+    ]
+  },
+  {
+    "gameTitle": "Final Fantasy XVI",
+    "releaseYear": 2023,
+    "songTitle": "Our Terms",
+    "youtubeUrl": "https://www.youtube.com/watch?v=AGhB6CTzGy4",
+    "startTime": 15,
+    "platform": "PS5 / PC",
+    "category": "RPG",
+    "tags": [
+      "rpg",
+      "square-enix",
+      "soken",
+      "epic",
+      "valisthea"
+    ],
+    "aliases": [
+      "FFXVI",
+      "FF16",
+      "Final Fantasy 16"
+    ]
+  },
+  {
+    "gameTitle": "BioShock Infinite",
+    "releaseYear": 2013,
+    "songTitle": "Will The Circle Be Unbroken",
+    "platform": "Multi",
+    "category": "FPS",
+    "startTime": 10,
+    "tags": [
+      "fps",
+      "hymn",
+      "acoustic",
+      "columbia",
+      "elizabeth"
+    ],
+    "aliases": [
+      "Bioshock Infinite",
+      "Bioshock"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=9F1l6xXLSI0"
+  },
+  {
+    "gameTitle": "Risk of Rain 2",
+    "releaseYear": 2020,
+    "songTitle": "The Rain Formerly Known as Purple",
+    "platform": "Multi",
+    "category": "Indie",
+    "startTime": 20,
+    "tags": [
+      "roguelike",
+      "synthwave",
+      "chris-christodoulou",
+      "guitar"
+    ],
+    "aliases": [
+      "ROR2",
+      "Risk of Rain 2"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=Io_yUfZQ2v4"
+  },
+  {
+    "gameTitle": "Warframe",
+    "releaseYear": 2013,
+    "songTitle": "We All Lift Together",
+    "platform": "Multi",
+    "category": "Ação",
+    "startTime": 10,
+    "tags": [
+      "mmo",
+      "fortuna",
+      "work-song",
+      "whistle",
+      "solaris"
+    ],
+    "aliases": [
+      "Warframe"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=2yIELWjG8Tc"
+  },
+  {
+    "gameTitle": "Sonic Adventure 2",
+    "releaseYear": 2001,
+    "songTitle": "Live & Learn",
+    "platform": "Dreamcast / GameCube",
+    "category": "Ação",
+    "startTime": 15,
+    "tags": [
+      "platformer",
+      "crush-40",
+      "rock",
+      "shadow",
+      "sega"
+    ],
+    "aliases": [
+      "SA2",
+      "Sonic Adventure 2"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=sefGW__p6WE"
+  },
+  {
+    "gameTitle": "Clair Obscur: Expedition 33",
+    "releaseYear": 2025,
+    "songTitle": "Flying Waters - Goblu",
+    "youtubeUrl": "https://www.youtube.com/watch?v=Ms4Mmb9kY4E",
+    "startTime": 10,
+    "platform": "PC / PS5 / Xbox",
+    "category": "RPG",
+    "tags": [
+      "rpg",
+      "french",
+      "turn-based",
+      "orchestral",
+      "sandfall"
+    ],
+    "aliases": [
+      "Expedition 33",
+      "Clair Obscur"
+    ]
+  },
+  {
+    "gameTitle": "Super Mario Galaxy 2",
+    "releaseYear": 2010,
+    "songTitle": "Sky Station Galaxy",
+    "platform": "Wii",
+    "category": "Retro",
+    "startTime": 5,
+    "tags": [
+      "platformer",
+      "nintendo",
+      "orchestral",
+      "space",
+      "mario"
+    ],
+    "aliases": [
+      "SMG2",
+      "Mario Galaxy 2",
+      "Super Mario Galaxy"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=Y5uGrLUr_3g"
+  },
+  {
+    "gameTitle": "Mario Strikers Charged",
+    "releaseYear": 2007,
+    "songTitle": "Sudden Death",
+    "platform": "Wii",
+    "category": "Esportes",
+    "startTime": 5,
+    "tags": [
+      "mario",
+      "soccer",
+      "rock",
+      "electric-guitar"
+    ],
+    "aliases": [
+      "Mario Strikers",
+      "Mario Strikers Charged Football"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=r9aealHZJ4U"
+  },
+  {
+    "gameTitle": "Clair Obscur: Expedition 33",
+    "releaseYear": 2025,
+    "songTitle": "Monoco",
+    "youtubeUrl": "https://www.youtube.com/watch?v=ajcSjnooBpA",
+    "startTime": 10,
+    "platform": "PC / PS5 / Xbox",
+    "category": "RPG",
+    "tags": [
+      "rpg",
+      "french",
+      "turn-based",
+      "orchestral",
+      "sandfall"
+    ],
+    "aliases": [
+      "Expedition 33",
+      "Clair Obscur"
+    ]
+  },
+  {
+    "gameTitle": "Clair Obscur: Expedition 33",
+    "releaseYear": 2025,
+    "songTitle": "Gestral Beach - Is it a Gestral or a Volleyball?",
+    "youtubeUrl": "https://www.youtube.com/watch?v=6QJaEN2SeYA",
+    "startTime": 10,
+    "platform": "PC / PS5 / Xbox",
+    "category": "RPG",
+    "tags": [
+      "rpg",
+      "french",
+      "turn-based",
+      "orchestral",
+      "sandfall"
+    ],
+    "aliases": [
+      "Expedition 33",
+      "Clair Obscur"
+    ]
+  },
+  {
+    "gameTitle": "Cuphead",
+    "releaseYear": 2017,
+    "songTitle": "Floral Fury (Cagney Carnation)",
+    "platform": "Multi",
+    "category": "Indie",
+    "startTime": 5,
+    "tags": [
+      "indie",
+      "jazz",
+      "samba",
+      "brass",
+      "boss"
+    ],
+    "aliases": [
+      "Cuphead"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=2clUY-OsCpY"
+  },
+  {
+    "gameTitle": "Super Mario Galaxy 2",
+    "releaseYear": 2010,
+    "songTitle": "Yoshi Star Galaxy",
+    "platform": "Wii",
+    "category": "Retro",
+    "startTime": 5,
+    "tags": [
+      "platformer",
+      "nintendo",
+      "yoshi"
+    ],
+    "aliases": [
+      "SMG2",
+      "Mario Galaxy 2"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=s_-temqMBfc"
+  },
+  {
+    "gameTitle": "Super Mario Galaxy 2",
+    "releaseYear": 2010,
+    "songTitle": "Fluffy Bluff Galaxy",
+    "platform": "Wii",
+    "category": "Retro",
+    "startTime": 5,
+    "tags": [
+      "platformer",
+      "nintendo"
+    ],
+    "aliases": [
+      "SMG2",
+      "Mario Galaxy 2"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=CHD2MDciu6Y"
+  },
+  {
+    "gameTitle": "Super Mario Galaxy 2",
+    "releaseYear": 2010,
+    "songTitle": "Space Storm Galaxy",
+    "platform": "Wii",
+    "category": "Retro",
+    "startTime": 5,
+    "tags": [
+      "platformer",
+      "nintendo"
+    ],
+    "aliases": [
+      "SMG2",
+      "Mario Galaxy 2"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=_5qbb_F4oSI"
+  },
+  {
+    "gameTitle": "Super Mario Galaxy 2",
+    "releaseYear": 2010,
+    "songTitle": "Final Bowser Battle",
+    "platform": "Wii",
+    "category": "Retro",
+    "startTime": 10,
+    "tags": [
+      "platformer",
+      "nintendo",
+      "bowser",
+      "boss",
+      "choral"
+    ],
+    "aliases": [
+      "SMG2",
+      "Mario Galaxy 2"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=FckLwjiPMKg"
+  },
+  {
+    "gameTitle": "Super Meat Boy",
+    "releaseYear": 2010,
+    "songTitle": "The Battle of Lil' Slugger",
+    "platform": "Multi",
+    "category": "Indie",
+    "startTime": 5,
+    "tags": [
+      "indie",
+      "platformer",
+      "rock",
+      "danny-baranowsky"
+    ],
+    "aliases": [
+      "Super Meat Boy",
+      "SMB"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=9b205rxazVU"
+  },
+  {
+    "gameTitle": "Super Meat Boy",
+    "releaseYear": 2010,
+    "songTitle": "Devil N' Bass",
+    "platform": "Multi",
+    "category": "Indie",
+    "startTime": 5,
+    "tags": [
+      "indie",
+      "drum-and-bass"
+    ],
+    "aliases": [
+      "Super Meat Boy",
+      "SMB"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=7LTzFWA0Tsg"
+  },
+  {
+    "gameTitle": "Sonic Frontiers",
+    "releaseYear": 2022,
+    "songTitle": "I’m Here",
+    "platform": "Multi",
+    "category": "Ação",
+    "startTime": 15,
+    "tags": [
+      "platformer",
+      "rock",
+      "sega",
+      "open-zone"
+    ],
+    "aliases": [
+      "Sonic Frontiers"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=mUJS9ystZlc"
+  },
+  {
+    "gameTitle": "Sonic Frontiers",
+    "releaseYear": 2022,
+    "songTitle": "Find Your Flame",
+    "platform": "Multi",
+    "category": "Ação",
+    "startTime": 15,
+    "tags": [
+      "platformer",
+      "post-hardcore",
+      "boss",
+      "sega"
+    ],
+    "aliases": [
+      "Sonic Frontiers"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=4gzIL8_G4Xs"
+  },
+  {
+    "gameTitle": "Sonic Frontiers",
+    "releaseYear": 2022,
+    "songTitle": "Undefeatable",
+    "platform": "Multi",
+    "category": "Ação",
+    "startTime": 15,
+    "tags": [
+      "platformer",
+      "metalcore",
+      "giganto",
+      "boss",
+      "sega"
+    ],
+    "aliases": [
+      "Sonic Frontiers"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=u_FRDqHT5y0"
+  },
+  {
+    "gameTitle": "Sonic and the Black Knight",
+    "releaseYear": 2009,
+    "songTitle": "Knight of the Wind",
+    "platform": "Wii",
+    "category": "Ação",
+    "startTime": 15,
+    "tags": [
+      "crush-40",
+      "rock",
+      "sega",
+      "medieval"
+    ],
+    "aliases": [
+      "Sonic Black Knight"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=L_bImwAmdAw"
+  },
+  {
+    "gameTitle": "Sonic Unleashed",
+    "releaseYear": 2008,
+    "songTitle": "Windmill Isle - Day",
+    "platform": "Multi",
+    "category": "Ação",
+    "startTime": 10,
+    "tags": [
+      "platformer",
+      "sega",
+      "acoustic",
+      "apotos"
+    ],
+    "aliases": [
+      "Sonic Unleashed"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=wOrSLnjfJGw"
+  },
+  {
+    "gameTitle": "BlazBlue: Central Fiction",
+    "releaseYear": 2015,
+    "songTitle": "CENTRALFICTION",
+    "youtubeUrl": "https://www.youtube.com/watch?v=bI1cdfgvW9Q",
+    "startTime": 15,
+    "platform": "Multi",
+    "category": "Luta",
+    "tags": [
+      "fighting",
+      "anime",
+      "rock",
+      "arc-system-works"
+    ],
+    "aliases": [
+      "BlazBlue",
+      "BBCF",
+      "Central Fiction"
+    ]
+  },
+  {
+    "gameTitle": "BlazBlue: Central Fiction",
+    "releaseYear": 2015,
+    "songTitle": "Next force",
+    "youtubeUrl": "https://www.youtube.com/watch?v=774Ylq0f484",
+    "startTime": 15,
+    "platform": "Multi",
+    "category": "Luta",
+    "tags": [
+      "fighting",
+      "anime",
+      "rock",
+      "arc-system-works"
+    ],
+    "aliases": [
+      "BlazBlue",
+      "BBCF",
+      "Central Fiction"
+    ]
+  },
+  {
+    "gameTitle": "BlazBlue: Central Fiction",
+    "releaseYear": 2015,
+    "songTitle": "Rebellion II",
+    "youtubeUrl": "https://www.youtube.com/watch?v=t_6qURMinx8",
+    "startTime": 15,
+    "platform": "Multi",
+    "category": "Luta",
+    "tags": [
+      "fighting",
+      "anime",
+      "rock",
+      "arc-system-works"
+    ],
+    "aliases": [
+      "BlazBlue",
+      "BBCF",
+      "Central Fiction"
+    ]
+  },
+  {
+    "gameTitle": "BlazBlue: Central Fiction",
+    "releaseYear": 2015,
+    "songTitle": "Gluttony Fang II",
+    "youtubeUrl": "https://www.youtube.com/watch?v=bbBMVDBsRYk",
+    "startTime": 15,
+    "platform": "Multi",
+    "category": "Luta",
+    "tags": [
+      "fighting",
+      "anime",
+      "rock",
+      "arc-system-works"
+    ],
+    "aliases": [
+      "BlazBlue",
+      "BBCF",
+      "Central Fiction"
+    ]
+  },
+  {
+    "gameTitle": "BlazBlue: Central Fiction",
+    "releaseYear": 2015,
+    "songTitle": "MUST DIE",
+    "youtubeUrl": "https://www.youtube.com/watch?v=mp7YVaiwNIc",
+    "startTime": 15,
+    "platform": "Multi",
+    "category": "Luta",
+    "tags": [
+      "fighting",
+      "anime",
+      "rock",
+      "arc-system-works"
+    ],
+    "aliases": [
+      "BlazBlue",
+      "BBCF",
+      "Central Fiction"
+    ]
+  },
+  {
+    "gameTitle": "BlazBlue: Central Fiction",
+    "releaseYear": 2015,
+    "songTitle": "SUSANOOH II",
+    "youtubeUrl": "https://www.youtube.com/watch?v=0mTZ1ECgB3s",
+    "startTime": 15,
+    "platform": "Multi",
+    "category": "Luta",
+    "tags": [
+      "fighting",
+      "anime",
+      "rock",
+      "arc-system-works"
+    ],
+    "aliases": [
+      "BlazBlue",
+      "BBCF",
+      "Central Fiction"
+    ]
+  },
+  {
+    "gameTitle": "BlazBlue: Central Fiction",
+    "releaseYear": 2015,
+    "songTitle": "Sword of Doom II",
+    "youtubeUrl": "https://www.youtube.com/watch?v=07TGKpm7WcU",
+    "startTime": 15,
+    "platform": "Multi",
+    "category": "Luta",
+    "tags": [
+      "fighting",
+      "anime",
+      "rock",
+      "arc-system-works"
+    ],
+    "aliases": [
+      "BlazBlue",
+      "BBCF",
+      "Central Fiction"
+    ]
+  },
+  {
+    "gameTitle": "BlazBlue: Central Fiction",
+    "releaseYear": 2015,
+    "songTitle": "Howling Moon II",
+    "youtubeUrl": "https://www.youtube.com/watch?v=Gn0eGYvm_Ik",
+    "startTime": 15,
+    "platform": "Multi",
+    "category": "Luta",
+    "tags": [
+      "fighting",
+      "anime",
+      "rock",
+      "arc-system-works"
+    ],
+    "aliases": [
+      "BlazBlue",
+      "BBCF",
+      "Central Fiction"
+    ]
+  },
+  {
+    "gameTitle": "BlazBlue: Central Fiction",
+    "releaseYear": 2015,
+    "songTitle": "Active Angel II",
+    "youtubeUrl": "https://www.youtube.com/watch?v=W7OXx9PwtiM",
+    "startTime": 15,
+    "platform": "Multi",
+    "category": "Luta",
+    "tags": [
+      "fighting",
+      "anime",
+      "rock",
+      "arc-system-works"
+    ],
+    "aliases": [
+      "BlazBlue",
+      "BBCF",
+      "Central Fiction"
+    ]
+  },
+  {
+    "gameTitle": "BlazBlue: Central Fiction",
+    "releaseYear": 2015,
+    "songTitle": "BLAZBLUE SOUND COMPLETE BOX CHRONOPHANTASMA (4) - Childish killer II",
+    "youtubeUrl": "https://www.youtube.com/watch?v=mJ8g-bZWNJY",
+    "startTime": 15,
+    "platform": "Multi",
+    "category": "Luta",
+    "tags": [
+      "fighting",
+      "anime",
+      "rock",
+      "arc-system-works"
+    ],
+    "aliases": [
+      "BlazBlue",
+      "BBCF",
+      "Central Fiction"
+    ]
+  },
+  {
+    "gameTitle": "BlazBlue: Central Fiction",
+    "releaseYear": 2015,
+    "songTitle": "Condemnation Wings II",
+    "youtubeUrl": "https://www.youtube.com/watch?v=KNdBI4ZYylk",
+    "startTime": 15,
+    "platform": "Multi",
+    "category": "Luta",
+    "tags": [
+      "fighting",
+      "anime",
+      "rock",
+      "arc-system-works"
+    ],
+    "aliases": [
+      "BlazBlue",
+      "BBCF",
+      "Central Fiction"
+    ]
+  },
+  {
+    "gameTitle": "BlazBlue: Central Fiction",
+    "releaseYear": 2015,
+    "songTitle": "Bullet Dance II",
+    "youtubeUrl": "https://www.youtube.com/watch?v=s4JgkbBoP14",
+    "startTime": 15,
+    "platform": "Multi",
+    "category": "Luta",
+    "tags": [
+      "fighting",
+      "anime",
+      "rock",
+      "arc-system-works"
+    ],
+    "aliases": [
+      "BlazBlue",
+      "BBCF",
+      "Central Fiction"
+    ]
+  },
+  {
+    "gameTitle": "BlazBlue: Central Fiction",
+    "releaseYear": 2015,
+    "songTitle": "Black aggression",
+    "youtubeUrl": "https://www.youtube.com/watch?v=65G6ljCF6ss",
+    "startTime": 15,
+    "platform": "Multi",
+    "category": "Luta",
+    "tags": [
+      "fighting",
+      "anime",
+      "rock",
+      "arc-system-works"
+    ],
+    "aliases": [
+      "BlazBlue",
+      "BBCF",
+      "Central Fiction"
+    ]
+  },
+  {
+    "gameTitle": "BlazBlue: Central Fiction",
+    "releaseYear": 2015,
+    "songTitle": "Under Heaven Destruction II",
+    "youtubeUrl": "https://www.youtube.com/watch?v=ir1-F4NymkI",
+    "startTime": 15,
+    "platform": "Multi",
+    "category": "Luta",
+    "tags": [
+      "fighting",
+      "anime",
+      "rock",
+      "arc-system-works"
+    ],
+    "aliases": [
+      "BlazBlue",
+      "BBCF",
+      "Central Fiction"
+    ]
+  },
+  {
+    "gameTitle": "BlazBlue: Central Fiction",
+    "releaseYear": 2015,
+    "songTitle": "STAND UNRIVALED",
+    "youtubeUrl": "https://www.youtube.com/watch?v=TNkykpcsr0w",
+    "startTime": 15,
+    "platform": "Multi",
+    "category": "Luta",
+    "tags": [
+      "fighting",
+      "anime",
+      "rock",
+      "arc-system-works"
+    ],
+    "aliases": [
+      "BlazBlue",
+      "BBCF",
+      "Central Fiction"
+    ]
+  },
+  {
+    "gameTitle": "BlazBlue: Central Fiction",
+    "releaseYear": 2015,
+    "songTitle": "Walpurgisnacht",
+    "youtubeUrl": "https://www.youtube.com/watch?v=b1Uc2ZoDdYs",
+    "startTime": 15,
+    "platform": "Multi",
+    "category": "Luta",
+    "tags": [
+      "fighting",
+      "anime",
+      "rock",
+      "arc-system-works"
+    ],
+    "aliases": [
+      "BlazBlue",
+      "BBCF",
+      "Central Fiction"
+    ]
+  },
+  {
+    "gameTitle": "BlazBlue: Central Fiction",
+    "releaseYear": 2015,
+    "songTitle": "Plastic Night II",
+    "youtubeUrl": "https://www.youtube.com/watch?v=QfWOik1wys0",
+    "startTime": 15,
+    "platform": "Multi",
+    "category": "Luta",
+    "tags": [
+      "fighting",
+      "anime",
+      "rock",
+      "arc-system-works"
+    ],
+    "aliases": [
+      "BlazBlue",
+      "BBCF",
+      "Central Fiction"
+    ]
+  },
+  {
+    "gameTitle": "Remnant II",
+    "releaseYear": 2023,
+    "songTitle": "Annihilation",
+    "youtubeUrl": "https://www.youtube.com/watch?v=4xmdEpX5FZ8",
+    "startTime": 15,
+    "platform": "Multi",
+    "category": "Ação",
+    "tags": [
+      "shooter",
+      "soulslike",
+      "boss",
+      "gunfire-games"
+    ],
+    "aliases": [
+      "Remnant 2",
+      "Remnant"
+    ]
+  },
+  {
+    "gameTitle": "Remnant II",
+    "releaseYear": 2023,
+    "songTitle": "The One True King",
+    "youtubeUrl": "https://www.youtube.com/watch?v=Z46JbZ3x5wY",
+    "startTime": 15,
+    "platform": "Multi",
+    "category": "Ação",
+    "tags": [
+      "shooter",
+      "soulslike",
+      "boss",
+      "gunfire-games"
+    ],
+    "aliases": [
+      "Remnant 2",
+      "Remnant"
+    ]
+  },
+  {
+    "gameTitle": "Warframe",
+    "releaseYear": 2013,
+    "songTitle": "This Is What You Are",
+    "platform": "Multi",
+    "category": "Ação",
+    "startTime": 15,
+    "tags": [
+      "mmo",
+      "choral",
+      "second-dream",
+      "emotional"
+    ],
+    "aliases": [
+      "Warframe"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=FEiTgU-hM5k"
+  },
+  {
+    "gameTitle": "Dishonored",
+    "releaseYear": 2012,
+    "songTitle": "Honor for All",
+    "platform": "Multi",
+    "category": "Ação",
+    "startTime": 10,
+    "tags": [
+      "stealth",
+      "bethesda",
+      "credits",
+      "corvo"
+    ],
+    "aliases": [
+      "Dishonored"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=l7hsVkYh9Ts"
+  },
+  {
+    "gameTitle": "Metal Gear Rising: Revengeance",
+    "releaseYear": 2013,
+    "songTitle": "It Has To Be This Way (Senator Armstrong)",
+    "platform": "Multi",
+    "category": "Ação",
+    "startTime": 20,
+    "tags": [
+      "hack-and-slash",
+      "platinum",
+      "rock",
+      "nanomachines",
+      "boss"
+    ],
+    "aliases": [
+      "MGR",
+      "MGRR",
+      "Metal Gear Rising"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=N72U-NFu44k"
+  },
+  {
+    "gameTitle": "Metal Gear Rising: Revengeance",
+    "releaseYear": 2013,
+    "songTitle": "The Only Thing I Know For Real (Jetstream Sam)",
+    "platform": "Multi",
+    "category": "Ação",
+    "startTime": 20,
+    "tags": [
+      "hack-and-slash",
+      "metal",
+      "samurai",
+      "boss"
+    ],
+    "aliases": [
+      "MGR",
+      "MGRR",
+      "Metal Gear Rising"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=CXRxRTW6nXg"
+  },
+  {
+    "gameTitle": "Metal Gear Rising: Revengeance",
+    "releaseYear": 2013,
+    "songTitle": "Red Sun (Sundowner)",
+    "platform": "Multi",
+    "category": "Ação",
+    "startTime": 20,
+    "tags": [
+      "hack-and-slash",
+      "metal",
+      "boss"
+    ],
+    "aliases": [
+      "MGR",
+      "MGRR",
+      "Metal Gear Rising"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=23oZbJNSd0s"
+  },
+  {
+    "gameTitle": "Metal Gear Rising: Revengeance",
+    "releaseYear": 2013,
+    "songTitle": "A Stranger I Remain (Mistral)",
+    "platform": "Multi",
+    "category": "Ação",
+    "startTime": 20,
+    "tags": [
+      "hack-and-slash",
+      "metal",
+      "boss"
+    ],
+    "aliases": [
+      "MGR",
+      "MGRR",
+      "Metal Gear Rising"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=fY97V9NvSjA"
+  },
+  {
+    "gameTitle": "Metal Gear Rising: Revengeance",
+    "releaseYear": 2013,
+    "songTitle": "The Stains of Time (Monsoon)",
+    "platform": "Multi",
+    "category": "Ação",
+    "startTime": 20,
+    "tags": [
+      "hack-and-slash",
+      "metal",
+      "boss"
+    ],
+    "aliases": [
+      "MGR",
+      "MGRR",
+      "Metal Gear Rising"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=Ep7Ni6dtQaA"
+  },
+  {
+    "gameTitle": "Metal Gear Rising: Revengeance",
+    "releaseYear": 2013,
+    "songTitle": "Rules of Nature (Metal Gear RAY)",
+    "platform": "Multi",
+    "category": "Ação",
+    "startTime": 20,
+    "tags": [
+      "hack-and-slash",
+      "metal",
+      "boss"
+    ],
+    "aliases": [
+      "MGR",
+      "MGRR",
+      "Metal Gear Rising"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=jOpzP33_USs"
+  },
+  {
+    "gameTitle": "Payday 2",
+    "releaseYear": 2013,
+    "songTitle": "Razormind",
+    "platform": "Multi",
+    "category": "FPS",
+    "startTime": 25,
+    "tags": [
+      "heist",
+      "electro",
+      "assault",
+      "simon-viklund"
+    ],
+    "aliases": [
+      "Payday 2",
+      "Payday"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=_Fl_LJBixfg"
+  },
+  {
+    "gameTitle": "Payday 2",
+    "releaseYear": 2013,
+    "songTitle": "I Will Give You My All 2017",
+    "platform": "Multi",
+    "category": "FPS",
+    "startTime": 15,
+    "tags": [
+      "heist",
+      "electro",
+      "simon-viklund"
+    ],
+    "aliases": [
+      "Payday 2",
+      "Payday"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=oN-8J1QA7f8"
+  },
+  {
+    "gameTitle": "Elden Ring",
+    "releaseYear": 2024,
+    "songTitle": "The Lord of Frenzied Flame (Midra)",
+    "platform": "Multi",
+    "category": "RPG",
+    "startTime": 15,
+    "tags": [
+      "soulslike",
+      "fromsoftware",
+      "erdtree",
+      "boss",
+      "violin"
+    ],
+    "aliases": [
+      "Elden Ring",
+      "Shadow of the Erdtree"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=ZL2OV7z2q40"
+  },
+  {
+    "gameTitle": "Elden Ring",
+    "releaseYear": 2024,
+    "songTitle": "Divine Beast Dancing Lion",
+    "platform": "Multi",
+    "category": "RPG",
+    "startTime": 15,
+    "tags": [
+      "soulslike",
+      "fromsoftware",
+      "erdtree",
+      "boss",
+      "horns"
+    ],
+    "aliases": [
+      "Elden Ring",
+      "Shadow of the Erdtree"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=1Saywp-mXxo"
+  },
+  {
+    "gameTitle": "Elden Ring",
+    "releaseYear": 2024,
+    "songTitle": "Bayle the Dread",
+    "platform": "Multi",
+    "category": "RPG",
+    "startTime": 15,
+    "tags": [
+      "soulslike",
+      "fromsoftware",
+      "erdtree",
+      "dragon",
+      "igor"
+    ],
+    "aliases": [
+      "Elden Ring",
+      "Shadow of the Erdtree"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=Tz8nN-7MPR8"
+  },
+  {
+    "gameTitle": "Clair Obscur: Expedition 33",
+    "releaseYear": 2025,
+    "songTitle": "Gestral Village - Gestral Market",
+    "youtubeUrl": "https://www.youtube.com/watch?v=7BOH9LD1pdM",
+    "startTime": 10,
+    "platform": "PC / PS5 / Xbox",
+    "category": "RPG",
+    "tags": [
+      "rpg",
+      "french",
+      "turn-based",
+      "orchestral",
+      "sandfall"
+    ],
+    "aliases": [
+      "Expedition 33",
+      "Clair Obscur"
+    ]
+  },
+  {
+    "gameTitle": "Clair Obscur: Expedition 33",
+    "releaseYear": 2025,
+    "songTitle": "Esquie's Nest - Esquie's Bath",
+    "youtubeUrl": "https://www.youtube.com/watch?v=s7-brNzwWT0",
+    "startTime": 10,
+    "platform": "PC / PS5 / Xbox",
+    "category": "RPG",
+    "tags": [
+      "rpg",
+      "french",
+      "turn-based",
+      "orchestral",
+      "sandfall"
+    ],
+    "aliases": [
+      "Expedition 33",
+      "Clair Obscur"
+    ]
+  },
+  {
+    "gameTitle": "Clair Obscur: Expedition 33",
+    "releaseYear": 2025,
+    "songTitle": "Verso",
+    "youtubeUrl": "https://www.youtube.com/watch?v=oOdJyVmfvXY",
+    "startTime": 10,
+    "platform": "PC / PS5 / Xbox",
+    "category": "RPG",
+    "tags": [
+      "rpg",
+      "french",
+      "turn-based",
+      "orchestral",
+      "sandfall"
+    ],
+    "aliases": [
+      "Expedition 33",
+      "Clair Obscur"
+    ]
+  },
+  {
+    "gameTitle": "Clair Obscur: Expedition 33",
+    "releaseYear": 2025,
+    "songTitle": "Forgotten Battlefield - Dualliste",
+    "youtubeUrl": "https://www.youtube.com/watch?v=MpX6B1k8lAc",
+    "startTime": 10,
+    "platform": "PC / PS5 / Xbox",
+    "category": "RPG",
+    "tags": [
+      "rpg",
+      "french",
+      "turn-based",
+      "orchestral",
+      "sandfall"
+    ],
+    "aliases": [
+      "Expedition 33",
+      "Clair Obscur"
+    ]
+  },
+  {
+    "gameTitle": "Clair Obscur: Expedition 33",
+    "releaseYear": 2025,
+    "songTitle": "Sirène - Poème d'Amour",
+    "youtubeUrl": "https://www.youtube.com/watch?v=1KiFMEj7DtQ",
+    "startTime": 10,
+    "platform": "PC / PS5 / Xbox",
+    "category": "RPG",
+    "tags": [
+      "rpg",
+      "french",
+      "turn-based",
+      "orchestral",
+      "sandfall"
+    ],
+    "aliases": [
+      "Expedition 33",
+      "Clair Obscur"
+    ]
+  },
+  {
+    "gameTitle": "Clair Obscur: Expedition 33",
+    "releaseYear": 2025,
+    "songTitle": "Visages - Portrait Imparfait",
+    "youtubeUrl": "https://www.youtube.com/watch?v=dffRUOBNGB8",
+    "startTime": 10,
+    "platform": "PC / PS5 / Xbox",
+    "category": "RPG",
+    "tags": [
+      "rpg",
+      "french",
+      "turn-based",
+      "orchestral",
+      "sandfall"
+    ],
+    "aliases": [
+      "Expedition 33",
+      "Clair Obscur"
+    ]
+  },
+  {
+    "gameTitle": "Clair Obscur: Expedition 33",
+    "releaseYear": 2025,
+    "songTitle": "Aline",
+    "youtubeUrl": "https://www.youtube.com/watch?v=638TbzmRL8A",
+    "startTime": 10,
+    "platform": "PC / PS5 / Xbox",
+    "category": "RPG",
+    "tags": [
+      "rpg",
+      "french",
+      "turn-based",
+      "orchestral",
+      "sandfall"
+    ],
+    "aliases": [
+      "Expedition 33",
+      "Clair Obscur"
+    ]
+  },
+  {
+    "gameTitle": "Clair Obscur: Expedition 33",
+    "releaseYear": 2025,
+    "songTitle": "Paintress",
+    "youtubeUrl": "https://www.youtube.com/watch?v=Dxa3mYx7zjw",
+    "startTime": 10,
+    "platform": "PC / PS5 / Xbox",
+    "category": "RPG",
+    "tags": [
+      "rpg",
+      "french",
+      "turn-based",
+      "orchestral",
+      "sandfall"
+    ],
+    "aliases": [
+      "Expedition 33",
+      "Clair Obscur"
+    ]
+  },
+  {
+    "gameTitle": "Clair Obscur: Expedition 33",
+    "releaseYear": 2025,
+    "songTitle": "Lettre à Maelle",
+    "youtubeUrl": "https://www.youtube.com/watch?v=WoHMioHIJPI",
+    "startTime": 10,
+    "platform": "PC / PS5 / Xbox",
+    "category": "RPG",
+    "tags": [
+      "rpg",
+      "french",
+      "turn-based",
+      "orchestral",
+      "sandfall"
+    ],
+    "aliases": [
+      "Expedition 33",
+      "Clair Obscur"
+    ]
+  },
+  {
+    "gameTitle": "Clair Obscur: Expedition 33",
+    "releaseYear": 2025,
+    "songTitle": "Our Drafts Collides",
+    "youtubeUrl": "https://www.youtube.com/watch?v=VxfRe9wkj5Y",
+    "startTime": 10,
+    "platform": "PC / PS5 / Xbox",
+    "category": "RPG",
+    "tags": [
+      "rpg",
+      "french",
+      "turn-based",
+      "orchestral",
+      "sandfall"
+    ],
+    "aliases": [
+      "Expedition 33",
+      "Clair Obscur"
+    ]
+  },
+  {
+    "gameTitle": "Clair Obscur: Expedition 33",
+    "releaseYear": 2025,
+    "songTitle": "Until Next Life",
+    "youtubeUrl": "https://www.youtube.com/watch?v=a9P0Qgi4wAM",
+    "startTime": 10,
+    "platform": "PC / PS5 / Xbox",
+    "category": "RPG",
+    "tags": [
+      "rpg",
+      "french",
+      "turn-based",
+      "orchestral",
+      "sandfall"
+    ],
+    "aliases": [
+      "Expedition 33",
+      "Clair Obscur"
+    ]
+  },
+  {
+    "gameTitle": "Clair Obscur: Expedition 33",
+    "releaseYear": 2025,
+    "songTitle": "Clair-Obscur",
+    "youtubeUrl": "https://www.youtube.com/watch?v=f1vSWXrMIqM",
+    "startTime": 10,
+    "platform": "PC / PS5 / Xbox",
+    "category": "RPG",
+    "tags": [
+      "rpg",
+      "french",
+      "turn-based",
+      "orchestral",
+      "sandfall"
+    ],
+    "aliases": [
+      "Expedition 33",
+      "Clair Obscur"
+    ]
+  },
+  {
+    "gameTitle": "Clair Obscur: Expedition 33",
+    "releaseYear": 2025,
+    "songTitle": "Maelle",
+    "youtubeUrl": "https://www.youtube.com/watch?v=56K5mhMf0ww",
+    "startTime": 10,
+    "platform": "PC / PS5 / Xbox",
+    "category": "RPG",
+    "tags": [
+      "rpg",
+      "french",
+      "turn-based",
+      "orchestral",
+      "sandfall"
+    ],
+    "aliases": [
+      "Expedition 33",
+      "Clair Obscur"
+    ]
+  },
+  {
+    "gameTitle": "Clair Obscur: Expedition 33",
+    "releaseYear": 2025,
+    "songTitle": "Sirène - Rouge d'Iris",
+    "youtubeUrl": "https://www.youtube.com/watch?v=RRCK_Co8c9c",
+    "startTime": 10,
+    "platform": "PC / PS5 / Xbox",
+    "category": "RPG",
+    "tags": [
+      "rpg",
+      "french",
+      "turn-based",
+      "orchestral",
+      "sandfall"
+    ],
+    "aliases": [
+      "Expedition 33",
+      "Clair Obscur"
+    ]
+  },
+  {
+    "gameTitle": "Midnight Club 3: DUB Edition",
+    "releaseYear": 2005,
+    "songTitle": "Menu Music",
+    "platform": "PS2 / Xbox",
+    "category": "Corrida",
+    "startTime": 5,
+    "tags": [
+      "racing",
+      "rockstar",
+      "hip-hop",
+      "tuning"
+    ],
+    "aliases": [
+      "Midnight Club 3",
+      "MC3",
+      "Midnight Club"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=mFP3O2VGiUc"
+  },
+  {
+    "gameTitle": "Hollow Knight: Silksong",
+    "releaseYear": 2025,
+    "songTitle": "Scary Spider Son",
+    "platform": "Multi",
+    "category": "Indie",
+    "startTime": 10,
+    "tags": [
+      "metroidvania",
+      "indie",
+      "spider",
+      "boss"
+    ],
+    "aliases": [
+      "Silksong",
+      "Hollow Knight Silksong"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=A3rWQvOgNn8"
+  },
+  {
+    "gameTitle": "Age of Empires II: Definitive Edition",
+    "releaseYear": 2019,
+    "songTitle": "The Monkey Book",
+    "platform": "PC",
+    "category": "Estratégia",
+    "startTime": 10,
+    "tags": [
+      "rts",
+      "strategy",
+      "medieval",
+      "age-of-empires"
+    ],
+    "aliases": [
+      "Age of Empires 2",
+      "AOE2",
+      "Age of Empires"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=TanLLBdOihQ"
+  },
+  {
+    "gameTitle": "Age of Empires II: Definitive Edition",
+    "releaseYear": 2019,
+    "songTitle": "Love and Will",
+    "platform": "PC",
+    "category": "Estratégia",
+    "startTime": 10,
+    "tags": [
+      "rts",
+      "strategy",
+      "medieval",
+      "age-of-empires"
+    ],
+    "aliases": [
+      "Age of Empires 2",
+      "AOE2",
+      "Age of Empires"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=Hro8hu9tb00"
+  },
+  {
+    "gameTitle": "Risk of Rain 2",
+    "releaseYear": 2020,
+    "songTitle": "…con lentitud poderosa",
+    "platform": "Multi",
+    "category": "Indie",
+    "startTime": 20,
+    "tags": [
+      "roguelike",
+      "ambient",
+      "guitar"
+    ],
+    "aliases": [
+      "ROR2",
+      "Risk of Rain 2"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=9tDeSuyz9kE"
+  },
+  {
+    "gameTitle": "Risk of Rain 2",
+    "releaseYear": 2020,
+    "songTitle": "You're Gonna Need a Bigger Ukulele",
+    "platform": "Multi",
+    "category": "Indie",
+    "startTime": 10,
+    "tags": [
+      "roguelike",
+      "synth",
+      "guitar"
+    ],
+    "aliases": [
+      "ROR2",
+      "Risk of Rain 2"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=N5VqlXD3Yg8"
+  },
+  {
+    "gameTitle": "Risk of Rain 2",
+    "releaseYear": 2024,
+    "songTitle": "I Should Build the Man a Statue",
+    "platform": "Multi",
+    "category": "Indie",
+    "startTime": 15,
+    "tags": [
+      "roguelike",
+      "synth",
+      "seekers-of-the-storm"
+    ],
+    "aliases": [
+      "ROR2",
+      "Risk of Rain 2"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=vMGUwcO6BkM"
+  },
+  {
+    "gameTitle": "Risk of Rain 2",
+    "releaseYear": 2020,
+    "songTitle": "Once in a Lullaby",
+    "platform": "Multi",
+    "category": "Indie",
+    "startTime": 10,
+    "tags": [
+      "roguelike",
+      "vocal",
+      "greek"
+    ],
+    "aliases": [
+      "ROR2",
+      "Risk of Rain 2"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=PK6XfDmeuj0"
+  },
+  {
+    "gameTitle": "Dark Souls",
+    "releaseYear": 2011,
+    "songTitle": "Sanctuary Guardian",
+    "platform": "Multi",
+    "category": "RPG",
+    "startTime": 10,
+    "tags": [
+      "soulslike",
+      "fromsoftware",
+      "boss",
+      "artorias"
+    ],
+    "aliases": [
+      "DS1",
+      "Dark Souls 1",
+      "Dark Souls"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=fnciEKtYqiU"
+  },
+  {
+    "gameTitle": "Dark Souls III",
+    "releaseYear": 2016,
+    "songTitle": "Abyss Watchers",
+    "platform": "Multi",
+    "category": "RPG",
+    "startTime": 15,
+    "tags": [
+      "soulslike",
+      "fromsoftware",
+      "boss",
+      "cinder",
+      "yuka-kitamura"
+    ],
+    "aliases": [
+      "DS3",
+      "Dark Souls 3",
+      "Dark Souls"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=Qwya6SEVR9o"
+  },
+  {
+    "gameTitle": "Dark Souls",
+    "releaseYear": 2011,
+    "songTitle": "Ornstein & Smough",
+    "platform": "Multi",
+    "category": "RPG",
+    "startTime": 15,
+    "tags": [
+      "soulslike",
+      "fromsoftware",
+      "boss",
+      "anor-londo"
+    ],
+    "aliases": [
+      "DS1",
+      "Dark Souls 1",
+      "Dark Souls"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=hOxLVIPkHTs"
+  },
+  {
+    "gameTitle": "Dark Souls",
+    "releaseYear": 2011,
+    "songTitle": "Seath the Scaleless",
+    "platform": "Multi",
+    "category": "RPG",
+    "startTime": 10,
+    "tags": [
+      "soulslike",
+      "fromsoftware",
+      "boss"
+    ],
+    "aliases": [
+      "DS1",
+      "Dark Souls 1",
+      "Dark Souls"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=2OAbeM4XQC8"
+  },
+  {
+    "gameTitle": "Dark Souls",
+    "releaseYear": 2011,
+    "songTitle": "Gaping Dragon",
+    "platform": "Multi",
+    "category": "RPG",
+    "startTime": 10,
+    "tags": [
+      "soulslike",
+      "fromsoftware",
+      "boss"
+    ],
+    "aliases": [
+      "DS1",
+      "Dark Souls 1",
+      "Dark Souls"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=UQ3nqf7Ndeo"
+  },
+  {
+    "gameTitle": "Dark Souls",
+    "releaseYear": 2011,
+    "songTitle": "Nameless Song",
+    "platform": "Multi",
+    "category": "RPG",
+    "startTime": 10,
+    "tags": [
+      "soulslike",
+      "fromsoftware",
+      "credits",
+      "emotional"
+    ],
+    "aliases": [
+      "DS1",
+      "Dark Souls 1",
+      "Dark Souls"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=90a5OuC9Fr8"
+  },
+  {
+    "gameTitle": "Dark Souls II",
+    "releaseYear": 2014,
+    "songTitle": "Ruin Sentinel",
+    "platform": "Multi",
+    "category": "RPG",
+    "startTime": 10,
+    "tags": [
+      "soulslike",
+      "fromsoftware",
+      "boss"
+    ],
+    "aliases": [
+      "DS2",
+      "Dark Souls 2",
+      "Dark Souls"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=rxQyt1o3jR0"
+  },
+  {
+    "gameTitle": "Dark Souls II",
+    "releaseYear": 2014,
+    "songTitle": "Sir Alonne",
+    "platform": "Multi",
+    "category": "RPG",
+    "startTime": 15,
+    "tags": [
+      "soulslike",
+      "fromsoftware",
+      "boss",
+      "samurai",
+      "iron-king"
+    ],
+    "aliases": [
+      "DS2",
+      "Dark Souls 2",
+      "Dark Souls"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=IN9kRFay02s"
+  },
+  {
+    "gameTitle": "Guilty Gear: Strive",
+    "releaseYear": 2021,
+    "songTitle": "Play the Hero",
+    "youtubeUrl": "https://www.youtube.com/watch?v=e5XKS9G_Wos",
+    "startTime": 15,
+    "platform": "Multi",
+    "category": "Luta",
+    "tags": [
+      "fighting",
+      "rock",
+      "metal",
+      "arc-system-works",
+      "daisuke-ishiwatari"
+    ],
+    "aliases": [
+      "GGST",
+      "Guilty Gear Strive",
+      "Guilty Gear"
+    ]
+  },
+  {
+    "gameTitle": "Metal Gear Rising: Revengeance",
+    "releaseYear": 2013,
+    "songTitle": "The Hot Wind Blowing (Khamsin)",
+    "platform": "Multi",
+    "category": "Ação",
+    "startTime": 20,
+    "tags": [
+      "hack-and-slash",
+      "metal",
+      "boss"
+    ],
+    "aliases": [
+      "MGR",
+      "MGRR",
+      "Metal Gear Rising"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=mUfTybEv1HU"
+  },
+  {
+    "gameTitle": "Limbus Company",
+    "releaseYear": 2023,
+    "songTitle": "Canto IX Boss Battle Theme 2",
+    "youtubeUrl": "https://www.youtube.com/watch?v=JZ3VbHpjDps",
+    "startTime": 10,
+    "platform": "PC / Mobile",
+    "category": "RPG",
+    "tags": [
+      "rpg",
+      "project-moon",
+      "boss",
+      "mili"
+    ],
+    "aliases": [
+      "Limbus Company",
+      "Limbus"
+    ]
+  },
+  {
+    "gameTitle": "Call of Duty: Black Ops",
+    "releaseYear": 2010,
+    "songTitle": "Abracadavre (Ascension)",
+    "platform": "Multi",
+    "category": "FPS",
+    "startTime": 15,
+    "tags": [
+      "fps",
+      "zombies",
+      "metal",
+      "elena-siegman"
+    ],
+    "aliases": [
+      "COD BO",
+      "Black Ops",
+      "BO1"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=G3dwKAHPC_s"
+  },
+  {
+    "gameTitle": "Dark Souls",
+    "releaseYear": 2011,
+    "songTitle": "Kalameet",
+    "platform": "Multi",
+    "category": "RPG",
+    "startTime": 10,
+    "tags": [
+      "soulslike",
+      "fromsoftware",
+      "dragon",
+      "boss"
+    ],
+    "aliases": [
+      "DS1",
+      "Dark Souls 1",
+      "Dark Souls"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=6898iSxLjhI"
+  },
+  {
+    "gameTitle": "Outer Wilds",
+    "releaseYear": 2019,
+    "songTitle": "14.3 Billion Years",
+    "platform": "Multi",
+    "category": "Indie",
+    "startTime": 15,
+    "tags": [
+      "indie",
+      "emotional",
+      "space",
+      "strings"
+    ],
+    "aliases": [
+      "Outer Wilds"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=XOrygf_iLhw"
+  },
+  {
+    "gameTitle": "Guilty Gear: Strive",
+    "releaseYear": 2021,
+    "songTitle": "Love the Subhuman Self",
+    "youtubeUrl": "https://www.youtube.com/watch?v=SMItKJ_SNf8",
+    "startTime": 15,
+    "platform": "Multi",
+    "category": "Luta",
+    "tags": [
+      "fighting",
+      "rock",
+      "metal",
+      "arc-system-works",
+      "daisuke-ishiwatari"
+    ],
+    "aliases": [
+      "GGST",
+      "Guilty Gear Strive",
+      "Guilty Gear"
+    ]
+  },
+  {
+    "gameTitle": "Dark Souls II",
+    "releaseYear": 2014,
+    "songTitle": "Old Dragonslayer",
+    "platform": "Multi",
+    "category": "RPG",
+    "startTime": 10,
+    "tags": [
+      "soulslike",
+      "fromsoftware",
+      "boss",
+      "ornstein"
+    ],
+    "aliases": [
+      "DS2",
+      "Dark Souls 2",
+      "Dark Souls"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=OxxgAA3F3Go"
+  },
+  {
+    "gameTitle": "Bloodborne",
+    "releaseYear": 2015,
+    "songTitle": "Laurence, the First Vicar",
+    "platform": "PS4",
+    "category": "RPG",
+    "startTime": 20,
+    "tags": [
+      "soulslike",
+      "fromsoftware",
+      "gothic",
+      "choral",
+      "old-hunters"
+    ],
+    "aliases": [
+      "Bloodborne",
+      "BB"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=Q_pHph2quWk"
+  },
+  {
+    "gameTitle": "Bloodborne",
+    "releaseYear": 2015,
+    "songTitle": "Ludwig, the Holy Blade",
+    "platform": "PS4",
+    "category": "RPG",
+    "startTime": 25,
+    "tags": [
+      "soulslike",
+      "fromsoftware",
+      "gothic",
+      "waltz",
+      "moonlight"
+    ],
+    "aliases": [
+      "Bloodborne",
+      "BB"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=XCLE0x5jXM4"
+  },
+  {
+    "gameTitle": "Hades II",
+    "releaseYear": 2024,
+    "songTitle": "I Am Gonna Claw",
+    "platform": "PC",
+    "category": "Indie",
+    "startTime": 10,
+    "tags": [
+      "roguelite",
+      "sirens",
+      "metal",
+      "supergiant"
+    ],
+    "aliases": [
+      "Hades 2"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=cQFEcBIf8z0"
+  },
+  {
+    "gameTitle": "Bloodborne",
+    "releaseYear": 2015,
+    "songTitle": "The Hunter (Father Gascoigne)",
+    "platform": "PS4",
+    "category": "RPG",
+    "startTime": 15,
+    "tags": [
+      "soulslike",
+      "fromsoftware",
+      "beast",
+      "boss"
+    ],
+    "aliases": [
+      "Bloodborne",
+      "BB"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=I0--Q6hKl_o"
+  },
+  {
+    "gameTitle": "Bloodborne",
+    "releaseYear": 2015,
+    "songTitle": "Living Failures",
+    "platform": "PS4",
+    "category": "RPG",
+    "startTime": 15,
+    "tags": [
+      "soulslike",
+      "fromsoftware",
+      "cosmic",
+      "choral"
+    ],
+    "aliases": [
+      "Bloodborne",
+      "BB"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=dJ4Ni-kFIZc"
+  },
+  {
+    "gameTitle": "Guilty Gear: Strive",
+    "releaseYear": 2021,
+    "songTitle": "Find Your One Way",
+    "youtubeUrl": "https://www.youtube.com/watch?v=eC15R4HeqZc",
+    "startTime": 15,
+    "platform": "Multi",
+    "category": "Luta",
+    "tags": [
+      "fighting",
+      "rock",
+      "metal",
+      "arc-system-works",
+      "daisuke-ishiwatari"
+    ],
+    "aliases": [
+      "GGST",
+      "Guilty Gear Strive",
+      "Guilty Gear"
+    ]
+  },
+  {
+    "gameTitle": "Guilty Gear: Strive",
+    "releaseYear": 2021,
+    "songTitle": "The Roar of the Spark",
+    "youtubeUrl": "https://www.youtube.com/watch?v=qLu9KQ5rWvs",
+    "startTime": 15,
+    "platform": "Multi",
+    "category": "Luta",
+    "tags": [
+      "fighting",
+      "rock",
+      "metal",
+      "arc-system-works",
+      "daisuke-ishiwatari"
+    ],
+    "aliases": [
+      "GGST",
+      "Guilty Gear Strive",
+      "Guilty Gear"
+    ]
+  },
+  {
+    "gameTitle": "Guilty Gear: Strive",
+    "releaseYear": 2021,
+    "songTitle": "Out of the Box",
+    "youtubeUrl": "https://www.youtube.com/watch?v=jD936LmoNZo",
+    "startTime": 15,
+    "platform": "Multi",
+    "category": "Luta",
+    "tags": [
+      "fighting",
+      "rock",
+      "metal",
+      "arc-system-works",
+      "daisuke-ishiwatari"
+    ],
+    "aliases": [
+      "GGST",
+      "Guilty Gear Strive",
+      "Guilty Gear"
+    ]
+  },
+  {
+    "gameTitle": "Guilty Gear: Strive",
+    "releaseYear": 2021,
+    "songTitle": "Alone Infection",
+    "youtubeUrl": "https://www.youtube.com/watch?v=RPtXY4WarlU",
+    "startTime": 15,
+    "platform": "Multi",
+    "category": "Luta",
+    "tags": [
+      "fighting",
+      "rock",
+      "metal",
+      "arc-system-works",
+      "daisuke-ishiwatari"
+    ],
+    "aliases": [
+      "GGST",
+      "Guilty Gear Strive",
+      "Guilty Gear"
+    ]
+  },
+  {
+    "gameTitle": "Guilty Gear: Strive",
+    "releaseYear": 2021,
+    "songTitle": "Let Me Carve Your Way",
+    "youtubeUrl": "https://www.youtube.com/watch?v=rL_40s1s8yM",
+    "startTime": 15,
+    "platform": "Multi",
+    "category": "Luta",
+    "tags": [
+      "fighting",
+      "rock",
+      "metal",
+      "arc-system-works",
+      "daisuke-ishiwatari"
+    ],
+    "aliases": [
+      "GGST",
+      "Guilty Gear Strive",
+      "Guilty Gear"
+    ]
+  },
+  {
+    "gameTitle": "Guilty Gear: Strive",
+    "releaseYear": 2021,
+    "songTitle": "Requiem",
+    "youtubeUrl": "https://www.youtube.com/watch?v=h6YBHrh4Uno",
+    "startTime": 15,
+    "platform": "Multi",
+    "category": "Luta",
+    "tags": [
+      "fighting",
+      "rock",
+      "metal",
+      "arc-system-works",
+      "daisuke-ishiwatari"
+    ],
+    "aliases": [
+      "GGST",
+      "Guilty Gear Strive",
+      "Guilty Gear"
+    ]
+  },
+  {
+    "gameTitle": "Guilty Gear: Strive",
+    "releaseYear": 2021,
+    "songTitle": "Perfection Can't Please Me",
+    "youtubeUrl": "https://www.youtube.com/watch?v=mgAngvEa_4A",
+    "startTime": 15,
+    "platform": "Multi",
+    "category": "Luta",
+    "tags": [
+      "fighting",
+      "rock",
+      "metal",
+      "arc-system-works",
+      "daisuke-ishiwatari"
+    ],
+    "aliases": [
+      "GGST",
+      "Guilty Gear Strive",
+      "Guilty Gear"
+    ]
+  },
+  {
+    "gameTitle": "Guilty Gear: Strive",
+    "releaseYear": 2021,
+    "songTitle": "Drift",
+    "youtubeUrl": "https://www.youtube.com/watch?v=QaNTOlrwlLs",
+    "startTime": 15,
+    "platform": "Multi",
+    "category": "Luta",
+    "tags": [
+      "fighting",
+      "rock",
+      "metal",
+      "arc-system-works",
+      "daisuke-ishiwatari"
+    ],
+    "aliases": [
+      "GGST",
+      "Guilty Gear Strive",
+      "Guilty Gear"
+    ]
+  },
+  {
+    "gameTitle": "Guilty Gear: Strive",
+    "releaseYear": 2021,
+    "songTitle": "Mirror of the World",
+    "youtubeUrl": "https://www.youtube.com/watch?v=FUlN4PkxqsM",
+    "startTime": 15,
+    "platform": "Multi",
+    "category": "Luta",
+    "tags": [
+      "fighting",
+      "rock",
+      "metal",
+      "arc-system-works",
+      "daisuke-ishiwatari"
+    ],
+    "aliases": [
+      "GGST",
+      "Guilty Gear Strive",
+      "Guilty Gear"
+    ]
+  },
+  {
+    "gameTitle": "Guilty Gear: Strive",
+    "releaseYear": 2021,
+    "songTitle": "The Circle",
+    "youtubeUrl": "https://www.youtube.com/watch?v=bNyQdweaupY",
+    "startTime": 15,
+    "platform": "Multi",
+    "category": "Luta",
+    "tags": [
+      "fighting",
+      "rock",
+      "metal",
+      "arc-system-works",
+      "daisuke-ishiwatari"
+    ],
+    "aliases": [
+      "GGST",
+      "Guilty Gear Strive",
+      "Guilty Gear"
+    ]
+  },
+  {
+    "gameTitle": "Guilty Gear: Strive",
+    "releaseYear": 2021,
+    "songTitle": "The Gravity",
+    "youtubeUrl": "https://www.youtube.com/watch?v=02Fy5oh2Pe8",
+    "startTime": 15,
+    "platform": "Multi",
+    "category": "Luta",
+    "tags": [
+      "fighting",
+      "rock",
+      "metal",
+      "arc-system-works",
+      "daisuke-ishiwatari"
+    ],
+    "aliases": [
+      "GGST",
+      "Guilty Gear Strive",
+      "Guilty Gear"
+    ]
+  },
+  {
+    "gameTitle": "Guilty Gear: Strive",
+    "releaseYear": 2021,
+    "songTitle": "Just Lean",
+    "youtubeUrl": "https://www.youtube.com/watch?v=T8_UW5i01FQ",
+    "startTime": 15,
+    "platform": "Multi",
+    "category": "Luta",
+    "tags": [
+      "fighting",
+      "rock",
+      "metal",
+      "arc-system-works",
+      "daisuke-ishiwatari"
+    ],
+    "aliases": [
+      "GGST",
+      "Guilty Gear Strive",
+      "Guilty Gear"
+    ]
+  },
+  {
+    "gameTitle": "Guilty Gear: Strive",
+    "releaseYear": 2021,
+    "songTitle": "Symphony",
+    "youtubeUrl": "https://www.youtube.com/watch?v=SP9GPsdga6g",
+    "startTime": 15,
+    "platform": "Multi",
+    "category": "Luta",
+    "tags": [
+      "fighting",
+      "rock",
+      "metal",
+      "arc-system-works",
+      "daisuke-ishiwatari"
+    ],
+    "aliases": [
+      "GGST",
+      "Guilty Gear Strive",
+      "Guilty Gear"
+    ]
+  },
+  {
+    "gameTitle": "Guilty Gear: Strive",
+    "releaseYear": 2021,
+    "songTitle": "A Tenth of Myself",
+    "youtubeUrl": "https://www.youtube.com/watch?v=bQFw51tFQp0",
+    "startTime": 15,
+    "platform": "Multi",
+    "category": "Luta",
+    "tags": [
+      "fighting",
+      "rock",
+      "metal",
+      "arc-system-works",
+      "daisuke-ishiwatari"
+    ],
+    "aliases": [
+      "GGST",
+      "Guilty Gear Strive",
+      "Guilty Gear"
+    ]
+  },
+  {
+    "gameTitle": "Final Fantasy XIV",
+    "releaseYear": 2013,
+    "songTitle": "Answers",
+    "platform": "Multi",
+    "category": "RPG",
+    "startTime": 15,
+    "tags": [
+      "mmo",
+      "choral",
+      "susan-calloway",
+      "nobuo-uematsu",
+      "bahamut"
+    ],
+    "aliases": [
+      "FFXIV",
+      "FF14",
+      "Final Fantasy 14"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=p86icWXs0CQ"
+  }
+]
