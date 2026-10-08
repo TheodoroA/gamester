@@ -33,8 +33,8 @@ export class GameModes {
         }
       }
     } else {
-      // Modo Arcade: avalia se atingiu pontuação máxima configurada (ex: 50 pontos)
-      const targetScore = 50;
+      // Modo Arcade: avalia se atingiu pontuação máxima configurada (padrão 20 pontos, ou maxCardsToWin * 2)
+      const targetScore = room.settings.maxCardsToWin ? room.settings.maxCardsToWin * 2 : 20;
       for (const player of room.players.values()) {
         if (player.score >= targetScore) {
           room.status = 'GAME_OVER';

@@ -81,6 +81,11 @@ export const HomeView: React.FC<HomeViewProps> = ({ onCreateRoom, onJoinRoom, on
                 ⚡ Modo Arcade
               </button>
             </div>
+            <p className="text-[11px] text-slate-400 mt-2">
+              {mode === 'TIMELINE'
+                ? 'Ordene os jogos cronologicamente na sua linha do tempo (10 cartas para vencer).'
+                : 'Adivinhe apenas o nome do jogo diretamente para somar pontos (sem linha do tempo).'}
+            </p>
           </div>
 
           <button

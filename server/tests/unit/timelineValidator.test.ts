@@ -92,4 +92,25 @@ describe('TimelineValidator e Regras de Vitória (TU-05, CA-08)', () => {
     const p3 = GameModes.calculateArcadePoints(true, 1995, 2000, false);
     assert.equal(p3, 2);
   });
+
+  it('Deve declarar vitória no Modo Arcade ao atingir a pontuação alvo', () => {
+    const room = new Room('ARCADE_VIC', 'player-1', { mode: 'ARCADE', maxCardsToWin: 5 });
+    const player = {
+      id: 'player-1',
+      nickname: 'ArcadeMaster',
+      isHost: true,
+      isReady: true,
+      tokens: 0,
+      score: 10, // 5 * 2 = 10 pontos atingidos
+      timeline: [], // Nenhuma carta
+      isConnected: true
+    };
+    room.players.set('player-1', player);
+
+    const victory = GameModes.checkVictory(room);
+    assert.ok(victory);
+    assert.equal(victory.winner.nickname, 'ArcadeMaster');
+    assert.equal(victory.winner.score, 10);
+    assert.equal(room.status, 'GAME_OVER');
+  });
 });

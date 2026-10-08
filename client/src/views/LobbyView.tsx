@@ -52,7 +52,7 @@ export const LobbyView: React.FC<LobbyViewProps> = ({
 
         <div className="text-right">
           <span className="px-3 py-1 rounded-full text-xs font-bold bg-slate-800 text-slate-300 border border-slate-700">
-            Modo: {room.settings.mode === 'TIMELINE' ? '📜 Linha do Tempo (10 cartas)' : '⚡ Arcade'}
+            Modo: {room.settings.mode === 'TIMELINE' ? '📜 Linha do Tempo (10 cartas)' : '⚡ Arcade (por pontos)'}
           </span>
         </div>
       </div>

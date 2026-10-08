@@ -79,9 +79,12 @@ export const App: React.FC = () => {
   };
 
   const handleGuessSubmit = (gameGuess: string, songGuess?: string, timelineIndex?: number) => {
-    const slot = timelineIndex !== undefined
-      ? timelineIndex
-      : ((player?.timeline.length === 0) ? 0 : (selectedSlot ?? 0));
+    const isTimelineMode = room?.settings?.mode === 'TIMELINE';
+    const slot = isTimelineMode
+      ? (timelineIndex !== undefined
+        ? timelineIndex
+        : ((player?.timeline.length === 0) ? 0 : (selectedSlot ?? 0)))
+      : undefined;
     roomStore.submitGuess(gameGuess, songGuess, slot);
   };
 
@@ -135,8 +138,8 @@ export const App: React.FC = () => {
         )}
       </main>
 
-      {/* Linha do Tempo Fixa no Rodapé durante o Jogo */}
-      {room && room.status === 'PLAYING' && player && (() => {
+      {/* Linha do Tempo Fixa no Rodapé durante o Jogo (Exclusivo do Modo TIMELINE) */}
+      {room && room.status === 'PLAYING' && player && room.settings.mode === 'TIMELINE' && (() => {
         const isViewingActive = !isActivePlayer && timelineViewTab === 'ACTIVE';
         const targetPlayer = isViewingActive ? activePlayer : player;
         const currentTimeline = targetPlayer?.timeline || [];
@@ -168,6 +171,7 @@ export const App: React.FC = () => {
           resolution={resolution}
           players={room.players}
           isHost={player?.isHost ?? false}
+          mode={room.settings.mode}
           onNextRound={() => roomStore.nextRound()}
         />
       )}

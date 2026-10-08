@@ -192,7 +192,11 @@ export const GameView: React.FC<GameViewProps> = ({
                   {p.isHost && <Crown className="w-3 h-3 text-amber-400" />}
                 </div>
                 <div className="flex items-center gap-2 text-[10px] text-slate-400 mt-0.5">
-                  <span className="font-semibold text-purple-300">{p.timeline.length} cartas</span>
+                  {room.settings.mode === 'TIMELINE' ? (
+                    <span className="font-semibold text-purple-300">{p.timeline.length} cartas</span>
+                  ) : (
+                    <span className="font-semibold text-amber-300 font-bold">🏆 {p.score} pts</span>
+                  )}
                   <span>🪙 {p.tokens}</span>
                   {!p.isConnected && <span className="text-rose-400 font-bold">Caiu</span>}
                 </div>
@@ -212,14 +216,16 @@ export const GameView: React.FC<GameViewProps> = ({
       {/* Banner de Jogador da Vez */}
       <div className="w-full max-w-xl text-center mb-6 p-4 rounded-2xl bg-slate-900/60 border border-slate-800">
         <span className="text-xs uppercase tracking-widest text-slate-400 font-bold block mb-1">
-          Adivinhador da Vez
+          Adivinhador da Vez {room.settings.mode === 'ARCADE' ? '• Modo Arcade' : '• Linha do Tempo'}
         </span>
         <div className="text-2xl font-black bg-gradient-to-r from-purple-400 to-indigo-300 bg-clip-text text-transparent">
           {isActive ? '🌟 É A SUA VEZ!' : `🎮 ${activePlayer?.nickname || 'Jogador'}`}
         </div>
         <p className="text-xs text-slate-400 mt-1">
           {isActive
-            ? 'Escute o trecho de 30s e digite o jogo de origem abaixo.'
+            ? (room.settings.mode === 'TIMELINE'
+                ? 'Escute o trecho de 30s e digite o jogo de origem abaixo.'
+                : 'Escute o trecho e digite o nome do jogo de origem para somar pontos!')
             : 'Escute com atenção! Você pode usar poderes para intervir nos primeiros 15s.'}
         </p>
       </div>
@@ -263,7 +269,7 @@ export const GameView: React.FC<GameViewProps> = ({
             <label className="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2 flex items-center justify-between">
               <span className="flex items-center gap-1.5">
                 <Music className="w-3.5 h-3.5 text-purple-400" />
-                Nome da Música (Bônus: +1 Recurso 🪙)
+                Nome da Música {room.settings.mode === 'ARCADE' ? '(Bônus: +1 Ponto 🏆 e +1 Recurso 🪙)' : '(Bônus: +1 Recurso 🪙)'}
               </span>
               <span className="text-[10px] text-amber-400/80 font-normal">Opcional</span>
             </label>
@@ -276,16 +282,18 @@ export const GameView: React.FC<GameViewProps> = ({
             />
           </div>
 
-          {/* Indicação do Slot Escolhido pelo Jogador */}
-          <div className="flex items-center justify-between text-xs px-3 py-2 bg-slate-950/70 rounded-xl border border-slate-800 text-slate-400">
-            <span className="flex items-center gap-1.5 font-bold text-slate-300">
-              <Sparkles className="w-3.5 h-3.5 text-purple-400" />
-              Posição na Linha:
-            </span>
-            <span className="font-extrabold text-purple-300">
-              {getSlotDescription(currentPlayer.timeline, selectedSlot)}
-            </span>
-          </div>
+          {/* Indicação do Slot Escolhido pelo Jogador (Apenas no Modo Linha do Tempo) */}
+          {room.settings.mode === 'TIMELINE' && (
+            <div className="flex items-center justify-between text-xs px-3 py-2 bg-slate-950/70 rounded-xl border border-slate-800 text-slate-400">
+              <span className="flex items-center gap-1.5 font-bold text-slate-300">
+                <Sparkles className="w-3.5 h-3.5 text-purple-400" />
+                Posição na Linha:
+              </span>
+              <span className="font-extrabold text-purple-300">
+                {getSlotDescription(currentPlayer.timeline, selectedSlot)}
+              </span>
+            </div>
+          )}
 
           <button
             type="submit"
@@ -303,6 +311,7 @@ export const GameView: React.FC<GameViewProps> = ({
           const typedSong = isThisPlayerPreview ? liveGuessPreview.songGuess : '';
           const typedSlot = isThisPlayerPreview ? liveGuessPreview.timelineIndex : null;
           const hasTypedSomething = !!typedGame?.trim() || !!typedSong?.trim() || typedSlot !== null;
+          const isArcade = room.settings.mode === 'ARCADE';
 
           return (
             <div className="w-full max-w-xl bg-slate-900/90 p-5 rounded-2xl border border-purple-500/30 shadow-2xl space-y-4 backdrop-blur-sm">
@@ -318,9 +327,15 @@ export const GameView: React.FC<GameViewProps> = ({
                   </span>
                 </div>
 
-                <span className="text-[11px] font-bold bg-purple-950/80 text-purple-300 border border-purple-800/50 px-2.5 py-1 rounded-lg">
-                  🎯 {getSlotDescription(activePlayer?.timeline || [], typedSlot)}
-                </span>
+                {isArcade ? (
+                  <span className="text-[11px] font-bold bg-amber-500/20 text-amber-300 border border-amber-500/40 px-2.5 py-1 rounded-lg">
+                    ⚡ Modo Arcade
+                  </span>
+                ) : (
+                  <span className="text-[11px] font-bold bg-purple-950/80 text-purple-300 border border-purple-800/50 px-2.5 py-1 rounded-lg">
+                    🎯 {getSlotDescription(activePlayer?.timeline || [], typedSlot)}
+                  </span>
+                )}
               </div>
 
               {/* Palpite do Jogo em tempo real */}
@@ -357,7 +372,11 @@ export const GameView: React.FC<GameViewProps> = ({
 
               {/* Status / Instrução para espectadores */}
               <div className="pt-2 border-t border-slate-800/80 flex items-center justify-between text-[11px] text-slate-400">
-                <span>👀 Linha do tempo de {activePlayer?.nickname} visível no rodapé</span>
+                <span>
+                  {isArcade
+                    ? '⚡ Acerte o jogo para somar +2 pontos (+1 pt pela música)'
+                    : `👀 Linha do tempo de ${activePlayer?.nickname} visível no rodapé`}
+                </span>
                 <span className="text-purple-400 font-semibold">
                   {hasTypedSomething ? 'Digitando em tempo real...' : 'Ouvindo música'}
                 </span>

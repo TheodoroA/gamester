@@ -80,13 +80,17 @@ export const GameOverModal: React.FC<GameOverModalProps> = ({ data, onPlayAgain 
                 </div>
 
                 <div className="text-right">
-                  <span className="text-xs uppercase font-bold text-slate-500">Cartas na Timeline</span>
-                  <div className="text-lg font-black text-purple-400">{entry.timeline.length}</div>
+                  <span className="text-xs uppercase font-bold text-slate-500">
+                    {mode === 'TIMELINE' ? 'Cartas na Timeline' : 'Pontuação Final'}
+                  </span>
+                  <div className="text-lg font-black text-purple-400">
+                    {mode === 'TIMELINE' ? entry.timeline.length : `${entry.score} pts`}
+                  </div>
                 </div>
               </div>
 
-              {/* Prévia da Linha do Tempo do Participante */}
-              {entry.timeline.length > 0 && (
+              {/* Prévia da Linha do Tempo do Participante (Apenas no Modo Linha do Tempo) */}
+              {mode === 'TIMELINE' && entry.timeline.length > 0 && (
                 <div className="flex items-center gap-1.5 overflow-x-auto py-1 scrollbar-thin">
                   {entry.timeline.map((card) => (
                     <span

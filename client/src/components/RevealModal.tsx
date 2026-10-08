@@ -20,12 +20,14 @@ interface RevealModalProps {
   };
   players: Player[];
   isHost?: boolean;
+  mode?: 'TIMELINE' | 'ARCADE';
   onNextRound?: () => void;
 }
 
 export const RevealModal: React.FC<RevealModalProps> = ({
   resolution,
-  players
+  players,
+  mode = 'TIMELINE'
 }) => {
   const [countdown, setCountdown] = useState(10);
 
@@ -38,7 +40,8 @@ export const RevealModal: React.FC<RevealModalProps> = ({
   }, [resolution]);
 
   const awardedPlayer = players.find(p => p.id === resolution.awardedPlayerId);
-  const success = resolution.gameCorrect && resolution.timelineCorrect;
+  const isArcade = mode === 'ARCADE';
+  const success = isArcade ? resolution.gameCorrect : (resolution.gameCorrect && resolution.timelineCorrect);
 
   return (
     <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4 animate-in fade-in duration-300">
@@ -74,7 +77,7 @@ export const RevealModal: React.FC<RevealModalProps> = ({
         </div>
 
         <h2 className="text-2xl font-black text-white mb-1">
-          {success ? 'Ponto Conquistado!' : 'Não foi dessa vez!'}
+          {success ? (isArcade ? '+2 Pontos Conquistados!' : 'Ponto Conquistado!') : 'Não foi dessa vez!'}
         </h2>
         <p className="text-xs text-slate-400 mb-4">
           Jogador da vez: <strong className="text-purple-300">{awardedPlayer?.nickname || 'Jogador'}</strong>
@@ -113,31 +116,50 @@ export const RevealModal: React.FC<RevealModalProps> = ({
         </div>
 
         {/* Resumo do Palpite */}
-        <div className="w-full grid grid-cols-2 gap-2 text-xs mb-4">
-          <div className={`p-2.5 rounded-xl border flex flex-col items-center gap-1 ${
-            resolution.gameCorrect
-              ? 'bg-emerald-500/10 border-emerald-500/20 text-emerald-300'
-              : 'bg-rose-500/10 border-rose-500/20 text-rose-300'
-          }`}>
-            <span className="text-[10px] uppercase text-slate-400 font-bold">Jogo</span>
-            <span className="font-extrabold">{resolution.gameCorrect ? 'ACERTOU' : 'ERROU'}</span>
+        {isArcade ? (
+          <div className="w-full mb-4">
+            <div className={`p-3.5 rounded-xl border flex items-center justify-between px-4 text-xs ${
+              resolution.gameCorrect
+                ? 'bg-emerald-500/10 border-emerald-500/20 text-emerald-300'
+                : 'bg-rose-500/10 border-rose-500/20 text-rose-300'
+            }`}>
+              <span className="text-[11px] uppercase text-slate-400 font-bold">Palpite do Jogo</span>
+              <span className="font-extrabold text-sm">
+                {resolution.gameCorrect ? 'ACERTOU (+2 Pontos) 🏆' : 'ERROU (0 Pontos)'}
+              </span>
+            </div>
           </div>
+        ) : (
+          <div className="w-full grid grid-cols-2 gap-2 text-xs mb-4">
+            <div className={`p-2.5 rounded-xl border flex flex-col items-center gap-1 ${
+              resolution.gameCorrect
+                ? 'bg-emerald-500/10 border-emerald-500/20 text-emerald-300'
+                : 'bg-rose-500/10 border-rose-500/20 text-rose-300'
+            }`}>
+              <span className="text-[10px] uppercase text-slate-400 font-bold">Jogo</span>
+              <span className="font-extrabold">{resolution.gameCorrect ? 'ACERTOU' : 'ERROU'}</span>
+            </div>
 
-          <div className={`p-2.5 rounded-xl border flex flex-col items-center gap-1 ${
-            resolution.timelineCorrect
-              ? 'bg-emerald-500/10 border-emerald-500/20 text-emerald-300'
-              : 'bg-rose-500/10 border-rose-500/20 text-rose-300'
-          }`}>
-            <span className="text-[10px] uppercase text-slate-400 font-bold">Linha do Tempo</span>
-            <span className="font-extrabold">{resolution.timelineCorrect ? 'CORRETO' : 'INCORRETO'}</span>
+            <div className={`p-2.5 rounded-xl border flex flex-col items-center gap-1 ${
+              resolution.timelineCorrect
+                ? 'bg-emerald-500/10 border-emerald-500/20 text-emerald-300'
+                : 'bg-rose-500/10 border-rose-500/20 text-rose-300'
+            }`}>
+              <span className="text-[10px] uppercase text-slate-400 font-bold">Linha do Tempo</span>
+              <span className="font-extrabold">{resolution.timelineCorrect ? 'CORRETO' : 'INCORRETO'}</span>
+            </div>
           </div>
-        </div>
+        )}
 
         {/* Bônus de Nome de Música */}
         {resolution.songTitleCorrect && (
           <div className="w-full bg-amber-500/15 border border-amber-500/30 rounded-xl p-2.5 mb-4 flex items-center justify-center gap-2 text-amber-300 text-xs font-bold animate-pulse">
             <Coins className="w-4 h-4 text-amber-400" />
-            <span>Bônus: Nome da Faixa Acertado (+1 Recurso)!</span>
+            <span>
+              {isArcade
+                ? 'Bônus: Nome da Faixa Acertado (+1 Ponto 🏆 e +1 Recurso 🪙)!'
+                : 'Bônus: Nome da Faixa Acertado (+1 Recurso)!'}
+            </span>
           </div>
         )}
 

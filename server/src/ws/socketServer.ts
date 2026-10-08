@@ -47,15 +47,11 @@ export function setupWebSocketServer(
 
     const resolution = TurnStateMachine.resolveRound(room, timelineValid);
 
-    // Se for modo ARCADE, calcular pontos adicionais
+    // Se for modo ARCADE, adiciona bônus de +1 ponto caso tenha acertado o nome da música
     if (room.settings.mode === 'ARCADE' && activePlayer) {
-      const arcadePts = GameModes.calculateArcadePoints(
-        resolution.gameCorrect,
-        round.song.releaseYear,
-        round.guessPayload?.targetYear,
-        resolution.songTitleCorrect
-      );
-      activePlayer.score += arcadePts;
+      if (resolution.songTitleCorrect) {
+        activePlayer.score += 1;
+      }
     }
 
     // Checar condição de vitória

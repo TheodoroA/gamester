@@ -164,4 +164,31 @@ describe('TurnStateMachine e Poderes (TU-06, TU-07)', () => {
     assert.equal(resolution.gameCorrect, true);
     assert.equal(resolution.timelineCorrect, true);
   });
+
+  it('Deve resolver rodada no modo ARCADE pontuando sem adicionar cartas na timeline', () => {
+    const room = new Room('ARCADE_TEST', 'player-1', { mode: 'ARCADE' });
+    room.players.set('player-1', {
+      id: 'player-1',
+      nickname: 'Alice',
+      isHost: true,
+      isReady: true,
+      tokens: 0,
+      score: 0,
+      timeline: [],
+      isConnected: true
+    });
+
+    TurnStateMachine.startRound(room, 'player-1', dummySong1);
+    TurnStateMachine.submitGuess(room, 'player-1', {
+      gameGuess: 'Chrono Trigger'
+    });
+
+    const resolution = TurnStateMachine.resolveRound(room, false);
+    assert.equal(resolution.gameCorrect, true);
+    assert.equal(resolution.timelineCorrect, true);
+
+    const player1 = room.players.get('player-1')!;
+    assert.equal(player1.score, 2);
+    assert.equal(player1.timeline.length, 0); // Nenhuma carta na timeline no modo Arcade!
+  });
 });

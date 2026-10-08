@@ -289,20 +289,30 @@ export class TurnStateMachine {
       }
     }
 
-    // Se acertou o jogo e a linha do tempo, adiciona carta à timeline
-    if (gameCorrect && timelineValid && targetPlayer) {
-      targetPlayer.timeline.push({
-        id: round.song.id,
-        gameTitle: round.song.gameTitle,
-        releaseYear: round.song.releaseYear,
-        songTitle: round.song.songTitle
-      });
-      targetPlayer.score += 2;
+    // Se for modo TIMELINE: adiciona carta e +2 pontos se acertou o jogo E a linha do tempo
+    // Se for modo ARCADE: não existe linha do tempo, pontua diretamente +2 pontos se acertou o jogo
+    const isArcade = room.settings.mode === 'ARCADE';
+
+    if (gameCorrect && targetPlayer) {
+      if (!isArcade) {
+        if (timelineValid) {
+          targetPlayer.timeline.push({
+            id: round.song.id,
+            gameTitle: round.song.gameTitle,
+            releaseYear: round.song.releaseYear,
+            songTitle: round.song.songTitle
+          });
+          targetPlayer.score += 2;
+        }
+      } else {
+        // No modo Arcade: pontua diretamente pelo acerto do nome do jogo
+        targetPlayer.score += 2;
+      }
     }
 
     const resolution: RoundResolution = {
       gameCorrect,
-      timelineCorrect: timelineValid,
+      timelineCorrect: isArcade ? true : timelineValid,
       songTitleCorrect,
       tokensEarned,
       tokensSpent: 0,
