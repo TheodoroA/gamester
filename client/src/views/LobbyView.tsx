@@ -124,7 +124,10 @@ export const LobbyView: React.FC<LobbyViewProps> = ({
       {/* Ações */}
       <div className="pt-4 border-t border-slate-800 flex flex-col sm:flex-row gap-3 justify-end">
         <button
-          onClick={onToggleReady}
+          onClick={() => {
+            onUnlockAudio();
+            onToggleReady();
+          }}
           className={`py-3 px-6 rounded-xl font-bold text-sm transition-all ${
             currentPlayer.isReady
               ? 'bg-slate-800 text-slate-300 hover:bg-slate-700'
@@ -136,7 +139,10 @@ export const LobbyView: React.FC<LobbyViewProps> = ({
 
         {isHost && (
           <button
-            onClick={onStartGame}
+            onClick={() => {
+              onUnlockAudio();
+              onStartGame();
+            }}
             disabled={room.players.length === 0}
             className="py-3 px-6 bg-purple-600 hover:bg-purple-500 disabled:opacity-50 text-white font-bold text-sm rounded-xl shadow-lg shadow-purple-600/30 flex items-center justify-center gap-2 transition-all active:scale-95"
           >

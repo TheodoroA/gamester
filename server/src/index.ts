@@ -18,7 +18,7 @@ export interface ServerInstance {
   catalogRepo: CatalogRepository;
 }
 
-export async function buildServer(): Promise<ServerInstance> {
+export async function buildServer(options?: { dbPath?: string }): Promise<ServerInstance> {
   const fastify = Fastify({
     logger: process.env.NODE_ENV !== 'test'
   });
@@ -27,7 +27,7 @@ export async function buildServer(): Promise<ServerInstance> {
     origin: true
   });
 
-  const db = getDatabase();
+  const db = getDatabase(options);
   const catalogRepo = new CatalogRepository(db);
   const roomManager = new RoomManager();
 

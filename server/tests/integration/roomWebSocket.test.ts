@@ -10,7 +10,7 @@ describe('Gerenciador de Salas e WebSockets (TI-01, CA-01, CA-10)', () => {
   const port = 3055; // Porta isolada para testes
 
   before(async () => {
-    serverInstance = await buildServer();
+    serverInstance = await buildServer({ dbPath: ':memory:' });
     await serverInstance.fastify.listen({ port, host: '127.0.0.1' });
     serverUrl = `http://127.0.0.1:${port}`;
     wsUrl = `ws://127.0.0.1:${port}/ws`;

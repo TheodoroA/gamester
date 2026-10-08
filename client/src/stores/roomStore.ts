@@ -143,6 +143,7 @@ class RoomStore {
 
       case 'round:start': {
         if (this.room) {
+          this.room.status = 'PLAYING';
           this.room.currentRound = msg.payload;
         }
         this.resolution = null;

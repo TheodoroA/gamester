@@ -120,6 +120,12 @@ export function setupWebSocketServer(
             room.playedSongIds.push(song.id);
             const round = TurnStateMachine.startRound(room, firstPlayer, song, 1);
 
+            // Atualiza status da sala para PLAYING para todos os clientes
+            room.broadcast({
+              type: 'room:update',
+              payload: room.toDTO()
+            });
+
             // Transmite início da rodada SEM as respostas
             room.broadcast({
               type: 'round:start',

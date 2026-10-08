@@ -9,7 +9,7 @@ describe('E2E-02: Queda de Conexão e Restauração de Estado em até 60s (CA-10
   const wsUrl = `ws://127.0.0.1:${port}/ws`;
 
   before(async () => {
-    serverInstance = await buildServer();
+    serverInstance = await buildServer({ dbPath: ':memory:' });
     await serverInstance.fastify.listen({ port, host: '127.0.0.1' });
   });
 

@@ -13,19 +13,24 @@ export function getDatabase(options?: DatabaseOptions): Database.Database {
     return dbInstance;
   }
 
-  const resolvedPath = options?.dbPath || process.env.DATABASE_PATH || path.resolve(process.cwd(), 'gamester.db');
+  const defaultDbPath = process.env.NODE_ENV === 'test' ? ':memory:' : path.resolve(process.cwd(), 'gamester.db');
+  const resolvedPath = options?.dbPath || process.env.DATABASE_PATH || defaultDbPath;
   
   // Assegura diretório se necessário
-  const dir = path.dirname(resolvedPath);
-  if (!fs.existsSync(dir)) {
-    fs.mkdirSync(dir, { recursive: true });
+  if (resolvedPath !== ':memory:') {
+    const dir = path.dirname(resolvedPath);
+    if (!fs.existsSync(dir)) {
+      fs.mkdirSync(dir, { recursive: true });
+    }
   }
 
   dbInstance = new Database(resolvedPath);
 
   // Regras de performance e integridade para VPS
-  dbInstance.pragma('journal_mode = WAL');
-  dbInstance.pragma('synchronous = NORMAL');
+  if (resolvedPath !== ':memory:') {
+    dbInstance.pragma('journal_mode = WAL');
+    dbInstance.pragma('synchronous = NORMAL');
+  }
   dbInstance.pragma('foreign_keys = ON');
 
   // Inicializa schema

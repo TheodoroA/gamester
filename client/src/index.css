@@ -2,15 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Player do YouTube Oculto (Headless) para não dar spoilers de títulos ou thumbnails */
+/* Player do YouTube Oculto (Headless): mantido no viewport para evitar suspensão de autoplay */
 .headless-audio-player {
-  position: absolute !important;
-  width: 1px !important;
-  height: 1px !important;
-  opacity: 0 !important;
+  position: fixed !important;
+  bottom: 0 !important;
+  right: 0 !important;
+  width: 200px !important;
+  height: 200px !important;
+  opacity: 0.01 !important;
   pointer-events: none !important;
-  top: -9999px !important;
-  left: -9999px !important;
+  z-index: -50 !important;
 }
 
 /* Custom scrollbars para Linha do Tempo horizontal */

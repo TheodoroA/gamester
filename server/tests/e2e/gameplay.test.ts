@@ -26,7 +26,7 @@ describe('E2E-01: Simulação Completa de Partida até a Vitória (CA-08)', () =
   ];
 
   before(async () => {
-    serverInstance = await buildServer();
+    serverInstance = await buildServer({ dbPath: ':memory:' });
     await serverInstance.fastify.listen({ port, host: '127.0.0.1' });
 
     // Insere músicas no catálogo

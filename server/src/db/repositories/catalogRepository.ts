@@ -58,7 +58,7 @@ export class CatalogRepository {
 
   public createSong(input: NewSongInput): SongEntity {
     const id = randomUUID();
-    const youtubeId = extractYouTubeId(input.youtubeUrl);
+    const youtubeId = (input as any).youtubeId || extractYouTubeId(input.youtubeUrl) || input.youtubeUrl;
     const createdAt = Date.now();
     const tagsJson = JSON.stringify(input.tags || []);
 
@@ -150,7 +150,7 @@ export class CatalogRepository {
     const transaction = this.db.transaction(() => {
       for (const input of validSongs) {
         const id = randomUUID();
-        const youtubeId = extractYouTubeId(input.youtubeUrl);
+        const youtubeId = (input as any).youtubeId || extractYouTubeId(input.youtubeUrl) || input.youtubeUrl;
         const createdAt = Date.now();
         const tagsJson = JSON.stringify(input.tags || []);
 
@@ -185,7 +185,7 @@ export class CatalogRepository {
   }
 
   public getRandomSong(excludedIds: string[] = [], category?: string, tag?: string): SongEntity | null {
-    let query = `SELECT * FROM songs WHERE 1=1`;
+    let query = `SELECT * FROM songs WHERE length(youtube_id) > 0`;
     const params: (string | number)[] = [];
 
     if (excludedIds.length > 0) {
