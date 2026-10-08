@@ -20,7 +20,7 @@ interface YouTubeHeadlessPlayerProps {
 export const YouTubeHeadlessPlayer: React.FC<YouTubeHeadlessPlayerProps> = ({
   youtubeId,
   startTime = 0,
-  duration = 30,
+  duration = 42,
   isPlaying = true,
   volume = 70,
   isMuted = false,

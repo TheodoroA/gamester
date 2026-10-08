@@ -63,10 +63,11 @@ export const GameView: React.FC<GameViewProps> = ({
 
   return (
     <div className="max-w-3xl w-full mx-auto p-4 sm:p-6 flex flex-col items-center">
-      {/* Player do YouTube Oculto (Headless) */}
+      {/* Player do YouTube Oculto (Headless) - toca durante os 30s de palpite + 10s de revelação */}
       <YouTubeHeadlessPlayer
         youtubeId={round.youtubeId}
         startTime={round.startTime}
+        duration={(room.settings.listenSeconds || 30) + 12}
         isPlaying={true}
         volume={volume}
         isMuted={isMuted}
