@@ -1,0 +1,37 @@
+{
+  "name": "gamester-server",
+  "version": "1.0.0",
+  "description": "Backend do Gamester - Multiplayer OST guessing game",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx watch src/index.ts",
+    "seed": "tsx src/scripts/seedCatalog.ts",
+    "start": "node dist/index.js",
+    "test": "tsx --test tests/**/*.test.ts"
+  },
+  "keywords": [
+    "gamester",
+    "ost",
+    "quiz",
+    "hitster",
+    "gartic"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@fastify/cors": "^11.3.0",
+    "@fastify/static": "^10.1.5",
+    "@fastify/websocket": "^11.3.1",
+    "better-sqlite3": "^13.0.3",
+    "fastify": "^5.12.5",
+    "ws": "^8.22.0"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^9.6.0",
+    "@types/node": "^26.6.4",
+    "@types/ws": "^8.18.2",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  }
+}

@@ -1,0 +1,161 @@
+import React, { useState } from 'react';
+import { Send, Music, HelpCircle, AlertCircle, Coins } from 'lucide-react';
+import { RoomState, Player } from '../stores/roomStore.js';
+import { RoundTimer } from '../components/RoundTimer.js';
+import { PowerButtons } from '../components/PowerButtons.js';
+import { YouTubeHeadlessPlayer } from '../components/YouTubeHeadlessPlayer.js';
+
+interface GameViewProps {
+  room: RoomState;
+  currentPlayer: Player;
+  closeNotice: string | null;
+  onUsePower: (power: 'REROLL' | 'STEAL' | 'AUTOHIT') => void;
+  onSubmitGuess: (gameGuess: string, songGuess?: string, timelineIndex?: number) => void;
+}
+
+export const GameView: React.FC<GameViewProps> = ({
+  room,
+  currentPlayer,
+  closeNotice,
+  onUsePower,
+  onSubmitGuess
+}) => {
+  const [gameGuess, setGameGuess] = useState('');
+  const [songGuess, setSongGuess] = useState('');
+  const [submitted, setSubmitted] = useState(false);
+
+  const round = room.currentRound;
+  if (!round) {
+    return <div className="text-center p-8 text-slate-400">Aguardando início da rodada...</div>;
+  }
+
+  const activePlayer = room.players.find(p => p.id === round.activePlayerId);
+  const isActive = currentPlayer.id === round.activePlayerId;
+  const isInterventionPhase = Date.now() <= (round.interventionEndsAt || 0);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!gameGuess.trim()) return;
+    onSubmitGuess(gameGuess.trim(), songGuess.trim() || undefined);
+    setSubmitted(true);
+  };
+
+  return (
+    <div className="max-w-3xl w-full mx-auto p-4 sm:p-6 flex flex-col items-center">
+      {/* Player do YouTube Oculto (Headless) */}
+      <YouTubeHeadlessPlayer
+        youtubeId={round.youtubeId}
+        startTime={round.startTime}
+        isPlaying={true}
+      />
+
+      {/* Barra de Status Superior */}
+      <div className="w-full flex justify-between items-center mb-4 px-2">
+        <div className="flex items-center gap-2">
+          <span className="text-xs uppercase font-bold text-slate-400">Rodada #{round.roundNumber || 1}</span>
+          {round.isStolen && (
+            <span className="px-2 py-0.5 text-[10px] font-extrabold bg-amber-500/20 text-amber-300 border border-amber-500/30 rounded-full">
+              🗡️ MÚSICA ROUBADA
+            </span>
+          )}
+        </div>
+
+        <div className="flex items-center gap-2 bg-slate-900 px-3 py-1.5 rounded-xl border border-slate-800">
+          <Coins className="w-4 h-4 text-amber-400" />
+          <span className="text-xs font-bold text-slate-300">Seus Recursos:</span>
+          <span className="text-sm font-black text-amber-400">{currentPlayer.tokens} / 5</span>
+        </div>
+      </div>
+
+      {/* Temporizador da Rodada */}
+      <RoundTimer
+        startedAt={round.startedAt}
+        interventionEndsAt={round.interventionEndsAt}
+        roundEndsAt={round.roundEndsAt}
+      />
+
+      {/* Banner de Jogador da Vez */}
+      <div className="w-full max-w-xl text-center mb-6 p-4 rounded-2xl bg-slate-900/60 border border-slate-800">
+        <span className="text-xs uppercase tracking-widest text-slate-400 font-bold block mb-1">
+          Adivinhador da Vez
+        </span>
+        <div className="text-2xl font-black bg-gradient-to-r from-purple-400 to-indigo-300 bg-clip-text text-transparent">
+          {isActive ? '🌟 É A SUA VEZ!' : `🎮 ${activePlayer?.nickname || 'Jogador'}`}
+        </div>
+        <p className="text-xs text-slate-400 mt-1">
+          {isActive
+            ? 'Escute o trecho de 30s e digite o jogo de origem abaixo.'
+            : 'Escute com atenção! Você pode usar poderes para intervir nos primeiros 15s.'}
+        </p>
+      </div>
+
+      {/* Botões de Poderes (Reroll, Steal, AutoHit) */}
+      <PowerButtons
+        playerTokens={currentPlayer.tokens}
+        isActivePlayer={isActive}
+        isInterventionPhase={isInterventionPhase}
+        roundIsStolen={!!round.isStolen}
+        onUsePower={onUsePower}
+      />
+
+      {/* Alerta Privado "Por Pouco!" */}
+      {closeNotice && (
+        <div className="w-full max-w-xl my-3 p-3 bg-amber-500/20 border border-amber-500/40 rounded-xl flex items-center gap-3 text-amber-300 text-sm font-bold animate-bounce">
+          <AlertCircle className="w-5 h-5 flex-shrink-0" />
+          <span>{closeNotice}</span>
+        </div>
+      )}
+
+      {/* Formulário de Palpites (Habilitado para quem tem a vez) */}
+      {isActive ? (
+        <form onSubmit={handleSubmit} className="w-full max-w-xl bg-slate-900 p-5 rounded-2xl border border-slate-800 shadow-xl space-y-4">
+          <div>
+            <label className="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2 flex items-center justify-between">
+              <span>Jogo de Origem (Obrigatório)</span>
+              <span className="text-[10px] text-slate-500 font-normal">Tolerante a erros leves</span>
+            </label>
+            <input
+              type="text"
+              value={gameGuess}
+              onChange={(e) => setGameGuess(e.target.value)}
+              placeholder="Ex: Chrono Trigger, Zelda Ocarina of Time, Doom..."
+              autoFocus
+              className="w-full px-4 py-3 bg-slate-950 border border-slate-700 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-purple-500 transition-colors text-base font-semibold"
+            />
+          </div>
+
+          <div>
+            <label className="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2 flex items-center justify-between">
+              <span className="flex items-center gap-1.5">
+                <Music className="w-3.5 h-3.5 text-purple-400" />
+                Nome da Música (Bônus: +1 Recurso 🪙)
+              </span>
+              <span className="text-[10px] text-amber-400/80 font-normal">Opcional</span>
+            </label>
+            <input
+              type="text"
+              value={songGuess}
+              onChange={(e) => setSongGuess(e.target.value)}
+              placeholder="Ex: Wind Scene, Gerudo Valley, BFG Division..."
+              className="w-full px-4 py-2.5 bg-slate-950 border border-slate-700 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-purple-500 text-sm"
+            />
+          </div>
+
+          <button
+            type="submit"
+            disabled={!gameGuess.trim()}
+            className="w-full py-3 bg-purple-600 hover:bg-purple-500 disabled:opacity-50 text-white font-bold rounded-xl shadow-lg shadow-purple-600/30 flex items-center justify-center gap-2 transition-all active:scale-95"
+          >
+            <Send className="w-4 h-4" />
+            {submitted ? 'Atualizar Palpite' : 'Enviar Resposta'}
+          </button>
+        </form>
+      ) : (
+        <div className="w-full max-w-xl p-6 bg-slate-900/40 border border-slate-800/80 rounded-2xl text-center text-slate-400 text-sm flex items-center justify-center gap-2">
+          <HelpCircle className="w-5 h-5 text-slate-500" />
+          Aguardando o palpite de <strong className="text-slate-300">{activePlayer?.nickname}</strong>...
+        </div>
+      )}
+    </div>
+  );
+};

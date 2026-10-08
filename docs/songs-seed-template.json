@@ -1,0 +1,57 @@
+[
+  {
+    "gameTitle": "Chrono Trigger",
+    "releaseYear": 1995,
+    "songTitle": "Wind Scene",
+    "youtubeUrl": "https://www.youtube.com/watch?v=5ejTEpMhp_8",
+    "startTime": 12,
+    "platform": "Super Nintendo",
+    "category": "Retro",
+    "tags": ["rpg", "overworld", "acoustic", "snes", "square"],
+    "aliases": ["Chrono", "CT"]
+  },
+  {
+    "gameTitle": "The Legend of Zelda: Ocarina of Time",
+    "releaseYear": 1998,
+    "songTitle": "Gerudo Valley",
+    "youtubeUrl": "https://www.youtube.com/watch?v=0hEYvdMoF2g",
+    "startTime": 5,
+    "platform": "Nintendo 64",
+    "category": "Retro",
+    "tags": ["adventure", "flamenco", "acoustic", "n64", "nintendo"],
+    "aliases": ["Zelda OoT", "Ocarina of Time", "Zelda 64"]
+  },
+  {
+    "gameTitle": "Hollow Knight",
+    "releaseYear": 2017,
+    "songTitle": "City of Tears",
+    "youtubeUrl": "https://www.youtube.com/watch?v=1unmFCyiVM8",
+    "startTime": 45,
+    "platform": "Multi",
+    "category": "Indie",
+    "tags": ["indie", "metroidvania", "ambient", "rain", "piano"],
+    "aliases": ["HK"]
+  },
+  {
+    "gameTitle": "Doom",
+    "releaseYear": 2016,
+    "songTitle": "BFG Division",
+    "youtubeUrl": "https://www.youtube.com/watch?v=QHRuTYtSbJQ",
+    "startTime": 65,
+    "platform": "Multi",
+    "category": "Moderno",
+    "tags": ["fps", "metal", "djent", "action", "mick-gordon"],
+    "aliases": ["Doom 2016", "Doom 4"]
+  },
+  {
+    "gameTitle": "Super Mario World",
+    "releaseYear": 1990,
+    "songTitle": "Overworld Theme",
+    "youtubeUrl": "https://www.youtube.com/watch?v=VH8mQRXemQ0",
+    "startTime": 0,
+    "platform": "Super Nintendo",
+    "category": "Retro",
+    "tags": ["platformer", "cheerful", "classic", "snes", "nintendo"],
+    "aliases": ["SMW", "Mario World"]
+  }
+]
