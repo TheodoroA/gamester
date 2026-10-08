@@ -88,7 +88,9 @@ export const LobbyView: React.FC<LobbyViewProps> = ({
             <div
               key={p.id}
               className={`p-3 rounded-xl border flex items-center justify-between ${
-                p.id === currentPlayer.id
+                !p.isConnected
+                  ? 'bg-rose-950/20 border-rose-800/40 opacity-70'
+                  : p.id === currentPlayer.id
                   ? 'bg-purple-950/30 border-purple-500/40'
                   : 'bg-slate-950/40 border-slate-800'
               }`}
@@ -108,7 +110,11 @@ export const LobbyView: React.FC<LobbyViewProps> = ({
               </div>
 
               <div>
-                {p.isReady ? (
+                {!p.isConnected ? (
+                  <span className="flex items-center gap-1 text-xs text-rose-400 font-semibold">
+                    🔴 Desconectado
+                  </span>
+                ) : p.isReady ? (
                   <span className="flex items-center gap-1 text-xs text-emerald-400 font-semibold">
                     <CheckCircle2 className="w-4 h-4" /> Pronto
                   </span>

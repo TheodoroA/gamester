@@ -239,7 +239,17 @@ export class RoomManager {
     player.disconnectedAt = Date.now();
     player.ws = undefined;
 
-    // Notifica outros participantes
+    // Se o jogador desconectado era o anfitrião (host), transfere provisoriamente para outro conectado
+    if (player.isHost) {
+      const activePlayer = Array.from(room.players.values()).find(p => p.id !== playerId && p.isConnected);
+      if (activePlayer) {
+        player.isHost = false;
+        activePlayer.isHost = true;
+        room.hostId = activePlayer.id;
+      }
+    }
+
+    // Notifica outros participantes imediatamente sobre a queda
     room.broadcast({
       type: 'room:update',
       payload: room.toDTO()

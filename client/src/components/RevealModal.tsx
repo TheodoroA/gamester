@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { CheckCircle, XCircle, Music, Calendar, ArrowRight, Coins, Clock } from 'lucide-react';
+import { CheckCircle, XCircle, Music, Calendar, Coins, Clock } from 'lucide-react';
 import { Player } from '../stores/roomStore.js';
 
 interface RevealModalProps {
@@ -19,15 +19,13 @@ interface RevealModalProps {
     };
   };
   players: Player[];
-  isHost: boolean;
-  onNextRound: () => void;
+  isHost?: boolean;
+  onNextRound?: () => void;
 }
 
 export const RevealModal: React.FC<RevealModalProps> = ({
   resolution,
-  players,
-  isHost,
-  onNextRound
+  players
 }) => {
   const [countdown, setCountdown] = useState(10);
 
@@ -160,21 +158,11 @@ export const RevealModal: React.FC<RevealModalProps> = ({
           </div>
         </div>
 
-        {/* Ação Próxima Rodada */}
-        {isHost ? (
-          <button
-            onClick={onNextRound}
-            className="w-full py-3 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-extrabold rounded-xl shadow-lg shadow-purple-600/30 flex items-center justify-center gap-2 transition-transform active:scale-95"
-          >
-            <span>Próxima Rodada ({countdown}s)</span>
-            <ArrowRight className="w-4 h-4" />
-          </button>
-        ) : (
-          <div className="text-xs text-slate-400 flex items-center justify-center gap-2 py-1">
-            <div className="w-2 h-2 rounded-full bg-purple-500 animate-ping" />
-            Iniciando próxima rodada em {countdown}s...
-          </div>
-        )}
+        {/* Status de Sincronização da Próxima Rodada (10s obrigatórios para sincronizar multiplayer) */}
+        <div className="w-full py-3.5 px-4 rounded-xl bg-purple-950/40 border border-purple-500/30 flex items-center justify-center gap-2.5 text-purple-300 text-xs font-bold shadow-inner">
+          <div className="w-2 h-2 rounded-full bg-purple-400 animate-ping" />
+          <span>Próxima rodada iniciando em {countdown}s...</span>
+        </div>
       </div>
     </div>
   );

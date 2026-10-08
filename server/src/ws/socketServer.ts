@@ -95,7 +95,17 @@ export function setupWebSocketServer(
     if (playerIds.length === 0) return;
 
     const currentIdx = room.currentRound ? playerIds.indexOf(room.currentRound.originalPlayerId || room.currentRound.activePlayerId) : -1;
-    const nextIdx = (currentIdx + 1) % playerIds.length;
+    
+    // Prioriza o próximo jogador que esteja ativamente conectado
+    let nextIdx = (currentIdx + 1) % playerIds.length;
+    for (let i = 0; i < playerIds.length; i++) {
+      const candidateIdx = (currentIdx + 1 + i) % playerIds.length;
+      const candidatePlayer = room.players.get(playerIds[candidateIdx]);
+      if (candidatePlayer && candidatePlayer.isConnected) {
+        nextIdx = candidateIdx;
+        break;
+      }
+    }
     const nextPlayerId = playerIds[nextIdx];
 
     const song = catalogRepo?.getRandomSong(room.playedSongIds, room.settings.category, room.settings.tag) || {
@@ -124,7 +134,8 @@ export function setupWebSocketServer(
         startTime: song.startTime,
         startedAt: round.startedAt,
         interventionEndsAt: round.interventionEndsAt,
-        roundEndsAt: round.roundEndsAt
+        roundEndsAt: round.roundEndsAt,
+        room: room.toDTO()
       }
     });
 
@@ -250,7 +261,8 @@ export function setupWebSocketServer(
                 startTime: song.startTime,
                 startedAt: round.startedAt,
                 interventionEndsAt: round.interventionEndsAt,
-                roundEndsAt: round.roundEndsAt
+                roundEndsAt: round.roundEndsAt,
+                room: room.toDTO()
               }
             });
 

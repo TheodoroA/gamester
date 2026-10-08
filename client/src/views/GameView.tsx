@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Send, Music, HelpCircle, AlertCircle, Coins, Volume2, VolumeX } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Send, Music, HelpCircle, AlertCircle, Coins, Volume2, VolumeX, WifiOff, Crown } from 'lucide-react';
 import { RoomState, Player, roomStore } from '../stores/roomStore.js';
 import { RoundTimer } from '../components/RoundTimer.js';
 import { PowerButtons } from '../components/PowerButtons.js';
@@ -30,6 +30,13 @@ export const GameView: React.FC<GameViewProps> = ({
   if (!round) {
     return <div className="text-center p-8 text-slate-400">Aguardando início da rodada...</div>;
   }
+
+  // Limpa inputs e status de envio a cada nova rodada
+  useEffect(() => {
+    setGameGuess('');
+    setSongGuess('');
+    setSubmitted(false);
+  }, [round.roundNumber, round.startedAt, round.youtubeId]);
 
   const activePlayer = room.players.find(p => p.id === round.activePlayerId);
   const isActive = currentPlayer.id === round.activePlayerId;
@@ -112,6 +119,62 @@ export const GameView: React.FC<GameViewProps> = ({
             <span className="text-sm font-black text-amber-400">{currentPlayer.tokens} / 5</span>
           </div>
         </div>
+      </div>
+
+      {/* Aviso de Jogadores Desconectados */}
+      {room.players.some(p => !p.isConnected) && (
+        <div className="w-full mb-3 p-3 bg-rose-500/15 border border-rose-500/40 rounded-xl flex items-center justify-between gap-3 text-rose-300 text-xs">
+          <div className="flex items-center gap-2">
+            <WifiOff className="w-4 h-4 flex-shrink-0 text-rose-400" />
+            <span>
+              <strong>{room.players.filter(p => !p.isConnected).map(p => p.nickname).join(', ')}</strong> desconectou-se da partida.
+            </span>
+          </div>
+          <span className="text-[10px] text-rose-400 font-mono bg-rose-950/60 px-2 py-0.5 rounded border border-rose-800/40">
+            Aguardando reconexão
+          </span>
+        </div>
+      )}
+
+      {/* Relação ao vivo dos jogadores na partida */}
+      <div className="w-full mb-4 flex items-center gap-2 overflow-x-auto pb-1 px-1">
+        {room.players.map((p) => {
+          const isTurn = p.id === round.activePlayerId;
+          const isMe = p.id === currentPlayer.id;
+          return (
+            <div
+              key={p.id}
+              className={`flex-shrink-0 px-3 py-2 rounded-xl border flex items-center gap-2.5 text-xs transition-all ${
+                !p.isConnected
+                  ? 'bg-rose-950/20 border-rose-800/40 opacity-70'
+                  : isTurn
+                  ? 'bg-purple-900/40 border-purple-500 text-white shadow-md shadow-purple-600/20 scale-[1.02]'
+                  : 'bg-slate-900/60 border-slate-800 text-slate-300'
+              }`}
+            >
+              <div className="relative">
+                <span
+                  className={`w-2.5 h-2.5 rounded-full block ${
+                    p.isConnected ? 'bg-emerald-400' : 'bg-rose-500 animate-pulse'
+                  }`}
+                  title={p.isConnected ? 'Conectado' : 'Desconectado'}
+                />
+              </div>
+              <div className="flex flex-col text-left">
+                <div className="flex items-center gap-1 font-bold leading-tight">
+                  <span className="truncate max-w-[90px]">{p.nickname}</span>
+                  {isMe && <span className="text-[9px] text-purple-400 font-normal">(Você)</span>}
+                  {p.isHost && <Crown className="w-3 h-3 text-amber-400" />}
+                </div>
+                <div className="flex items-center gap-2 text-[10px] text-slate-400 mt-0.5">
+                  <span className="font-semibold text-purple-300">{p.timeline.length} cartas</span>
+                  <span>🪙 {p.tokens}</span>
+                  {!p.isConnected && <span className="text-rose-400 font-bold">Caiu</span>}
+                </div>
+              </div>
+            </div>
+          );
+        })}
       </div>
 
       {/* Temporizador da Rodada */}

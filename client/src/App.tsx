@@ -24,8 +24,10 @@ export const App: React.FC = () => {
   useEffect(() => {
     if (player && player.timeline.length === 0) {
       setSelectedSlot(0);
+    } else {
+      setSelectedSlot(null);
     }
-  }, [player?.timeline?.length, room?.currentRound?.roundNumber]);
+  }, [player?.timeline?.length, room?.currentRound?.roundNumber, room?.currentRound?.startedAt]);
 
   useEffect(() => {
     const unsubscribe = roomStore.subscribe(() => {

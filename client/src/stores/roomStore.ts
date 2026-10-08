@@ -136,12 +136,23 @@ class RoomStore {
     }
   }
 
+  private updateRoomState(newRoom: RoomState): void {
+    if (!newRoom) return;
+    this.room = newRoom;
+    if (this.player && this.room.players) {
+      const updatedPlayer = this.room.players.find(p => p.id === this.player!.id);
+      if (updatedPlayer) {
+        this.player = { ...updatedPlayer };
+      }
+    }
+  }
+
   private handleMessage(msg: { type: string; payload?: any }): void {
     switch (msg.type) {
       case 'room:joined':
       case 'room:syncState': {
-        this.room = msg.payload.room;
         this.player = msg.payload.player;
+        this.updateRoomState(msg.payload.room);
         if (this.room && this.player) {
           localStorage.setItem(`gamester_token_${this.room.id}`, this.player.id);
         }
@@ -151,18 +162,15 @@ class RoomStore {
       }
 
       case 'room:update': {
-        this.room = msg.payload;
-        if (this.room && this.player) {
-          const updatedPlayer = this.room.players.find(p => p.id === this.player!.id);
-          if (updatedPlayer) {
-            this.player = updatedPlayer;
-          }
-        }
+        this.updateRoomState(msg.payload);
         this.notify();
         break;
       }
 
       case 'round:start': {
+        if (msg.payload?.room) {
+          this.updateRoomState(msg.payload.room);
+        }
         if (this.room) {
           this.room.status = 'PLAYING';
           this.room.currentRound = msg.payload;
@@ -176,7 +184,7 @@ class RoomStore {
       case 'round:end': {
         this.resolution = msg.payload.resolution;
         if (msg.payload.room) {
-          this.room = msg.payload.room;
+          this.updateRoomState(msg.payload.room);
         }
         this.notify();
         break;
@@ -187,6 +195,9 @@ class RoomStore {
         if (msg.payload.resolution) {
           this.resolution = msg.payload.resolution;
         }
+        if (msg.payload.room) {
+          this.updateRoomState(msg.payload.room);
+        }
         if (this.room) {
           this.room.status = 'GAME_OVER';
         }
@@ -195,11 +206,11 @@ class RoomStore {
       }
 
       case 'power:applied': {
-        if (this.room) {
-          this.room = msg.payload.room;
-          if (msg.payload.round && this.room) {
-            this.room.currentRound = { ...(this.room.currentRound || {}), ...msg.payload.round };
-          }
+        if (msg.payload.room) {
+          this.updateRoomState(msg.payload.room);
+        }
+        if (msg.payload.round && this.room) {
+          this.room.currentRound = { ...(this.room.currentRound || {}), ...msg.payload.round };
         }
         this.notify();
         break;
