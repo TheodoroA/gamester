@@ -115,4 +115,42 @@ export class CatalogController {
 
     reply.send(updated);
   }
+
+  public async deleteSong(request: FastifyRequest, reply: FastifyReply): Promise<void> {
+    if (!this.checkAdmin(request, reply)) return;
+
+    const { id } = request.params as { id: string };
+    const success = this.repo.deleteSong(id);
+    if (!success) {
+      reply.status(404).send({
+        error: {
+          code: 'NOT_FOUND',
+          message: 'Música não encontrada para exclusão.'
+        }
+      });
+      return;
+    }
+
+    reply.send({ success: true, id, message: 'Música removida com sucesso.' });
+  }
+
+  public async toggleActive(request: FastifyRequest, reply: FastifyReply): Promise<void> {
+    if (!this.checkAdmin(request, reply)) return;
+
+    const { id } = request.params as { id: string };
+    const body = (request.body as { isActive?: boolean } | undefined) || {};
+
+    const updated = this.repo.toggleSongActive(id, body.isActive);
+    if (!updated) {
+      reply.status(404).send({
+        error: {
+          code: 'NOT_FOUND',
+          message: 'Música não encontrada.'
+        }
+      });
+      return;
+    }
+
+    reply.send(updated);
+  }
 }

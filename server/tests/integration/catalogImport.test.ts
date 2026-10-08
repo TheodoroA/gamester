@@ -212,4 +212,88 @@ describe('Catálogo e Importação em Lote (TI-04)', () => {
     const fetched = repo.getSongById(song.id);
     assert.equal(fetched?.gameTitle, 'Chrono Trigger Remaster');
   });
+
+  it('Deve desativar e ativar música (toggleSongActive) e ignorar inativas no sorteio', async () => {
+    const song = repo.createSong({
+      gameTitle: 'Song to Deactivate',
+      releaseYear: 2000,
+      songTitle: 'Track 1',
+      youtubeUrl: 'https://youtube.com/watch?v=11111111111',
+      startTime: 0,
+      isActive: true
+    });
+
+    assert.equal(song.isActive, true);
+
+    // Desativa a música
+    const deactivated = repo.toggleSongActive(song.id, false);
+    assert.ok(deactivated);
+    assert.equal(deactivated?.isActive, false);
+
+    // Confirma que getRandomSong nunca sorteia música inativa
+    const fetched = repo.getSongById(song.id);
+    assert.equal(fetched?.isActive, false);
+
+    // Cria outra música ativa para sorteio exclusivo
+    const activeSong = repo.createSong({
+      gameTitle: 'Active Unique Game',
+      releaseYear: 2010,
+      songTitle: 'Active Song',
+      youtubeUrl: 'https://youtube.com/watch?v=22222222222',
+      startTime: 0,
+      isActive: true
+    });
+
+    // Pega música excluindo as demais, garantindo que a inativa não seja retornada
+    const random = repo.getRandomSong();
+    assert.ok(random);
+    assert.notEqual(random.id, song.id);
+
+    // Reativa a música
+    const reactivated = repo.toggleSongActive(song.id, true);
+    assert.equal(reactivated?.isActive, true);
+  });
+
+  it('Deve excluir permanentemente uma música (deleteSong) com proteção de admin', async () => {
+    const song = repo.createSong({
+      gameTitle: 'Song to Delete',
+      releaseYear: 1999,
+      songTitle: 'Delete Me',
+      youtubeUrl: 'https://youtube.com/watch?v=33333333333',
+      startTime: 0,
+      aliases: ['Del1', 'Del2']
+    });
+
+    const controller = new CatalogController(repo, 'chave-secreta-teste');
+    let statusCode = 200;
+    let payload: any = null;
+    const mockReply: any = {
+      status(code: number) {
+        statusCode = code;
+        return this;
+      },
+      send(data: any) {
+        payload = data;
+        return this;
+      }
+    };
+
+    // 1. Sem admin key -> 401
+    await controller.deleteSong({ headers: {}, params: { id: song.id } } as any, mockReply);
+    assert.equal(statusCode, 401);
+
+    // 2. Com admin key -> 200
+    statusCode = 200;
+    await controller.deleteSong(
+      { headers: { 'x-admin-key': 'chave-secreta-teste' }, params: { id: song.id } } as any,
+      mockReply
+    );
+    assert.equal(statusCode, 200);
+    assert.equal(payload.success, true);
+
+    // 3. Verifica que foi removida do banco
+    const deleted = repo.getSongById(song.id);
+    assert.equal(deleted, null);
+  });
 });
+

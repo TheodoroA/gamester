@@ -143,6 +143,7 @@ export function setupWebSocketServer(
       startTime: 12,
       tags: ['rpg'],
       aliases: ['CT'],
+      isActive: true,
       createdAt: Date.now()
     };
 
@@ -263,6 +264,7 @@ export function setupWebSocketServer(
               startTime: 12,
               tags: ['rpg'],
               aliases: ['CT'],
+              isActive: true,
               createdAt: Date.now()
             };
 
@@ -353,6 +355,24 @@ export function setupWebSocketServer(
             break;
           }
 
+          case 'guess:typing': {
+            if (!currentRoomId || !currentPlayerId) return;
+            const room = roomManager.getRoom(currentRoomId);
+            if (!room || !room.currentRound) return;
+            if (room.currentRound.activePlayerId !== currentPlayerId) return;
+
+            room.broadcast({
+              type: 'guess:preview',
+              payload: {
+                playerId: currentPlayerId,
+                gameGuess: msg.payload?.gameGuess || '',
+                songGuess: msg.payload?.songGuess || '',
+                timelineIndex: msg.payload?.timelineIndex !== undefined ? msg.payload.timelineIndex : null
+              }
+            });
+            break;
+          }
+
           case 'guess:submit': {
             if (!currentRoomId || !currentPlayerId) return;
             const room = roomManager.getRoom(currentRoomId);
@@ -361,6 +381,17 @@ export function setupWebSocketServer(
             const guess = msg.payload as GuessPayload;
             try {
               const evalResult = TurnStateMachine.submitGuess(room, currentPlayerId, guess);
+
+              // Transmite preview atualizado para a sala
+              room.broadcast({
+                type: 'guess:preview',
+                payload: {
+                  playerId: currentPlayerId,
+                  gameGuess: guess.gameGuess || '',
+                  songGuess: guess.songGuess || '',
+                  timelineIndex: guess.timelineIndex !== undefined ? guess.timelineIndex : null
+                }
+              });
 
               // Se o palpite estiver "Por Pouco!", envia aviso privado somente para quem enviou
               if (evalResult.gameMatch.status === 'CLOSE') {

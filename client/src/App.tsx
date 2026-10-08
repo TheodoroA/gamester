@@ -20,8 +20,11 @@ export const App: React.FC = () => {
 
   // Slot selection for Timeline mode
   const [selectedSlot, setSelectedSlot] = useState<number | null>(0);
+  const [liveGuessPreview, setLiveGuessPreview] = useState(roomStore.liveGuessPreview);
+  const [timelineViewTab, setTimelineViewTab] = useState<'ACTIVE' | 'MINE'>('ACTIVE');
 
   useEffect(() => {
+    setTimelineViewTab('ACTIVE');
     if (player && player.timeline.length === 0) {
       setSelectedSlot(0);
     } else {
@@ -38,6 +41,7 @@ export const App: React.FC = () => {
       setHasAudioUnlocked(roomStore.hasAudioUnlocked);
       setResolution(roomStore.resolution);
       setGameOver(roomStore.gameOver);
+      setLiveGuessPreview(roomStore.liveGuessPreview);
     });
 
     return unsubscribe;
@@ -74,8 +78,10 @@ export const App: React.FC = () => {
     roomStore.initAudioContext();
   };
 
-  const handleGuessSubmit = (gameGuess: string, songGuess?: string) => {
-    const slot = (player?.timeline.length === 0) ? 0 : (selectedSlot ?? 0);
+  const handleGuessSubmit = (gameGuess: string, songGuess?: string, timelineIndex?: number) => {
+    const slot = timelineIndex !== undefined
+      ? timelineIndex
+      : ((player?.timeline.length === 0) ? 0 : (selectedSlot ?? 0));
     roomStore.submitGuess(gameGuess, songGuess, slot);
   };
 
@@ -86,6 +92,9 @@ export const App: React.FC = () => {
       </div>
     );
   }
+
+  const activePlayer = room?.players?.find(p => p.id === room.currentRound?.activePlayerId);
+  const isActivePlayer = player?.id === activePlayer?.id;
 
   return (
     <div className="min-h-screen flex flex-col justify-between">
@@ -118,6 +127,8 @@ export const App: React.FC = () => {
             room={room}
             currentPlayer={player}
             closeNotice={closeNotice}
+            selectedSlot={selectedSlot}
+            liveGuessPreview={liveGuessPreview}
             onUsePower={(power) => roomStore.usePower(power)}
             onSubmitGuess={handleGuessSubmit}
           />
@@ -125,15 +136,31 @@ export const App: React.FC = () => {
       </main>
 
       {/* Linha do Tempo Fixa no Rodapé durante o Jogo */}
-      {room && room.status === 'PLAYING' && player && (
-        <TimelineBoard
-          timeline={player.timeline}
-          targetCardsToWin={room.settings.maxCardsToWin}
-          isSelectingSlot={room.currentRound?.activePlayerId === player.id}
-          selectedSlot={selectedSlot}
-          onSelectSlot={(slot) => setSelectedSlot(slot)}
-        />
-      )}
+      {room && room.status === 'PLAYING' && player && (() => {
+        const isViewingActive = !isActivePlayer && timelineViewTab === 'ACTIVE';
+        const targetPlayer = isViewingActive ? activePlayer : player;
+        const currentTimeline = targetPlayer?.timeline || [];
+        const slotToShow = isActivePlayer
+          ? selectedSlot
+          : isViewingActive
+          ? (liveGuessPreview?.playerId === activePlayer?.id ? liveGuessPreview?.timelineIndex ?? null : null)
+          : null;
+
+        return (
+          <TimelineBoard
+            timeline={currentTimeline}
+            targetCardsToWin={room.settings.maxCardsToWin}
+            isSelectingSlot={isActivePlayer}
+            selectedSlot={slotToShow}
+            onSelectSlot={(slot) => setSelectedSlot(slot)}
+            activePlayerName={activePlayer?.nickname || 'Jogador da Vez'}
+            isViewingActivePlayer={isViewingActive}
+            viewTab={timelineViewTab}
+            onToggleViewTab={(tab) => setTimelineViewTab(tab)}
+            canSwitchTab={!isActivePlayer}
+          />
+        );
+      })()}
 
       {/* Modal de Revelação da Rodada */}
       {resolution && !gameOver && room && (

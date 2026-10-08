@@ -9,6 +9,7 @@ CREATE TABLE IF NOT EXISTS songs (
   platform TEXT,
   category TEXT,
   tags TEXT NOT NULL DEFAULT '[]',
+  is_active INTEGER NOT NULL DEFAULT 1,
   created_at INTEGER NOT NULL
 );
 

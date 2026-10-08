@@ -58,6 +58,7 @@ export function initSchema(db: Database.Database): void {
         platform TEXT,
         category TEXT,
         tags TEXT NOT NULL DEFAULT '[]',
+        is_active INTEGER NOT NULL DEFAULT 1,
         created_at INTEGER NOT NULL
       );
 
@@ -72,6 +73,13 @@ export function initSchema(db: Database.Database): void {
       CREATE INDEX IF NOT EXISTS idx_songs_category ON songs(category);
       CREATE INDEX IF NOT EXISTS idx_song_aliases_song_id ON song_aliases(song_id);
     `);
+  }
+
+  // Garante adição de is_active caso o banco já existisse
+  try {
+    db.exec(`ALTER TABLE songs ADD COLUMN is_active INTEGER NOT NULL DEFAULT 1;`);
+  } catch (e) {
+    // Coluna já existe
   }
 }
 

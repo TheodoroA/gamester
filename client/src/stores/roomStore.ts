@@ -51,6 +51,7 @@ class RoomStore {
     return saved !== null ? Math.max(0, Math.min(100, Number(saved))) : 70;
   })();
   public isMuted: boolean = localStorage.getItem('gamester_muted') === 'true';
+  public liveGuessPreview: { playerId: string; gameGuess: string; songGuess?: string; timelineIndex?: number | null } | null = null;
 
   private listeners = new Set<Listener>();
 
@@ -177,6 +178,7 @@ class RoomStore {
         }
         this.resolution = null;
         this.closeNotice = null;
+        this.liveGuessPreview = null;
         this.notify();
         break;
       }
@@ -226,6 +228,12 @@ class RoomStore {
         break;
       }
 
+      case 'guess:preview': {
+        this.liveGuessPreview = msg.payload;
+        this.notify();
+        break;
+      }
+
       case 'room:error':
       case 'power:error': {
         this.error = msg.payload.message;
@@ -261,6 +269,7 @@ class RoomStore {
   public resetGameOver(): void {
     this.gameOver = null;
     this.resolution = null;
+    this.liveGuessPreview = null;
     if (this.room) {
       this.room.status = 'LOBBY';
     }
@@ -269,6 +278,10 @@ class RoomStore {
 
   public usePower(power: 'REROLL' | 'STEAL' | 'AUTOHIT'): void {
     this.send('power:use', { power });
+  }
+
+  public sendTyping(gameGuess: string, songGuess?: string, timelineIndex?: number | null): void {
+    this.send('guess:typing', { gameGuess, songGuess, timelineIndex });
   }
 
   public submitGuess(gameGuess: string, songGuess?: string, timelineIndex?: number): void {

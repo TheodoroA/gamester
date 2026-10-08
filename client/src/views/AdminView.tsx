@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowLeft, Plus, Upload, Play, Pause, Check, AlertCircle, Lock, LogOut, Search, Edit2, X } from 'lucide-react';
+import { ArrowLeft, Plus, Upload, Play, Pause, Check, AlertCircle, Lock, LogOut, Search, Edit2, X, Trash2 } from 'lucide-react';
 import { YouTubeHeadlessPlayer } from '../components/YouTubeHeadlessPlayer.js';
 
 interface AdminViewProps {
@@ -18,6 +18,7 @@ interface SongItem {
   category?: string;
   tags: string[];
   aliases?: string[];
+  isActive?: boolean;
 }
 
 export const AdminView: React.FC<AdminViewProps> = ({ onBack }) => {
@@ -43,6 +44,7 @@ export const AdminView: React.FC<AdminViewProps> = ({ onBack }) => {
   const [editCategory, setEditCategory] = useState('');
   const [editTagsStr, setEditTagsStr] = useState('');
   const [editAliasesStr, setEditAliasesStr] = useState('');
+  const [editIsActive, setEditIsActive] = useState(true);
   const [isSavingEdit, setIsSavingEdit] = useState(false);
   const [editError, setEditError] = useState<string | null>(null);
 
@@ -164,6 +166,7 @@ export const AdminView: React.FC<AdminViewProps> = ({ onBack }) => {
     setEditCategory(song.category || '');
     setEditTagsStr(song.tags ? song.tags.join(', ') : '');
     setEditAliasesStr(song.aliases ? song.aliases.join(', ') : '');
+    setEditIsActive(song.isActive !== false);
     setEditError(null);
   };
 
@@ -204,7 +207,8 @@ export const AdminView: React.FC<AdminViewProps> = ({ onBack }) => {
           platform: editPlatform || undefined,
           category: editCategory || undefined,
           tags,
-          aliases
+          aliases,
+          isActive: editIsActive
         })
       });
 
@@ -221,6 +225,55 @@ export const AdminView: React.FC<AdminViewProps> = ({ onBack }) => {
       setEditError('Erro de conexão ao salvar alterações.');
     } finally {
       setIsSavingEdit(false);
+    }
+  };
+
+  const handleDeleteSong = async (id: string, title: string) => {
+    if (!window.confirm(`Tem certeza que deseja remover a música "${title}" permanentemente do catálogo?`)) {
+      return;
+    }
+
+    try {
+      const res = await fetch(`/api/catalog/songs/${id}`, {
+        method: 'DELETE',
+        headers: { 'x-admin-key': adminKey }
+      });
+
+      if (res.ok) {
+        setSongs(prev => prev.filter(s => s.id !== id));
+        if (previewing && previewId === songs.find(s => s.id === id)?.youtubeId) {
+          setPreviewing(false);
+        }
+      } else {
+        const err = await res.json().catch(() => ({}));
+        alert(`Erro ao remover: ${err.error?.message || 'Falha na exclusão'}`);
+      }
+    } catch (e) {
+      alert('Erro de conexão ao remover música.');
+    }
+  };
+
+  const handleToggleActive = async (song: SongItem) => {
+    const newState = song.isActive === false ? true : false;
+    try {
+      const res = await fetch(`/api/catalog/songs/${song.id}/toggle-active`, {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json',
+          'x-admin-key': adminKey
+        },
+        body: JSON.stringify({ isActive: newState })
+      });
+
+      if (res.ok) {
+        const updated = await res.json();
+        setSongs(prev => prev.map(s => s.id === song.id ? { ...s, isActive: updated.isActive } : s));
+      } else {
+        const err = await res.json().catch(() => ({}));
+        alert(`Erro ao alterar status: ${err.error?.message || 'Falha na atualização'}`);
+      }
+    } catch (e) {
+      alert('Erro de conexão ao alterar status da música.');
     }
   };
 
@@ -475,21 +528,23 @@ export const AdminView: React.FC<AdminViewProps> = ({ onBack }) => {
                   <th className="p-3">Faixa</th>
                   <th className="p-3">Tags</th>
                   <th className="p-3 text-right">Início</th>
-                  <th className="p-3 text-center w-16">Ações</th>
+                  <th className="p-3 text-center w-24">Status</th>
+                  <th className="p-3 text-center w-20">Ações</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-800">
                 {filteredSongs.length === 0 ? (
                   <tr>
-                    <td colSpan={7} className="text-center py-8 text-slate-500 text-xs">
+                    <td colSpan={8} className="text-center py-8 text-slate-500 text-xs">
                       Nenhuma música encontrada para os filtros aplicados.
                     </td>
                   </tr>
                 ) : (
                   filteredSongs.map((s) => {
                     const isPlaying = previewing && previewId === s.youtubeId;
+                    const isActive = s.isActive !== false;
                     return (
-                      <tr key={s.id} className={`hover:bg-slate-800/40 transition-colors ${isPlaying ? 'bg-purple-950/30' : ''}`}>
+                      <tr key={s.id} className={`hover:bg-slate-800/40 transition-colors ${isPlaying ? 'bg-purple-950/30' : ''} ${!isActive ? 'opacity-60' : ''}`}>
                         <td className="p-3 text-center">
                           <button
                             type="button"
@@ -533,12 +588,36 @@ export const AdminView: React.FC<AdminViewProps> = ({ onBack }) => {
                         <td className="p-3 text-center">
                           <button
                             type="button"
-                            onClick={() => startEditSong(s)}
-                            className="p-1.5 rounded-lg bg-slate-800 hover:bg-purple-600 text-slate-300 hover:text-white transition-colors"
-                            title="Editar música"
+                            onClick={() => handleToggleActive(s)}
+                            className={`px-2.5 py-1 rounded-full text-[10px] font-bold transition-all border ${
+                              isActive
+                                ? 'bg-emerald-500/15 text-emerald-400 border-emerald-500/30 hover:bg-emerald-500/25'
+                                : 'bg-slate-800 text-slate-400 border-slate-700 hover:bg-slate-700 hover:text-slate-200'
+                            }`}
+                            title={isActive ? 'Clique para desativar esta música das partidas' : 'Clique para ativar esta música para as partidas'}
                           >
-                            <Edit2 className="w-3.5 h-3.5" />
+                            {isActive ? 'Ativa' : 'Inativa'}
                           </button>
+                        </td>
+                        <td className="p-3 text-center">
+                          <div className="flex items-center justify-center gap-1.5">
+                            <button
+                              type="button"
+                              onClick={() => startEditSong(s)}
+                              className="p-1.5 rounded-lg bg-slate-800 hover:bg-purple-600 text-slate-300 hover:text-white transition-colors"
+                              title="Editar música"
+                            >
+                              <Edit2 className="w-3.5 h-3.5" />
+                            </button>
+                            <button
+                              type="button"
+                              onClick={() => handleDeleteSong(s.id, s.gameTitle)}
+                              className="p-1.5 rounded-lg bg-slate-800 hover:bg-rose-600 text-slate-300 hover:text-white transition-colors"
+                              title="Remover música do banco"
+                            >
+                              <Trash2 className="w-3.5 h-3.5" />
+                            </button>
+                          </div>
                         </td>
                       </tr>
                     );
@@ -857,6 +936,19 @@ export const AdminView: React.FC<AdminViewProps> = ({ onBack }) => {
                     className="w-full px-3 py-2 bg-slate-950 border border-slate-700 rounded-lg text-white text-xs"
                   />
                 </div>
+              </div>
+
+              <div className="flex items-center gap-2 pt-1">
+                <input
+                  type="checkbox"
+                  id="editIsActive"
+                  checked={editIsActive}
+                  onChange={(e) => setEditIsActive(e.target.checked)}
+                  className="w-4 h-4 rounded border-slate-700 bg-slate-950 text-purple-600 focus:ring-purple-500 focus:ring-offset-slate-900"
+                />
+                <label htmlFor="editIsActive" className="text-xs text-slate-300 font-medium cursor-pointer">
+                  Música ativa no catálogo (disponível para sorteio nas partidas)
+                </label>
               </div>
 
               <div className="flex items-center justify-end gap-3 pt-3 border-t border-slate-800">

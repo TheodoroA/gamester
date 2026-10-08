@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import { Send, Music, HelpCircle, AlertCircle, Coins, Volume2, VolumeX, WifiOff, Crown } from 'lucide-react';
+import { Send, Music, AlertCircle, Coins, Volume2, VolumeX, WifiOff, Crown, Radio, Sparkles } from 'lucide-react';
 import { RoomState, Player, roomStore } from '../stores/roomStore.js';
 import { RoundTimer } from '../components/RoundTimer.js';
 import { PowerButtons } from '../components/PowerButtons.js';
 import { YouTubeHeadlessPlayer } from '../components/YouTubeHeadlessPlayer.js';
+import { getSlotDescription } from '../components/TimelineBoard.js';
 
 interface GameViewProps {
   room: RoomState;
   currentPlayer: Player;
   closeNotice: string | null;
+  selectedSlot?: number | null;
+  liveGuessPreview?: { playerId: string; gameGuess: string; songGuess?: string; timelineIndex?: number | null } | null;
   onUsePower: (power: 'REROLL' | 'STEAL' | 'AUTOHIT') => void;
   onSubmitGuess: (gameGuess: string, songGuess?: string, timelineIndex?: number) => void;
 }
@@ -17,6 +20,8 @@ export const GameView: React.FC<GameViewProps> = ({
   room,
   currentPlayer,
   closeNotice,
+  selectedSlot = null,
+  liveGuessPreview = null,
   onUsePower,
   onSubmitGuess
 }) => {
@@ -42,6 +47,25 @@ export const GameView: React.FC<GameViewProps> = ({
   const isActive = currentPlayer.id === round.activePlayerId;
   const isInterventionPhase = Date.now() <= (round.interventionEndsAt || 0);
 
+  // Quando o jogador ativo muda de slot na linha do tempo, envia atualização de digitação
+  useEffect(() => {
+    if (isActive) {
+      roomStore.sendTyping(gameGuess, songGuess, selectedSlot);
+    }
+  }, [selectedSlot]);
+
+  const handleGameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const val = e.target.value;
+    setGameGuess(val);
+    roomStore.sendTyping(val, songGuess, selectedSlot);
+  };
+
+  const handleSongChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const val = e.target.value;
+    setSongGuess(val);
+    roomStore.sendTyping(gameGuess, val, selectedSlot);
+  };
+
   const handleVolumeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const val = Number(e.target.value);
     roomStore.setVolume(val);
@@ -57,7 +81,7 @@ export const GameView: React.FC<GameViewProps> = ({
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!gameGuess.trim()) return;
-    onSubmitGuess(gameGuess.trim(), songGuess.trim() || undefined);
+    onSubmitGuess(gameGuess.trim(), songGuess.trim() || undefined, selectedSlot ?? 0);
     setSubmitted(true);
   };
 
@@ -228,7 +252,7 @@ export const GameView: React.FC<GameViewProps> = ({
             <input
               type="text"
               value={gameGuess}
-              onChange={(e) => setGameGuess(e.target.value)}
+              onChange={handleGameChange}
               placeholder="Ex: Chrono Trigger, Zelda Ocarina of Time, Doom..."
               autoFocus
               className="w-full px-4 py-3 bg-slate-950 border border-slate-700 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-purple-500 transition-colors text-base font-semibold"
@@ -246,10 +270,21 @@ export const GameView: React.FC<GameViewProps> = ({
             <input
               type="text"
               value={songGuess}
-              onChange={(e) => setSongGuess(e.target.value)}
+              onChange={handleSongChange}
               placeholder="Ex: Wind Scene, Gerudo Valley, BFG Division..."
               className="w-full px-4 py-2.5 bg-slate-950 border border-slate-700 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-purple-500 text-sm"
             />
+          </div>
+
+          {/* Indicação do Slot Escolhido pelo Jogador */}
+          <div className="flex items-center justify-between text-xs px-3 py-2 bg-slate-950/70 rounded-xl border border-slate-800 text-slate-400">
+            <span className="flex items-center gap-1.5 font-bold text-slate-300">
+              <Sparkles className="w-3.5 h-3.5 text-purple-400" />
+              Posição na Linha:
+            </span>
+            <span className="font-extrabold text-purple-300">
+              {getSlotDescription(currentPlayer.timeline, selectedSlot)}
+            </span>
           </div>
 
           <button
@@ -262,10 +297,74 @@ export const GameView: React.FC<GameViewProps> = ({
           </button>
         </form>
       ) : (
-        <div className="w-full max-w-xl p-6 bg-slate-900/40 border border-slate-800/80 rounded-2xl text-center text-slate-400 text-sm flex items-center justify-center gap-2">
-          <HelpCircle className="w-5 h-5 text-slate-500" />
-          Aguardando o palpite de <strong className="text-slate-300">{activePlayer?.nickname}</strong>...
-        </div>
+        (() => {
+          const isThisPlayerPreview = liveGuessPreview && liveGuessPreview.playerId === activePlayer?.id;
+          const typedGame = isThisPlayerPreview ? liveGuessPreview.gameGuess : '';
+          const typedSong = isThisPlayerPreview ? liveGuessPreview.songGuess : '';
+          const typedSlot = isThisPlayerPreview ? liveGuessPreview.timelineIndex : null;
+          const hasTypedSomething = !!typedGame?.trim() || !!typedSong?.trim() || typedSlot !== null;
+
+          return (
+            <div className="w-full max-w-xl bg-slate-900/90 p-5 rounded-2xl border border-purple-500/30 shadow-2xl space-y-4 backdrop-blur-sm">
+              <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800 pb-3">
+                <div className="flex items-center gap-2">
+                  <span className="relative flex h-3 w-3">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+                  </span>
+                  <span className="text-xs font-black text-purple-200 uppercase tracking-wider flex items-center gap-1.5">
+                    <Radio className="w-3.5 h-3.5 text-emerald-400" />
+                    Ao Vivo: Palpite de {activePlayer?.nickname}
+                  </span>
+                </div>
+
+                <span className="text-[11px] font-bold bg-purple-950/80 text-purple-300 border border-purple-800/50 px-2.5 py-1 rounded-lg">
+                  🎯 {getSlotDescription(activePlayer?.timeline || [], typedSlot)}
+                </span>
+              </div>
+
+              {/* Palpite do Jogo em tempo real */}
+              <div>
+                <span className="block text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1.5">
+                  🎮 Palpite de Jogo (Digitando):
+                </span>
+                <div className="p-3.5 bg-slate-950 rounded-xl border border-slate-800 flex items-center min-h-[50px] shadow-inner">
+                  {typedGame ? (
+                    <div className="flex items-center font-mono font-bold text-base text-white tracking-wide">
+                      <span>{typedGame}</span>
+                      <span className="w-2 h-4 bg-purple-400 animate-pulse ml-0.5 inline-block rounded-xs" />
+                    </div>
+                  ) : (
+                    <span className="text-slate-600 text-xs italic">
+                      {activePlayer?.nickname} ainda está ouvindo / pensando...
+                    </span>
+                  )}
+                </div>
+              </div>
+
+              {/* Palpite da Música se houver */}
+              {typedSong ? (
+                <div>
+                  <span className="block text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1.5 flex items-center gap-1.5">
+                    <Music className="w-3.5 h-3.5 text-amber-400" />
+                    Nome da Música (Opcional):
+                  </span>
+                  <div className="p-2.5 bg-slate-950 rounded-xl border border-slate-800 font-mono text-xs text-amber-300 font-bold">
+                    {typedSong}
+                  </div>
+                </div>
+              ) : null}
+
+              {/* Status / Instrução para espectadores */}
+              <div className="pt-2 border-t border-slate-800/80 flex items-center justify-between text-[11px] text-slate-400">
+                <span>👀 Linha do tempo de {activePlayer?.nickname} visível no rodapé</span>
+                <span className="text-purple-400 font-semibold">
+                  {hasTypedSomething ? 'Digitando em tempo real...' : 'Ouvindo música'}
+                </span>
+              </div>
+            </div>
+          );
+        })()
       )}
     </div>
   );

@@ -13,6 +13,7 @@ export interface SongEntity {
   category?: string;
   tags: string[];
   aliases: string[];
+  isActive: boolean;
   createdAt: number;
 }
 
@@ -26,6 +27,7 @@ export interface NewSongInput {
   category?: string;
   tags?: string[];
   aliases?: string[];
+  isActive?: boolean;
 }
 
 export interface CatalogFilter {
@@ -61,12 +63,13 @@ export class CatalogRepository {
     const youtubeId = (input as any).youtubeId || extractYouTubeId(input.youtubeUrl) || input.youtubeUrl;
     const createdAt = Date.now();
     const tagsJson = JSON.stringify(input.tags || []);
+    const isActive = input.isActive !== false ? 1 : 0;
 
     const insertSong = this.db.prepare(`
       INSERT INTO songs (
         id, game_title, release_year, song_title, youtube_url, youtube_id,
-        start_time, platform, category, tags, created_at
-      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        start_time, platform, category, tags, is_active, created_at
+      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     `);
 
     const insertAlias = this.db.prepare(`
@@ -85,6 +88,7 @@ export class CatalogRepository {
         input.platform || null,
         input.category || null,
         tagsJson,
+        isActive,
         createdAt
       );
 
@@ -112,6 +116,7 @@ export class CatalogRepository {
       category: input.category,
       tags: input.tags || [],
       aliases: input.aliases || [],
+      isActive: isActive === 1,
       createdAt
     };
   }
@@ -139,8 +144,8 @@ export class CatalogRepository {
     const insertSong = this.db.prepare(`
       INSERT INTO songs (
         id, game_title, release_year, song_title, youtube_url, youtube_id,
-        start_time, platform, category, tags, created_at
-      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        start_time, platform, category, tags, is_active, created_at
+      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     `);
 
     const insertAlias = this.db.prepare(`
@@ -153,6 +158,7 @@ export class CatalogRepository {
         const youtubeId = (input as any).youtubeId || extractYouTubeId(input.youtubeUrl) || input.youtubeUrl;
         const createdAt = Date.now();
         const tagsJson = JSON.stringify(input.tags || []);
+        const isActive = input.isActive !== false ? 1 : 0;
 
         insertSong.run(
           id,
@@ -165,6 +171,7 @@ export class CatalogRepository {
           input.platform || null,
           input.category || null,
           tagsJson,
+          isActive,
           createdAt
         );
 
@@ -185,7 +192,7 @@ export class CatalogRepository {
   }
 
   public getRandomSong(excludedIds: string[] = [], category?: string, tag?: string): SongEntity | null {
-    let query = `SELECT * FROM songs WHERE length(youtube_id) > 0`;
+    let query = `SELECT * FROM songs WHERE length(youtube_id) > 0 AND (is_active IS NULL OR is_active = 1)`;
     const params: (string | number)[] = [];
 
     if (excludedIds.length > 0) {
@@ -229,6 +236,7 @@ export class CatalogRepository {
       category: row.category || undefined,
       tags: JSON.parse(row.tags || '[]'),
       aliases,
+      isActive: row.is_active === undefined || row.is_active === 1,
       createdAt: row.created_at
     };
   }
@@ -282,6 +290,7 @@ export class CatalogRepository {
       category: row.category || undefined,
       tags: JSON.parse(row.tags || '[]'),
       aliases: this.getAliases(row.id),
+      isActive: row.is_active === undefined || row.is_active === 1,
       createdAt: row.created_at
     }));
 
@@ -303,6 +312,7 @@ export class CatalogRepository {
       category: row.category || undefined,
       tags: JSON.parse(row.tags || '[]'),
       aliases: this.getAliases(row.id),
+      isActive: row.is_active === undefined || row.is_active === 1,
       createdAt: row.created_at
     };
   }
@@ -321,6 +331,7 @@ export class CatalogRepository {
     const category = input.category !== undefined ? (input.category || null) : (existing.category || null);
     const tags = input.tags !== undefined ? input.tags : existing.tags;
     const aliases = input.aliases !== undefined ? input.aliases : existing.aliases;
+    const isActive = input.isActive !== undefined ? (input.isActive ? 1 : 0) : (existing.isActive ? 1 : 0);
 
     const tagsJson = JSON.stringify(tags);
 
@@ -334,7 +345,8 @@ export class CatalogRepository {
         start_time = ?,
         platform = ?,
         category = ?,
-        tags = ?
+        tags = ?,
+        is_active = ?
       WHERE id = ?
     `);
 
@@ -352,6 +364,7 @@ export class CatalogRepository {
         platform,
         category,
         tagsJson,
+        isActive,
         id
       );
 
@@ -368,6 +381,19 @@ export class CatalogRepository {
 
     transaction();
 
+    return this.getSongById(id);
+  }
+
+  public deleteSong(id: string): boolean {
+    const res = this.db.prepare(`DELETE FROM songs WHERE id = ?`).run(id);
+    return res.changes > 0;
+  }
+
+  public toggleSongActive(id: string, active?: boolean): SongEntity | null {
+    const existing = this.getSongById(id);
+    if (!existing) return null;
+    const targetState = active !== undefined ? (active ? 1 : 0) : (existing.isActive ? 0 : 1);
+    this.db.prepare(`UPDATE songs SET is_active = ? WHERE id = ?`).run(targetState, id);
     return this.getSongById(id);
   }
 
